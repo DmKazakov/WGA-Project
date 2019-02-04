@@ -25,7 +25,7 @@ public class EnemyController : MovementController {
 
 	void OnTriggerEnter2D(Collider2D collision) {
 		if (collision.gameObject.tag == "Player") {
-			print("See you!\n");
+			//print("See you!\n");
 			movementMode = new ChaseMode(this, collision.gameObject);
 			if (!isSpeededUp) {
 				speed += speedUp;
@@ -47,7 +47,10 @@ public class EnemyController : MovementController {
 				isSpeededUp = false;
 			}
 		} else if (collision.gameObject.tag == "Player") {
-			print("Catch you!\n");
+			//Load battle scene
+			//print("Catch you!\n");
+			//Just an example:
+			collision.gameObject.GetComponent<HealthManager>().ChangeHP(-10);
 		}
 	}
 
@@ -100,7 +103,7 @@ public class EnemyController : MovementController {
 
 		public Vector2? getNextMove() {
 			if (Vector2.Distance(currentPosition(), targetPosition()) > controller.chaseDistance) {
-				print("Lost you!");
+				//print("Lost you!");
 				return null;
 			}
 			return target.transform.position - controller.transform.position;
