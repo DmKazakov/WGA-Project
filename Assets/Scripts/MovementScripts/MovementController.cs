@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public abstract class MovementController : MonoBehaviour {
 	private Rigidbody2D rb2d;
@@ -12,25 +10,28 @@ public abstract class MovementController : MonoBehaviour {
 
 	// Use this for initialization
 	protected virtual void Start() {
-		animator = GetComponent<Animator>();
-		rb2d = GetComponent<Rigidbody2D>();
+		Init();
 	}
 
 	// Update is called once per frame
 	protected abstract void Update();
 
-	protected void MakeMove(Vector2 movement) {
-		rb2d.velocity = movement * speed;
+	protected void Init() {
+		animator = GetComponent<Animator>();
+		rb2d = GetComponent<Rigidbody2D>();
+	}
 
-		isMoving = movement.x != 0 || movement.y != 0;
-		if (isMoving)
-		{
+	protected void MakeMove(Vector2 movement) {
+		rb2d.velocity = movement.normalized * speed;
+
+		isMoving = rb2d.velocity.x != 0 || rb2d.velocity.y != 0;
+		if (isMoving) {
 			lastMove.x = movement.x;
 			lastMove.y = movement.y;
 		}
 
-		animator.SetFloat("MoveX", movement.x);
-		animator.SetFloat("MoveY", movement.y);
+		animator.SetFloat("MoveX", rb2d.velocity.x);
+		animator.SetFloat("MoveY", rb2d.velocity.y);
 		animator.SetFloat("LastMoveX", lastMove.x);
 		animator.SetFloat("LastMoveY", lastMove.y);
 		animator.SetBool("IsMoving", isMoving);
