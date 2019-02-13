@@ -20,13 +20,13 @@ public class Point : MonoBehaviour {
                 text.GetComponent<Text>().text = component.strength.ToString();
                 break;
             case "DexP":
-                text.GetComponent<Text>().text = component.dextery.ToString();
+                text.GetComponent<Text>().text = component.agility.ToString();
                 break;
             case "VitP":
                 text.GetComponent<Text>().text = component.vitality.ToString();
                 break;
             case "EmptyP":
-                text.GetComponent<Text>().text = component.emptypoints.ToString();
+                text.GetComponent<Text>().text = component.freeStatPoints.ToString();
                 break;
             default:
                 text.GetComponent<Text>().text = "0";

@@ -1,9 +1,8 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Click : MonoBehaviour {
     public GameObject player;
+
 	// Use this for initialization
 	void Start () {
 		
