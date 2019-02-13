@@ -23,7 +23,7 @@ public class Unit : MonoBehaviour {
     // Use this for initialization
     void Start () {
         personlevel = 1;
-        emptypoints = 15;
+        emptypoints = 7;
         strength = 1;
         dextery = 2;
         vitality = 3;
