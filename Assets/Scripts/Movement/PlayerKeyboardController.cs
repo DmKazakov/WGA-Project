@@ -3,7 +3,8 @@
 public class PlayerKeyboardController : MovementController {
 	private static bool isPlayerExists = false;
 
-	// Use this for initialization
+	public string statrtPoint;
+
 	protected override void Start() {
 		base.Start();
 
@@ -15,7 +16,6 @@ public class PlayerKeyboardController : MovementController {
 		}
 	}
 
-	// Update is called once per frame
 	override protected void Update() {
 		float moveHorizontal = Input.GetAxisRaw("Horizontal");
 		float moveVertical = Input.GetAxisRaw("Vertical");
