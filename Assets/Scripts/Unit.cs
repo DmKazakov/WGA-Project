@@ -8,23 +8,24 @@ public class Unit : MonoBehaviour {
     public int agility;
     public int vitality;
 
-    private int hitPoint;
-    private float criticalChance;
-    private float criticalMF;
-    private int criticalDMG;
-    private float dodge;
-    private int armor;
-    private int initiative;
+    public int hitPoint;
+    public float criticalChance;
+    public float criticalMF;
+    public int criticalDMG;
+    public float dodge;
+    public int armor;
+    public int initiative;
 
-    private int minDMG;
-    private int maxDMG;
+    public int minDMG;
+    public int maxDMG;
 
     public void Init() {
         level = 1;
-        freeStatPoints = 7;
-        strength = 1;
-        agility = 2;
-        vitality = 3;
+        freeStatPoints = 4;
+        strength = 5;
+        agility = 5;
+        vitality = 5;
+        
     }
 	
 	public void Recalc() {
@@ -32,10 +33,10 @@ public class Unit : MonoBehaviour {
         criticalChance = 0 + (2 * agility);
         criticalMF = 2;
         criticalDMG = (int)(maxDMG * criticalMF);
-        dodge = 0 + (2 * agility);
+        dodge = 0 +(int) (0.5 * agility);
         armor = (int)(vitality / 2);
         initiative = 0 + (int)(agility / 2) + (int)(strength / 2);
         minDMG = 1 + strength;
-        maxDMG = 1 + strength;
+        maxDMG = 3 + strength;
     }
 }
