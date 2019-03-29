@@ -19,6 +19,8 @@ public class Unit : MonoBehaviour {
     public int minDMG;
     public int maxDMG;
 
+    public Skills[] currentSkills = new Skills[3];
+
     public void Init() {
         level = 1;
         freeStatPoints = 4;
@@ -38,5 +40,11 @@ public class Unit : MonoBehaviour {
         initiative = 0 + (int)(agility / 2) + (int)(strength / 2);
         minDMG = 1 + strength;
         maxDMG = 3 + strength;
+    }
+    public int Attack(double mf) {
+       
+        int i = Random.Range(minDMG, maxDMG);
+        int result = (int)(i * mf);
+        return result;
     }
 }

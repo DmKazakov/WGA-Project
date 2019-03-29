@@ -5,10 +5,8 @@ using UnityEngine;
 public class ButtonLight : MonoBehaviour {
 
     private SpriteRenderer buttonColor;
-    private Color colorOn;
-    private Color colorOff;
     
-
+ 
     public void Start()
     {
         buttonColor = GetComponent<SpriteRenderer>();
