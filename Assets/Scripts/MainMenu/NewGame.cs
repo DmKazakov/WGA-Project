@@ -4,17 +4,14 @@ using UnityEngine;
 
 public class NewGame : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-		
-	}
+    public string scene;
+
+	
     public void OnMouseDown()
     {
-        SceneManager.LoadScene("CreatePlayer");
+        SceneManager.LoadScene(scene);
     }
 
-    // Update is called once per frame
-    void Update () {
-		
-	}
+    
+    
 }

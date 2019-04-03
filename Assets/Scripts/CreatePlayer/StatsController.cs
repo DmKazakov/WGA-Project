@@ -11,11 +11,11 @@ public class StatsController : MonoBehaviour {
 	public Button agilDown;
 	public GameObject player;
 
-	private Unit playerStats;
+	private Player playerStats;
 
 	// Start is called before the first frame update
 	void Start() {
-		playerStats = player.GetComponent<Unit>();
+		playerStats = player.GetComponent<Player>();
 
 		strUp.onClick.AddListener(() => playerStats.strength++);
 		strDown.onClick.AddListener(() => playerStats.strength--);
