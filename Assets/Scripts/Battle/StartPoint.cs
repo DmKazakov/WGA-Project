@@ -17,6 +17,8 @@ public class StartPoint : MonoBehaviour
 
     List<GameObject> units = new List<GameObject>();
 
+    public GameObject battleManager;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -25,7 +27,7 @@ public class StartPoint : MonoBehaviour
         enemy = GameObject.FindGameObjectWithTag("Enemy");
 
         ToPlace();
-        BattleManager.ToBattle(units);
+        battleManager.GetComponent<BattleManager>().ToBattle(units);
         
     }
 
