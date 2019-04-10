@@ -20,7 +20,12 @@ public abstract class Unit : MonoBehaviour {
     public int maxDMG;
 
     public Skills[] currentSkills = new Skills[3];
+    public GameObject[] team = new GameObject[3];
 
+    public Sprite moveSprite;
+    public Sprite battleSprite;
+
+    public GameObject[] squad = new GameObject[2];
 
     public abstract int Attack(double mf); 
 }
