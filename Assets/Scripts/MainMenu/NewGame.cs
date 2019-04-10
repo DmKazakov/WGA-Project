@@ -4,17 +4,22 @@ using UnityEngine;
 
 public class NewGame : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-		
-	}
+    public string scene;
+    public GameObject player;
+    public GameObject dustman;
+   // public GameObject dustman2;
+
+	
     public void OnMouseDown()
     {
-        SceneManager.LoadScene("CreatePlayer");
+        SceneManager.LoadScene(scene);
+        
+        DontDestroyOnLoad(player);
+        DontDestroyOnLoad(dustman);
+      //  DontDestroyOnLoad(dustman2);
+    }
     }
 
-    // Update is called once per frame
-    void Update () {
-		
-	}
-}
+    
+    
+
