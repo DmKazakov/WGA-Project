@@ -15,10 +15,6 @@ public class BattleManager : MonoBehaviour
         if (units[0].tag.Equals("Player"))   { activeMenu.SetActive(true);}
         else { activeMenu.SetActive(false); }
 
-
-
-
-
     }
 
     internal void ToBattle(List<GameObject> units) {
@@ -48,6 +44,20 @@ public class BattleManager : MonoBehaviour
     internal void ReplaceActiveMenu() {
         activeMenu.transform.position = units[0].transform.position;
         //activeMenu.GetComponent<RectTransform>().anchoredPosition = units[0].transform.position;
+    }
+
+    internal void EndRound()
+    {
+        GameObject[] enemyes = GameObject.FindGameObjectsWithTag("Enemy");
+        if (enemyes.Length < 1)
+        {
+            print("win!");
+        }
+        else
+        {
+
+        }
+
     }
    
 }
