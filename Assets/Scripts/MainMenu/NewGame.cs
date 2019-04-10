@@ -6,6 +6,8 @@ public class NewGame : MonoBehaviour {
 
     public string scene;
     public GameObject player;
+    public GameObject dustman;
+   // public GameObject dustman2;
 
 	
     public void OnMouseDown()
@@ -13,8 +15,9 @@ public class NewGame : MonoBehaviour {
         SceneManager.LoadScene(scene);
         
         DontDestroyOnLoad(player);
-        
-        }
+        DontDestroyOnLoad(dustman);
+      //  DontDestroyOnLoad(dustman2);
+    }
     }
 
     

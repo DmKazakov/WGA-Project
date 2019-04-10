@@ -10,11 +10,7 @@ public class Player : Unit
 
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
+   
 
     public void Init()
     {
@@ -26,18 +22,18 @@ public class Player : Unit
 
     }
 
-    public void Recalc()
-    {
-        hitPoint = vitality * 10 + strength * 5 + level * vitality;
-        criticalChance = 0 + (2 * agility);
-        criticalMF = 2;
-        criticalDMG = (int)(maxDMG * criticalMF);
-        dodge = 0 + (int)(0.5 * agility);
-        armor = (int)(vitality / 2);
-        initiative = 0 + (int)(agility / 2) + (int)(strength / 2);
-        minDMG = 1 + strength;
-        maxDMG = 3 + strength;
-    }
+  //  public void Recalc()
+  //  {
+  //      hitPoint = vitality * 10 + strength * 5 + level * vitality;
+  //      criticalChance = 0 + (2 * agility);
+   //     criticalMF = 2;
+  //      criticalDMG = (int)(maxDMG * criticalMF);
+  //      dodge = 0 + (int)(0.5 * agility);
+  //      armor = (int)(vitality / 2);
+   //     initiative = 0 + (int)(agility / 2) + (int)(strength / 2);
+   //     minDMG = 1 + strength;
+   //     maxDMG = 3 + strength;
+   // }
 
     public override int Attack(double mf)
     {
