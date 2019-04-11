@@ -4,12 +4,16 @@ using UnityEngine;
 
 public class SelectUnit : MonoBehaviour
 {
-    internal bool select = false;
+    public bool select;
+    public static GameObject battleManager;
     private void OnMouseDown()
     {
         if (select)
         {
-            print("click");
+            BattleManager.target = gameObject;
+            int dmg = battleManager.GetComponent<BattleManager>().activeMenu.GetComponent<ActiveMenu>().Dmg;
+            battleManager.GetComponent<BattleManager>().Fight(dmg);
+            
         }
     }
 }

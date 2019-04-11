@@ -28,6 +28,7 @@ public class StartPoint : MonoBehaviour
 
         ToPlace();
         battleManager.GetComponent<BattleManager>().ToBattle(units);
+        SelectUnit.battleManager = battleManager;
         
     }
 
@@ -54,6 +55,7 @@ public class StartPoint : MonoBehaviour
         //главный враг, спрайт - на точку
         enemy.GetComponent<SpriteRenderer>().sprite = enemy.GetComponent<Unit>().battleSprite;
         enemy.transform.position = enemyPoint1.transform.position;
+        
         units.Add(enemy);
         //Вражеский сквад
         squad = enemy.GetComponent<Unit>().squad;
@@ -62,13 +64,15 @@ public class StartPoint : MonoBehaviour
             
             if (squad[i] != null)
             {
+                
                 squad[i].GetComponent<SpriteRenderer>().sprite = squad[i].GetComponent<Unit>().battleSprite;
                 Instantiate(squad[i], enemySquadPoint[i].transform.position, Quaternion.identity);
+                
                 units.Add(squad[i]);
             }
 
         }
-
+        print(units.Count);
     }
     
 

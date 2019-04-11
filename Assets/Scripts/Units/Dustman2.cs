@@ -2,17 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Dustman2 : Dustman
+public class Dustman2 : Enemy
 {
     // Start is called before the first frame update
     void Start()
     {
-        agility = 2;
+        level = 1;
+        strength = 1;
+        vitality = 5;
+        agility = 4;
+        Recalc();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    
 }

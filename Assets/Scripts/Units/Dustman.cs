@@ -10,20 +10,19 @@ public class Dustman : Enemy
     {
         level = 1;
         strength = 1;
-        vitality = 1;
+        vitality = 3;
         agility = 4;
-        
+        Recalc();
         
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    
 
     public override int Attack(double mf)
     {
-        throw new System.NotImplementedException();
+        int i = Random.Range(minDMG, maxDMG);
+        int result = (int)(i * mf);
+        return result;
     }
 }
