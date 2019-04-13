@@ -32,11 +32,16 @@ public abstract class MovementController : MonoBehaviour {
 			lastMove.y = movement.y;
 		}
 
-		animator.SetFloat("MoveX", rb2d.velocity.x);
-		animator.SetFloat("MoveY", rb2d.velocity.y);
-		animator.SetFloat("LastMoveX", lastMove.x);
-		animator.SetFloat("LastMoveY", lastMove.y);
-		animator.SetBool("IsMoving", isMoving);
+        //check direction
+        if (rb2d.velocity.x < 0)
+        {
+            transform.localScale = new Vector3(-1, 1, 1);
+        }
+        else if (rb2d.velocity.x > 0)
+        {
+            transform.localScale = new Vector3(1, 1, 1);
+        }
+        animator.SetFloat("speed", Mathf.Abs(rb2d.velocity.x));
 	}
 
 	private void Zindex() {
