@@ -48,6 +48,7 @@ public class StartPoint : MonoBehaviour
             {
                 squad[i].GetComponent<SpriteRenderer>().sprite = squad[i].GetComponent<Unit>().battleSprite;
                 Instantiate(squad[i], squadPoint[i].transform.position, Quaternion.identity);
+                
                 units.Add(squad[i]);
             }
 
@@ -64,15 +65,20 @@ public class StartPoint : MonoBehaviour
             
             if (squad[i] != null)
             {
+                GameObject pp = Instantiate(squad[i], enemySquadPoint[i].transform.position, Quaternion.identity);
+                pp.GetComponent<SpriteRenderer>().sprite = squad[i].GetComponent<Unit>().battleSprite;
                 
-                squad[i].GetComponent<SpriteRenderer>().sprite = squad[i].GetComponent<Unit>().battleSprite;
-                Instantiate(squad[i], enemySquadPoint[i].transform.position, Quaternion.identity);
-                
-                units.Add(squad[i]);
+               
+                units.Add(pp);
             }
 
         }
-        print(units.Count);
+        for (int i = 0; i <units.Count; i++)
+        {
+            units[i].SetActive(true);
+            units[i].GetComponent<Unit>().Recalc();
+           // print("Активирован и пересчитан: " + units[i].name);
+        }
     }
     
 

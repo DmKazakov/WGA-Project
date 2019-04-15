@@ -15,8 +15,10 @@ public class BattleManager : MonoBehaviour
     {
         //весь процесс боя
         target.GetComponent<Unit>().currentHitPoint -= dmg;
-        print("Нанесен урон " + dmg);
-        print("Осталось ХП: " + target.GetComponent<Unit>().currentHitPoint);
+        
+        print("Нанесен урон " + dmg +" по "+target.name+" осталось ХП: " + target.GetComponent<Unit>().currentHitPoint + "/" + target.GetComponent<Unit>().hitPoint) ;
+        
+       
         for (int i = 0; i < units.Count; i++)
         {
             if (units[i].tag.Equals("Enemy"))
@@ -34,9 +36,7 @@ public class BattleManager : MonoBehaviour
         BattleManager.units = units;
         Sort();
         ReplaceActiveMenu();
-
-
-    }
+            }
 
     internal void Sort()
     {
@@ -67,7 +67,9 @@ public class BattleManager : MonoBehaviour
             int dmg = units[0].GetComponent<Unit>().Attack(1);
             activeMenu.SetActive(false);
             BattleAI.ChoiceTarget();
+          //  print(units[0].name + " ударил " + target.name + " на " + dmg + "осталось ХП " + target.GetComponent<Unit>().hitPoint);
             Fight(dmg);
+            
 
         }
     }
@@ -76,10 +78,13 @@ public class BattleManager : MonoBehaviour
     {
         for (int i = 0; i < units.Count; i++)
         {
+
             Unit currentUnit = units[i].GetComponent<Unit>();
             if (currentUnit.currentHitPoint < 1)
             {
+            
                 units[i].SetActive(false);
+                print("юнит: "+ currentUnit.name + " умер");
                 units.RemoveAt(i);
             }
         }
