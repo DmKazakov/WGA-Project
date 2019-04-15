@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class BattleManager : MonoBehaviour
 {
@@ -15,10 +16,20 @@ public class BattleManager : MonoBehaviour
     {
         //весь процесс боя
         target.GetComponent<Unit>().currentHitPoint -= dmg;
+        String tXt = "Нанесен урон " + dmg + " по " + target.name + " осталось ХП: " + target.GetComponent<Unit>().currentHitPoint + "/" + target.GetComponent<Unit>().hitPoint;
+
+        if (target.tag.Equals("Enemy"))
+        {
+            Debug.Log("<color=blue>" + tXt + "</color>");
+        }
+        else
+        {
+            Debug.Log("<color=red>" + tXt + "</color>");
+        }
         
-        print("Нанесен урон " + dmg +" по "+target.name+" осталось ХП: " + target.GetComponent<Unit>().currentHitPoint + "/" + target.GetComponent<Unit>().hitPoint) ;
-        
-       
+
+
+
         for (int i = 0; i < units.Count; i++)
         {
             if (units[i].tag.Equals("Enemy"))

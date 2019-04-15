@@ -29,7 +29,7 @@ public class ActiveMenu : MonoBehaviour
     }
 
     public void RangeAttack() {
-        dmg = BattleManager.units[0].GetComponent<Unit>().Attack(1);
+        dmg = BattleManager.units[0].GetComponent<Unit>().RangeAttack(1);
         print("ДБ");
     }
 

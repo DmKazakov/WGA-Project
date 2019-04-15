@@ -29,6 +29,11 @@ public abstract class Unit : MonoBehaviour {
     public GameObject[] squad = new GameObject[2];
 
     public abstract int Attack(double mf);
+    public int RangeAttack(double mf)
+    {
+        //прописать логику ДБ в зависимости от оружия
+        return Attack(mf);
+    }
     public void Recalc()
     {
         hitPoint = vitality * 10 + strength * 5 + level * vitality;
