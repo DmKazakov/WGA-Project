@@ -4,12 +4,9 @@ using UnityEngine;
 
 public class StartPoint : MonoBehaviour
 {
-    public GameObject playerPoint1;
-    public GameObject[] squadPoint = new GameObject[2];
-
-
-    public GameObject enemyPoint1;
-    public GameObject[] enemySquadPoint = new GameObject[2];
+   
+    public GameObject[] squadPoint = new GameObject[3];
+    public GameObject[] enemySquadPoint = new GameObject[3];
 
 
     GameObject player;
@@ -34,51 +31,43 @@ public class StartPoint : MonoBehaviour
 
     void ToPlace()
     {
-        //главный перс, назначаем спрайт, выставляем на точку
-        player.GetComponent<SpriteRenderer>().sprite = player.GetComponent<Unit>().battleSprite;
-        player.transform.position = playerPoint1.transform.position;
-        units.Add(player);
-        
-        //тоже, но с тиммейтами
-        GameObject[] squad = player.GetComponent<Unit>().squad;
+                //расставляем отряд
+        GameObject[] squad = player.GetComponent<Avatar>().squad;
         for (int i = 0; i < squad.Length; i++)
         {
-            
+            GameObject playerUnit;
             if (squad[i] != null)
             {
-                squad[i].GetComponent<SpriteRenderer>().sprite = squad[i].GetComponent<Unit>().battleSprite;
-                Instantiate(squad[i], squadPoint[i].transform.position, Quaternion.identity);
                 
-                units.Add(squad[i]);
+                playerUnit = Instantiate<GameObject>(squad[i], squadPoint[i].transform.position, Quaternion.identity);
+                
+                units.Add(playerUnit);
             }
 
         }
-        //главный враг, спрайт - на точку
-        enemy.GetComponent<SpriteRenderer>().sprite = enemy.GetComponent<Unit>().battleSprite;
-        enemy.transform.position = enemyPoint1.transform.position;
-        
-        units.Add(enemy);
+       
         //Вражеский сквад
-        squad = enemy.GetComponent<Unit>().squad;
+        squad = enemy.GetComponent<Avatar>().squad;
         for (int i = 0; i < squad.Length; i++)
         {
-            
+            GameObject enemyUnit;
             if (squad[i] != null)
             {
-                GameObject pp = Instantiate(squad[i], enemySquadPoint[i].transform.position, Quaternion.identity);
-                pp.GetComponent<SpriteRenderer>().sprite = squad[i].GetComponent<Unit>().battleSprite;
-                
-               
-                units.Add(pp);
+                enemyUnit = Instantiate<GameObject>(squad[i], enemySquadPoint[i].transform.position, Quaternion.identity);
+                units.Add(enemyUnit);
             }
 
         }
+        //делаем активными и пересчитываем
         for (int i = 0; i <units.Count; i++)
         {
             units[i].SetActive(true);
             units[i].GetComponent<Unit>().Recalc();
            // print("Активирован и пересчитан: " + units[i].name);
         }
+        //вырубаем аватары
+        player.SetActive(false);
+        enemy.SetActive(false);
     }
     
 

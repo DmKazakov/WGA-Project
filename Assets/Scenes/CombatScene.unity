@@ -2049,12 +2049,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0070b70d4f4b7647b8dc5939e596a2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerPoint1: {fileID: 1933651627}
   squadPoint:
+  - {fileID: 1933651627}
   - {fileID: 1572663753}
   - {fileID: 826572292}
-  enemyPoint1: {fileID: 825211676}
   enemySquadPoint:
+  - {fileID: 825211676}
   - {fileID: 1653710589}
   - {fileID: 899808812}
   battleManager: {fileID: 909082695}

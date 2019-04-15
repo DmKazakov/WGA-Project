@@ -56,8 +56,5 @@ public class SkillsControl : MonoBehaviour
         button.colors = colorVar;
     }
 
-    void Update()
-    {
-        
-    }
+    
 }

@@ -26,7 +26,7 @@ public abstract class Unit : MonoBehaviour {
     public Sprite moveSprite;
     public Sprite battleSprite;
 
-    public GameObject[] squad = new GameObject[2];
+   // public GameObject[] squad = new GameObject[2];
 
     public abstract int Attack(double mf);
     public int RangeAttack(double mf)
