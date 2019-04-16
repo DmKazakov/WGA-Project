@@ -8,7 +8,8 @@ public abstract class Unit : MonoBehaviour {
     public int agility;
     public int vitality;
 
-    internal int hitPoint;
+    public int hitPoint; //мах
+    public int currentHitPoint;
     internal float criticalChance;
     internal float criticalMF;
     internal int criticalDMG;
@@ -16,21 +17,27 @@ public abstract class Unit : MonoBehaviour {
     internal int armor;
     internal int initiative;
 
-    internal int minDMG;
-    internal int maxDMG;
+    public int minDMG;
+    public int maxDMG;
 
     public Skills[] currentSkills = new Skills[3];
-    public GameObject[] team = new GameObject[3];
+   
 
     public Sprite moveSprite;
     public Sprite battleSprite;
 
-    public GameObject[] squad = new GameObject[2];
+   // public GameObject[] squad = new GameObject[2];
 
     public abstract int Attack(double mf);
+    public int RangeAttack(double mf)
+    {
+        //прописать логику ДБ в зависимости от оружия
+        return Attack(mf);
+    }
     public void Recalc()
     {
         hitPoint = vitality * 10 + strength * 5 + level * vitality;
+        currentHitPoint = hitPoint;
         criticalChance = 0 + (2 * agility);
         criticalMF = 2;
         criticalDMG = (int)(maxDMG * criticalMF);
@@ -40,4 +47,6 @@ public abstract class Unit : MonoBehaviour {
         minDMG = 1 + strength;
         maxDMG = 3 + strength;
     }
+
+  
 }
