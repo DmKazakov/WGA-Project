@@ -1198,6 +1198,8 @@ MonoBehaviour:
   - {fileID: 362900784}
   - {fileID: 1055733545}
   - {fileID: 1504373406}
+  viewDamage: {fileID: 1875101286885076089, guid: 38a022c9484c241438e0151192eea270,
+    type: 3}
 --- !u!1 &1055733545
 GameObject:
   m_ObjectHideFlags: 0

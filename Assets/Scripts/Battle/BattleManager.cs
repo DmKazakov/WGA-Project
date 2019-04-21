@@ -13,13 +13,14 @@ public class BattleManager : MonoBehaviour
     public GameObject activeMenu;
     internal static GameObject target;
     public GameObject[] orderPanel = new GameObject[6];
+    public GameObject viewDamage;
 
 
 
     internal void Fight(int dmg)
     {
         //весь процесс боя
-        target.GetComponent<Unit>().currentHitPoint -= dmg;
+        target.GetComponent<Unit>().currentHitPoint -= dmg; //вместо этого вызываем метод получения дмг
         String tXt = "Нанесен урон " + dmg + " по " + target.name + " осталось ХП: " + target.GetComponent<Unit>().currentHitPoint + "/" + target.GetComponent<Unit>().hitPoint;
 
         if (target.tag.Equals("Enemy"))
@@ -30,6 +31,8 @@ public class BattleManager : MonoBehaviour
         {
             Debug.Log("<color=red>" + tXt + "</color>");
         }
+
+        ViewDmg(dmg);
         
 
 
@@ -144,5 +147,11 @@ public class BattleManager : MonoBehaviour
 
             k++;
         }
+    }
+    void ViewDmg(int dmg) {
+        GameObject dmgView = Instantiate(viewDamage, target.transform.position, Quaternion.identity);
+         dmgView.GetComponent<ViewDamage>().Init(dmg);
+         dmgView.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, false);
+          dmgView.transform.position = target.transform.position;
     }
 }
