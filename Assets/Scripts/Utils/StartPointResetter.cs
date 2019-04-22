@@ -2,7 +2,7 @@
 
 public class StartPointResetter : MonoBehaviour {
 	private PlayerKeyboardController thePlayer;
-	private CameraController theCamera;
+	private CameraControl theCamera;
 
 	public Vector2 startDirection;
 	public string pointName;
@@ -15,7 +15,7 @@ public class StartPointResetter : MonoBehaviour {
 			thePlayer.transform.position = transform.position;
 			thePlayer.lastMove = startDirection;
 
-			theCamera = FindObjectOfType<CameraController>();
+			theCamera = FindObjectOfType<CameraControl>();
 			theCamera.transform.position = new Vector3(transform.position.x, transform.position.y, theCamera.transform.position.z);
 		}
 	}
