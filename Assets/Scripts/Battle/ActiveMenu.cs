@@ -10,22 +10,19 @@ public class ActiveMenu : MonoBehaviour
 
    
 
-    public void ToTarget() //включаем возможность выбора на юнитах
-    {
+    public void ToTarget() {
         for (int i = 0; i < BattleManager.units.Count; i++)
         {
             
             if (BattleManager.units[i].tag.Equals("Enemy"))
             {
                 BattleManager.units[i].GetComponent<SelectUnit>().select = true;
+              //  print(BattleManager.units[i].name + " " + BattleManager.units[i].GetComponent<SelectUnit>().select);
             }
            
         }
         
     }
-
-    //тут прописываем получение цифры дмг в зависимости от скилла
-
     public void MeleeAttack() {
         dmg = BattleManager.units[0].GetComponent<Unit>().Attack(1);
         print("ББ");

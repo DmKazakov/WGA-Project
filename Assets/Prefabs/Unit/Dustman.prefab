@@ -107,7 +107,11 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  headIcon: {fileID: 21300000, guid: df4d6e59c8ecbee4bac39025835152da, type: 3}
+  moveSprite: {fileID: 0}
+  battleSprite: {fileID: 21300000, guid: a81195029a2f6954ea048205770cb55a, type: 3}
+  squad:
+  - {fileID: 4787263607262992368, guid: f5a71f39019120640b035adc4c402b1f, type: 3}
+  - {fileID: 0}
 --- !u!61 &734633688
 BoxCollider2D:
   m_ObjectHideFlags: 0

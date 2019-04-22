@@ -5,5 +5,4 @@ using UnityEngine;
 public class Avatar : MonoBehaviour
 {
     public GameObject[] squad = new GameObject[3];
-
 }

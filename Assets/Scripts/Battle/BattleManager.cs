@@ -2,8 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System;
-using UnityEngine.UI;
-using System.Threading;
 
 public class BattleManager : MonoBehaviour
 {
@@ -12,15 +10,12 @@ public class BattleManager : MonoBehaviour
     public static List<GameObject> units;
     public GameObject activeMenu;
     internal static GameObject target;
-    public GameObject[] orderPanel = new GameObject[6];
-    public GameObject viewDamage;
-
 
 
     internal void Fight(int dmg)
     {
         //весь процесс боя
-        target.GetComponent<Unit>().currentHitPoint -= dmg; //вместо этого вызываем метод получения дмг
+        target.GetComponent<Unit>().currentHitPoint -= dmg;
         String tXt = "Нанесен урон " + dmg + " по " + target.name + " осталось ХП: " + target.GetComponent<Unit>().currentHitPoint + "/" + target.GetComponent<Unit>().hitPoint;
 
         if (target.tag.Equals("Enemy"))
@@ -31,8 +26,6 @@ public class BattleManager : MonoBehaviour
         {
             Debug.Log("<color=red>" + tXt + "</color>");
         }
-
-        ViewDmg(dmg);
         
 
 
@@ -53,7 +46,6 @@ public class BattleManager : MonoBehaviour
     {
         BattleManager.units = units;
         Sort();
-        OrderPanelplace();
         ReplaceActiveMenu();
             }
 
@@ -89,6 +81,7 @@ public class BattleManager : MonoBehaviour
           //  print(units[0].name + " ударил " + target.name + " на " + dmg + "осталось ХП " + target.GetComponent<Unit>().hitPoint);
             Fight(dmg);
             
+
         }
     }
 
@@ -112,7 +105,6 @@ public class BattleManager : MonoBehaviour
         if (enemyes.Length < 1)
         {
             print("win!");
-            //добавить уничтожение всех объектов, чтобы по tag Player находился только один (Аватар)
         }
         else if (players.Length < 1)
         {
@@ -121,37 +113,10 @@ public class BattleManager : MonoBehaviour
         else
         {
             units.Add(units[0]);
-            units.RemoveAt(0);  //двигаем очередь
-            OrderPanelplace();  //отображаем очередь на панели
-            Invoke("ReplaceActiveMenu", 0.5f); //задрежка для проверки, удалить потом
-           // ReplaceActiveMenu(); активировать после удаления
+            units.RemoveAt(0);
+            ReplaceActiveMenu();
         }
 
     }
-    void OrderPanelplace()
-    {
-        int k = 0;
-        for (int i = 0; i < orderPanel.Length; i++)
-        {
-            try
-            {
-                orderPanel[i].GetComponent<Image>().sprite = units[k].GetComponent<Unit>().headIcon;
-            }
-            catch (Exception)
-            {
-                k = 0;
-                orderPanel[i].GetComponent<Image>().sprite = units[k].GetComponent<Unit>().headIcon;
 
-            }
-            
-
-            k++;
-        }
-    }
-    void ViewDmg(int dmg) {
-        GameObject dmgView = Instantiate(viewDamage, target.transform.position, Quaternion.identity);
-         dmgView.GetComponent<ViewDamage>().Init(dmg);
-         dmgView.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, false);
-          dmgView.transform.position = target.transform.position;
-    }
 }
