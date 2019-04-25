@@ -26,6 +26,12 @@ public class ActiveMenu : MonoBehaviour
 
     //тут прописываем получение цифры дмг в зависимости от скилла
 
+    internal void ReplaceActiveMenu(List<GameObject> units)
+    {
+        gameObject.transform.position = units[0].transform.position;
+        gameObject.SetActive(true);
+
+    }
     public void MeleeAttack() {
         dmg = BattleManager.units[0].GetComponent<Unit>().Attack(1);
         print("ББ");

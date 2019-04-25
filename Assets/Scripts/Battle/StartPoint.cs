@@ -27,11 +27,10 @@ public class StartPoint : MonoBehaviour
         enemy = GameObject.FindGameObjectWithTag("Enemy");
 
         ToPlace();
-        battleManager.GetComponent<BattleManager>().ToBattle(units); //запускаем бой
+        gameObject.GetComponent<BattleManager>().BattleSetup(units); //запускаем бой
         SelectUnit.battleManager = battleManager;
-
     }
-    
+
     void ToPlace() //создаем и расставляем юнитов
     {
         //расставляем отряд
@@ -82,7 +81,7 @@ public class StartPoint : MonoBehaviour
         List<GameObject> Uplayer = new List<GameObject>();
         List<GameObject> Uenemy = new List<GameObject>();
         float k = HPpointPlayer.GetComponent<RectTransform>().position.y;
-        
+
         GameObject slider;
 
         for (int i = 0; i < units.Count; i++)
@@ -101,13 +100,13 @@ public class StartPoint : MonoBehaviour
         {
             slider = Instantiate(sliderHP, HPpointPlayer.transform.position, Quaternion.identity);
             slider.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, false);
-            slider.transform.position = new Vector2(HPpointPlayer.GetComponent<RectTransform>().position.x,k);
+            slider.transform.position = new Vector2(HPpointPlayer.GetComponent<RectTransform>().position.x, k);
             slider.GetComponent<HP>().Init(Uplayer[i]);
             k -= 0.5f;
 
         }
         k = HPpointEnemy.GetComponent<RectTransform>().position.y;
-        
+
 
         for (int i = 0; i < Uenemy.Count; i++)
         {
@@ -115,22 +114,18 @@ public class StartPoint : MonoBehaviour
             slider.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, false);
             slider.transform.position = new Vector2(HPpointEnemy.GetComponent<RectTransform>().position.x, k);
             slider.GetComponent<HP>().Init(Uenemy[i]);
-           
+
             k -= 0.5f;
             slider.GetComponent<Slider>().direction = Slider.Direction.RightToLeft;
-            
-            
+
         }
 
 
-       
-
-
     }
-    
-   
-    
-    
+
+
+
+
 
 
 
