@@ -21,20 +21,8 @@ public class BattleManager : MonoBehaviour
     {
         //весь процесс боя
         target.GetComponent<Unit>().currentHitPoint -= dmg; //вместо этого вызываем метод получения дмг
-        String tXt = "Нанесен урон " + dmg + " по " + target.name + " осталось ХП: " + target.GetComponent<Unit>().currentHitPoint + "/" + target.GetComponent<Unit>().hitPoint;
-
-        if (target.tag.Equals("Enemy"))
-        {
-            Debug.Log("<color=blue>" + tXt + "</color>");
-        }
-        else
-        {
-            Debug.Log("<color=red>" + tXt + "</color>");
-        }
-
+        PrintRound(dmg);
         ViewDmg(dmg);
-        
-
 
 
         for (int i = 0; i < units.Count; i++)
@@ -44,51 +32,35 @@ public class BattleManager : MonoBehaviour
                 units[i].GetComponent<SelectUnit>().select = false;
             }
         }
+
+
         EndRound();
 
 
     }
 
-    internal void ToBattle(List<GameObject> units)
+    internal void BattleSetup(List<GameObject> units)
     {
         BattleManager.units = units;
         Sort();
         OrderPanelplace();
-        ReplaceActiveMenu();
-            }
-
-    internal void Sort()
-    {
-        GameObject temp;
-        for (int i = 0; i < units.Count; i++)
-        {
-            for (int j = i + 1; j < units.Count; j++)
-            {
-                if (units[i].GetComponent<Unit>().initiative < units[j].GetComponent<Unit>().initiative)
-                {
-                    temp = units[i];
-                    units[i] = units[j];
-                    units[j] = temp;
-
-                }
-            }
-        }
+        StartBattle();
     }
-    internal void ReplaceActiveMenu()
+    internal void StartBattle()
     {
-        activeMenu.transform.position = units[0].transform.position;
         if (units[0].tag.Equals("Player"))
         {
-            activeMenu.SetActive(true);
+            activeMenu.GetComponent<ActiveMenu>().ReplaceActiveMenu(units);
+
         }
         else
         {
-            int dmg = units[0].GetComponent<Unit>().Attack(1);
             activeMenu.SetActive(false);
+            int dmg = units[0].GetComponent<Unit>().Attack(1);
+
             BattleAI.ChoiceTarget();
-          //  print(units[0].name + " ударил " + target.name + " на " + dmg + "осталось ХП " + target.GetComponent<Unit>().hitPoint);
             Fight(dmg);
-            
+
         }
     }
 
@@ -100,9 +72,9 @@ public class BattleManager : MonoBehaviour
             Unit currentUnit = units[i].GetComponent<Unit>();
             if (currentUnit.currentHitPoint < 1)
             {
-            
+
                 units[i].SetActive(false);
-                print("юнит: "+ currentUnit.name + " умер");
+                print("юнит: " + currentUnit.name + " умер");
                 units.RemoveAt(i);
             }
         }
@@ -123,8 +95,8 @@ public class BattleManager : MonoBehaviour
             units.Add(units[0]);
             units.RemoveAt(0);  //двигаем очередь
             OrderPanelplace();  //отображаем очередь на панели
-            Invoke("ReplaceActiveMenu", 0.5f); //задрежка для проверки, удалить потом
-           // ReplaceActiveMenu(); активировать после удаления
+            Invoke("StartBattle", 0.5f); //задрежка для проверки, удалить потом
+                                         // StartBattle(); активировать после удаления
         }
 
     }
@@ -143,15 +115,46 @@ public class BattleManager : MonoBehaviour
                 orderPanel[i].GetComponent<Image>().sprite = units[k].GetComponent<Unit>().headIcon;
 
             }
-            
+
 
             k++;
         }
-    }
-    void ViewDmg(int dmg) {
+    }// панель очереди
+    void ViewDmg(int dmg)
+    {
         GameObject dmgView = Instantiate(viewDamage, target.transform.position, Quaternion.identity);
-         dmgView.GetComponent<ViewDamage>().Init(dmg);
-         dmgView.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, false);
-          dmgView.transform.position = target.transform.position;
+        dmgView.GetComponent<ViewDamage>().Init(dmg);
+        dmgView.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, false);
+        dmgView.transform.position = target.transform.position;
+    }//визуализация урона
+    void PrintRound(int dmg)
+    {
+        String tXt = "Нанесен урон " + dmg + " по " + target.name + " осталось ХП: " + target.GetComponent<Unit>().currentHitPoint + "/" + target.GetComponent<Unit>().hitPoint;
+
+        if (target.tag.Equals("Enemy"))
+        {
+            Debug.Log("<color=blue>" + tXt + "</color>");
+        }
+        else
+        {
+            Debug.Log("<color=red>" + tXt + "</color>");
+        }
+    }  //текстовое отображение урона, пока нет анимации
+    internal void Sort()
+    {
+        GameObject temp;
+        for (int i = 0; i < units.Count; i++)
+        {
+            for (int j = i + 1; j < units.Count; j++)
+            {
+                if (units[i].GetComponent<Unit>().initiative < units[j].GetComponent<Unit>().initiative)
+                {
+                    temp = units[i];
+                    units[i] = units[j];
+                    units[j] = temp;
+
+                }
+            }
+        }
     }
 }
