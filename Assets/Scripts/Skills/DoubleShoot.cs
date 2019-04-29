@@ -2,11 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DoubleShoot : Skills
+public class DoubleShoot : Skills,Foe
 {
     // Start is called before the first frame update
-    void Start()
+    public override void Init(Unit unit)
     {
+        this.unit = unit;
+    
         _name = "Двойной выстрел";
         cooldown = 4;
         duration = 1;
@@ -17,6 +19,11 @@ public class DoubleShoot : Skills
     public int Effect()
     {
 
-        return unit.Attack(mf);
+        return 0;
+    }
+
+    public override int Attack()
+    {
+        return 0;
     }
 }

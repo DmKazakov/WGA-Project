@@ -13,8 +13,8 @@ public class SelectUnit : MonoBehaviour
         if (select)
         {
             BattleManager.target = gameObject;
-            int dmg = battleManager.GetComponent<BattleManager>().activeMenu.GetComponent<ActiveMenu>().Dmg;
-            battleManager.GetComponent<BattleManager>().Fight(dmg);
+            
+            battleManager.GetComponent<BattleManager>().Fight();
             
         }
     }

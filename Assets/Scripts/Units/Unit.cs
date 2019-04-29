@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 
-public abstract class Unit : MonoBehaviour {
+public abstract class Unit : MonoBehaviour
+{
     public int level;
 
     public int freeStatPoints;
@@ -10,40 +11,65 @@ public abstract class Unit : MonoBehaviour {
 
     public int hitPoint; //мах
     public int currentHitPoint;
-    internal float criticalChance;
-    internal float criticalMF;
-    internal int criticalDMG;
-    internal float dodge;
-    internal int armor;
-    internal int initiative;
+    public float criticalChance;
+    public float criticalMF;
+    public int criticalDMG;
+    public float dodge;
+    public int armor;
+    public int initiative;
 
     public int minDMG;
     public int maxDMG;
 
-    public Skills[] currentSkills = new Skills[3];
+    private int dmg;
+
+    public GameObject[] currentSkills = new GameObject[3];
 
     public Sprite headIcon;
-    
 
-    public abstract int Attack(double mf);
-    public int RangeAttack(double mf)
-    {
-        //прописать логику ДБ в зависимости от оружия
-        return Attack(mf);
-    }
+
+
     public void Recalc()
     {
         hitPoint = vitality * 10 + strength * 5 + level * vitality;
         currentHitPoint = hitPoint;
+        minDMG = 1 + strength;
+        maxDMG = 3 + strength;
+
         criticalChance = 0 + (2 * agility);
         criticalMF = 2;
         criticalDMG = (int)(maxDMG * criticalMF);
         dodge = 0 + (int)(0.5 * agility);
         armor = (int)(vitality / 2);
         initiative = 0 + (int)(agility / 2) + (int)(strength / 2);
-        minDMG = 1 + strength;
-        maxDMG = 3 + strength;
+
+
     }
 
-  
+    public void SetDamage(int dmg)
+    {
+        int chance = Random.Range(0, 100);
+        dmg -= armor;
+
+        if (dmg < 1)
+        {
+            dmg = 1;
+        }
+
+
+        if (chance > (100 - dodge))
+        {
+            dmg = 0;
+        }
+        this.dmg = dmg;
+        currentHitPoint -= dmg;
+
+    }
+
+    public int GetDamage() {
+        return dmg;
+    }
+
+
+
 }

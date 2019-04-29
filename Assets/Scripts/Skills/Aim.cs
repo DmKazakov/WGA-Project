@@ -2,17 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Aim : Skills
+public class Aim : Skills, Mate
 {
-    // Start is called before the first frame update
-    void Start()
+    
+    public override void Init(Unit unit)
     {
-        
+        this.unit = unit;
     }
 
-    // Update is called once per frame
-    void Update()
+    public override int Attack()
     {
-        
+        return 0;
     }
 }

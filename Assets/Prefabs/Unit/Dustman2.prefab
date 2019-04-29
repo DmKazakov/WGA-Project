@@ -104,7 +104,7 @@ MonoBehaviour:
   minDMG: 1
   maxDMG: 3
   currentSkills:
-  - {fileID: 0}
+  - {fileID: 4615261179389350267, guid: 9f1c2484641e15742aaf805160eac510, type: 3}
   - {fileID: 0}
   - {fileID: 0}
   headIcon: {fileID: 21300000, guid: f2e29c25539fb474fba9f1e196b31274, type: 3}

@@ -12,27 +12,27 @@ public class BattleManager : MonoBehaviour
     public static List<GameObject> units;
     public GameObject activeMenu;
     internal static GameObject target;
+    internal static GameObject skill;
     public GameObject[] orderPanel = new GameObject[6];
     public GameObject viewDamage;
 
 
 
-    internal void Fight(int dmg)
+    internal void Fight()
     {
         //весь процесс боя
-        target.GetComponent<Unit>().currentHitPoint -= dmg; //вместо этого вызываем метод получения дмг
+        //Прописать добавление эффекта в список, вызываем оставшиеся эффекты
+        activeMenu.SetActive(false);
+        SelectOFF();
+        skill.GetComponent<Skills>().Init(units[0].GetComponent<Unit>());
+
+        int dmg = skill.GetComponent<Skills>().Attack();
+        target.GetComponent<Unit>().SetDamage(dmg);
+        dmg = target.GetComponent<Unit>().GetDamage();
+
+
         PrintRound(dmg);
         ViewDmg(dmg);
-
-
-        for (int i = 0; i < units.Count; i++)
-        {
-            if (units[i].tag.Equals("Enemy"))
-            {
-                units[i].GetComponent<SelectUnit>().select = false;
-            }
-        }
-
 
         EndRound();
 
@@ -55,11 +55,11 @@ public class BattleManager : MonoBehaviour
         }
         else
         {
-            activeMenu.SetActive(false);
-            int dmg = units[0].GetComponent<Unit>().Attack(1);
+            //прописать AI
 
+            skill = units[0].GetComponent<Unit>().currentSkills[0];
             BattleAI.ChoiceTarget();
-            Fight(dmg);
+            Fight();
 
         }
     }
@@ -155,6 +155,13 @@ public class BattleManager : MonoBehaviour
 
                 }
             }
+        }
+    }
+    private void SelectOFF()
+    {
+        for (int i = 0; i < units.Count; i++)
+        {
+            units[i].GetComponent<SelectUnit>().select = false;
         }
     }
 }

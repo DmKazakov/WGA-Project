@@ -14,14 +14,12 @@ public class Player : Unit
         agility = 5;
         vitality = 5;
 
+        
+
     }
 
-    public override int Attack(double mf)
-    {
-        int i = Random.Range(minDMG, maxDMG);
-        int result = (int)(i * mf);
-        return result;
-    }
+    
+  
 
     
 }

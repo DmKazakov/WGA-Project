@@ -10,6 +10,10 @@ public abstract class Skills : MonoBehaviour
    protected int duration;
    protected Unit unit;
    internal double mf;
+    public Sprite spriteON;
+    public Sprite spriteOFF;
 
+    public abstract int Attack();
+    public abstract void Init(Unit unit);
     
 }

@@ -19,7 +19,7 @@ public class Tooltip : MonoBehaviour
     public RectTransform arrow;
     public Text boxText;
     public Camera _camera;
-    public float speed = 1; // скорость плавного затухания и проявления
+    public float speed = 0.1f; // скорость плавного затухания и проявления
 
     private Image[] img;
     private Color BGColorFade;

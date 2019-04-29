@@ -2088,7 +2088,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04721e40c48798343bcc233332f40198, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  battleManager: {fileID: 909082695}
+  button:
+  - {fileID: 854495156}
+  - {fileID: 66679912}
+  - {fileID: 1888522112}
 --- !u!1 &1921569324
 GameObject:
   m_ObjectHideFlags: 0

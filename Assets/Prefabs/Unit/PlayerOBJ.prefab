@@ -11,6 +11,9 @@ GameObject:
   - component: {fileID: 5719606070075497130}
   - component: {fileID: 5719606070075497129}
   - component: {fileID: 5719606070075497128}
+  - component: {fileID: 6577528351913652739}
+  - component: {fileID: 4861506102914160066}
+  - component: {fileID: 1432930872045893612}
   m_Layer: 0
   m_Name: PlayerOBJ
   m_TagString: Player
@@ -92,17 +95,80 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50eebb499d2938c4caa78085ded7b8c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  level: 0
-  freeStatPoints: 0
-  strength: 0
-  agility: 0
-  vitality: 0
-  hitPoint: 0
-  currentHitPoint: 0
-  minDMG: 0
-  maxDMG: 0
+  level: 1
+  freeStatPoints: 4
+  strength: 5
+  agility: 5
+  vitality: 5
+  hitPoint: 80
+  currentHitPoint: 80
+  criticalChance: 0
+  criticalMF: 0
+  criticalDMG: 0
+  dodge: 0
+  armor: 0
+  initiative: 0
+  minDMG: 6
+  maxDMG: 8
   currentSkills:
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 4615261179389350267, guid: 9f1c2484641e15742aaf805160eac510, type: 3}
+  - {fileID: 4121976991800837276, guid: 5972460143c5d8f42b259b5a7426df6c, type: 3}
   - {fileID: 0}
   headIcon: {fileID: 21300000, guid: ebcd99c5b1af1b648853dc54a54e4c67, type: 3}
+--- !u!114 &6577528351913652739
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5719606070075497135}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92acdf058a391d14eada7e77e0cf546d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  skillsPull:
+  - {fileID: 4433577809228310125, guid: e55bdc804fcc01d4bb6547896bf7585c, type: 3}
+  - {fileID: 1857962424452997128, guid: e3e7820fdaa97f545bc9a6b3a05f8039, type: 3}
+  - {fileID: 1067625510709232244, guid: 684883ac46bc6894194a82376dbfcad0, type: 3}
+  emptySkill: {fileID: 2844519048248853892, guid: f3345c3546fc8834a8b19300d8fdf330,
+    type: 3}
+--- !u!114 &4861506102914160066
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5719606070075497135}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53ad4e3a6392ef84d9ebafe5134ea178, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  select: 0
+--- !u!61 &1432930872045893612
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5719606070075497135}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.29, y: 0.78}
+    newSize: {x: 0.29, y: 0.78}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.29, y: 0.78}
+  m_EdgeRadius: 0

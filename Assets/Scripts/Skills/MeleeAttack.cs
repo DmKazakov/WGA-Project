@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MeleeAttack : Skills
+public class MeleeAttack : Skills,Foe
 {
     // private Unit unit;
 
-    void Init(Unit unit)
+    public override void Init(Unit unit)
     {
         this.unit = unit;
         _name = "Ближний бой";
@@ -15,8 +15,10 @@ public class MeleeAttack : Skills
         duration = 0;
     }
 
-    public int Attack()
+    public override int Attack() //вызывается последний юнит Init
     {
+        
+        
         int minDMG = unit.minDMG;
         int maxDMG = unit.maxDMG;
         float criticalChance = unit.criticalChance;
@@ -26,7 +28,9 @@ public class MeleeAttack : Skills
         int chance = Random.Range(0, 100);
         if (chance > (100 - criticalChance))
         {
-            totalDmg = criticalDMG;
+            totalDmg =(int) (maxDMG * unit.criticalMF);
+            print("МAXDMG "+maxDMG+" mf "+ unit.criticalMF + " crDmg " + totalDmg);
+            
         }
         else
         {
