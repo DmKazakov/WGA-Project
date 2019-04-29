@@ -33,7 +33,7 @@ public class Characteristic : MonoBehaviour
                 text.GetComponent<Text>().text = component.criticalChance.ToString();
                 break;
             case "CritDmgP":
-                text.GetComponent<Text>().text = component.criticalDMG.ToString();
+                text.GetComponent<Text>().text = component.criticalMF.ToString();
                 break;
             case "DodgeP":
                 text.GetComponent<Text>().text = component.dodge.ToString();

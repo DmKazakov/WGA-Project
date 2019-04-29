@@ -337,7 +337,6 @@ GameObject:
   - component: {fileID: 112115630}
   - component: {fileID: 112115629}
   - component: {fileID: 112115632}
-  - component: {fileID: 112115631}
   - component: {fileID: 112115633}
   m_Layer: 0
   m_Name: player
@@ -383,7 +382,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: e5026aa498401cc4da5c781c9c3d54d8, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 702301617bfa7cf4aa7bb4d643c9c7b0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -425,7 +424,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.87, y: 3.58}
+    oldSize: {x: 2.23, y: 3.4}
     newSize: {x: 0.27, y: 0.76}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -455,21 +454,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &112115631
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 112115626}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1a24d0d52d52fbe4dbc621ff5a418085, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mooveSpeed: 5
-  parallax: 1
-  lastMove: {x: 0, y: 0}
 --- !u!95 &112115632
 Animator:
   serializedVersion: 3

@@ -16,13 +16,7 @@ public class Dustman : Enemy
         
     }
 
-    
-    
 
-    public override int Attack(double mf)
-    {
-        int i = Random.Range(minDMG, maxDMG);
-        int result = (int)(i * mf);
-        return result;
-    }
+ 
+
 }

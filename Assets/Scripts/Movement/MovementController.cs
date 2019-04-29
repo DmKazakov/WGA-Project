@@ -41,11 +41,20 @@ public abstract class MovementController : MonoBehaviour {
         {
             transform.localScale = new Vector3(1, 1, 1);
         }
-        animator.SetFloat("speed", Mathf.Abs(rb2d.velocity.x));
-	}
+
+        if (rb2d.velocity.x != 0)
+            animator.SetFloat("speed", Mathf.Abs(rb2d.velocity.x));
+        else
+            animator.SetFloat("speed", Mathf.Abs(rb2d.velocity.y));
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            animator.SetTrigger("dash");
+        }
+    }
 
 	private void Zindex() {
 		Vector3 position = transform.position;
-		transform.position = new Vector3(position.x, position.y, position.y + parallax);
+		transform.position = new Vector3(position.x, position.y, 0/*position.y + parallax*/);
 	}
 }
