@@ -24,11 +24,11 @@ public class BattleManager : MonoBehaviour
         //Прописать добавление эффекта в список, вызываем оставшиеся эффекты
         activeMenu.SetActive(false);
         SelectOFF();
-        skill.GetComponent<Skills>().Init(units[0].GetComponent<Unit>());
+       // skill.GetComponent<Skills>().Init(units[0].GetComponent<Unit>()); заменено на Unit.skillInit
 
         int dmg = skill.GetComponent<Skills>().Attack();
         target.GetComponent<Unit>().SetDamage(dmg);
-        dmg = target.GetComponent<Unit>().GetDamage();
+        dmg = target.GetComponent<Unit>().GetDamage(); // временно для отображение урона
 
 
         PrintRound(dmg);
@@ -57,7 +57,7 @@ public class BattleManager : MonoBehaviour
         {
             //прописать AI
 
-            skill = units[0].GetComponent<Unit>().currentSkills[0];
+            skill = units[0].GetComponent<Unit>().activeSkills[0]; //заменить на currentSkills[0]
             BattleAI.ChoiceTarget();
             Fight();
 
@@ -92,6 +92,7 @@ public class BattleManager : MonoBehaviour
         }
         else
         {
+            UnitUpdate(); //обновление юнитов: откат скила, срабатывание эффекта(кровотечение, лечение)
             units.Add(units[0]);
             units.RemoveAt(0);  //двигаем очередь
             OrderPanelplace();  //отображаем очередь на панели
@@ -163,5 +164,16 @@ public class BattleManager : MonoBehaviour
         {
             units[i].GetComponent<SelectUnit>().select = false;
         }
+    }
+    private void UnitUpdate()
+    {
+        for (int i = 0; i < units[0].GetComponent<Unit>().activeSkills.Length; i++)
+        {
+            if (units[0].GetComponent<Unit>().activeSkills[i] != null)
+            {
+                units[0].GetComponent<Unit>().activeSkills[i].GetComponent<Skills>().DecreaseCoolDown();
+            }
+        }
+
     }
 }

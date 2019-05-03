@@ -22,6 +22,7 @@ public class EneryShield : Skills, Mate
     }
     public override int Attack()
     {
+        StartCoolDown();
         return 0;
     }
 }

@@ -5,22 +5,24 @@ using UnityEngine;
 
 public class Cuts : Skills, Foe
 {
-    
-    
-    
+
+
+
     public override void Init(Unit unit)
     {
         this.unit = unit;
         _name = "Глубокие порезы";
-        cooldown = 3;
+        cooldown = 4;
+        cooldownTimer = 0;
         duration = 3;
         mf = 0.9;
+
     }
 
     // Update is called once per frame
     public int Effect()
     {
-       
+
         return 0;
     }
 
@@ -36,14 +38,15 @@ public class Cuts : Skills, Foe
         if (chance > (100 - criticalChance))
         {
             totalDmg = criticalDMG;
-            print("МAXDMG " + maxDMG + " mf " + unit.criticalMF + " crDmg " + criticalDMG);
+            print("КРИТ МAXDMG " + maxDMG + " mf " + unit.criticalMF + " crDmg " + criticalDMG);
         }
         else
         {
             totalDmg = Random.Range(minDMG, maxDMG);
         }
-
+        StartCoolDown();
         return totalDmg;
     }
+ 
 }
 

@@ -1,4 +1,6 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
+
 
 public abstract class Unit : MonoBehaviour
 {
@@ -24,6 +26,8 @@ public abstract class Unit : MonoBehaviour
     private int dmg;
 
     public GameObject[] currentSkills = new GameObject[3];
+    public GameObject[] activeSkills = new GameObject[3];
+    
 
     public Sprite headIcon;
 
@@ -43,7 +47,8 @@ public abstract class Unit : MonoBehaviour
         armor = (int)(vitality / 2);
         initiative = 0 + (int)(agility / 2) + (int)(strength / 2);
 
-
+        SetActiveSkills();
+        SkillInit();
     }
 
     public void SetDamage(int dmg)
@@ -66,10 +71,39 @@ public abstract class Unit : MonoBehaviour
 
     }
 
+    private void SetActiveSkills() { //замена, чтобы у каждого был свой скилл, у каждого свой кулдаун и пр...
+        for (int i = 0; i < currentSkills.Length; i++)
+        {
+            if (currentSkills[i] != null && activeSkills[i]==null)
+            {
+                activeSkills[i] = new GameObject();
+                activeSkills[i].AddComponent<Image>();
+                activeSkills[i].GetComponent<Image>().sprite = currentSkills[i].GetComponent<Image>().sprite;
+
+
+                activeSkills[i].AddComponent(currentSkills[i].GetComponent<Skills>().GetType());
+            }
+            
+
+
+        }
+    }
+
     public int GetDamage() {
         return dmg;
     }
+    private void SkillInit() {
+        for (int i = 0; i < activeSkills.Length; i++)
+        {
+            if (activeSkills[i] != null)
+            {
 
+
+                activeSkills[i].GetComponent<Skills>().Init(gameObject.GetComponent<Unit>());
+               
+            }
+        }
+    }
 
 
 }
