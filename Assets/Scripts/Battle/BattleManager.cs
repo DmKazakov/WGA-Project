@@ -27,14 +27,16 @@ public class BattleManager : MonoBehaviour
         SelectOFF();
         // skill.GetComponent<Skills>().Init(units[0].GetComponent<Unit>()); заменено на Unit.skillInit
 
-        int dmg = skill.GetComponent<Skills>().Attack();
+        int[] dmg = skill.GetComponent<Skills>().Attack();
         targetUnit.SetDamage(dmg); //наносим урон
         
 
-        dmg = target.GetComponent<Unit>().GetDamage(); // временно для отображение урона
-        PrintRound(dmg);
-        ViewDmg(dmg);
-
+      //  dmg[0] = target.GetComponent<Unit>().GetDamage(); // временно для отображение урона
+        PrintRound(dmg[0]);
+      //    ViewDmg(dmg[0]);
+       // viewDamage.GetComponent<ViewDamage>().toView(dmg, target);
+       
+        
         EndRound();
 
 
@@ -124,10 +126,10 @@ public class BattleManager : MonoBehaviour
     }// панель очереди
     void ViewDmg(int dmg) //визуализация урона... переделать
     {
-        GameObject dmgView = Instantiate(viewDamage, target.transform.position, Quaternion.identity);
-          dmgView.GetComponent<ViewDamage>().Init(dmg);
-        dmgView.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, false);
-        dmgView.transform.position = target.transform.position;
+      //  GameObject dmgView = Instantiate(viewDamage, target.transform.position, Quaternion.identity);
+      //    dmgView.GetComponent<ViewDamage>().Init(dmg);
+     //   dmgView.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, false);
+       // dmgView.transform.position = target.transform.position;
     }
     void PrintRound(int dmg)
     {

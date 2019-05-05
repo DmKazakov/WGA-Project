@@ -32,10 +32,16 @@ public class Aim : Skills, Mate, Debuff
         return result;
     }
 
-    public override int Attack()
+    public override int[] Attack()
     {
+        //result[0] - dmg
+        //result[1] - crit, 1 - true, 0 - false, -1 - effect
+        
+        int[] result = new int[2];
+        result[0] = 0;
+        result[1] = -1;
         durationTimer = duration;
         StartCoolDown();
-        return 0;
+        return result;
     }
 }

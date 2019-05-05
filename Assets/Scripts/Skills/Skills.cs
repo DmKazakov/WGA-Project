@@ -19,7 +19,7 @@ public abstract class Skills : MonoBehaviour
     public Sprite spriteOFF;
 
 
-    public abstract int Attack();
+    public abstract int[] Attack();
     public abstract int[] Effect();
     public abstract void Init(Unit unit);
 

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1875101286885076091}
   - component: {fileID: 1875101286885076090}
   m_Layer: 5
-  m_Name: ViewDamage
+  m_Name: ViewDamagePR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -35,8 +35,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1.04, y: -14.32}
-  m_SizeDelta: {x: 21.08, y: 8.88}
+  m_AnchoredPosition: {x: 14.59, y: -14.03}
+  m_SizeDelta: {x: 48.19, y: 8.31}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1875101286885076092
 CanvasRenderer:
@@ -79,7 +79,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 
+  m_Text: "\u0443\u0432\u043E\u0440\u043E\u0442"
 --- !u!114 &1875101286885076090
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -92,4 +92,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 086d09d7cb38b5d46a5ab5082e74ee28, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  obj: {fileID: 1875101286885076089}

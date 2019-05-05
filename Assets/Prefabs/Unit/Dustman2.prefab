@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4787263607262992369}
   - component: {fileID: 410221666}
   - component: {fileID: 410221665}
+  - component: {fileID: 603900308453976863}
   m_Layer: 0
   m_Name: Dustman2
   m_TagString: Enemy
@@ -101,12 +102,23 @@ MonoBehaviour:
   vitality: 0
   hitPoint: 0
   currentHitPoint: 0
+  criticalChance: 0
+  criticalMF: 0
+  criticalDMG: 0
+  dodge: 0
+  armor: 0
+  initiative: 0
   minDMG: 1
   maxDMG: 3
   currentSkills:
   - {fileID: 4615261179389350267, guid: 9f1c2484641e15742aaf805160eac510, type: 3}
   - {fileID: 0}
   - {fileID: 0}
+  activeSkills:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  effectSkills: []
   headIcon: {fileID: 21300000, guid: f2e29c25539fb474fba9f1e196b31274, type: 3}
 --- !u!61 &410221666
 BoxCollider2D:
@@ -147,3 +159,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   select: 0
+--- !u!114 &603900308453976863
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4787263607262992368}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14e30c43f9b2b7544b05f6db7d63e585, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  viewPanel: {fileID: 1875101286885076089, guid: 38a022c9484c241438e0151192eea270,
+    type: 3}

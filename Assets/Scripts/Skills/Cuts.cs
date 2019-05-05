@@ -40,36 +40,38 @@ public class Cuts : Skills, Foe, Poison
         return result;
     }
 
-    public override int Attack()
+    public override int[] Attack()
     {
-        
+     //totalDmg[0] - dmg
+     //totalDmg[1] - crit, 0 - false, 1- true
 
         int minDMG = unit.minDMG;
         int maxDMG = unit.maxDMG;
         float criticalChance = unit.criticalChance;
         int criticalDMG = unit.criticalDMG;
-        int totalDmg = 0;
+        int[] totalDmg = new int[2];
 
         int chance = Random.Range(0, 100);
         if (chance > (100 - criticalChance))
         {
-            totalDmg = criticalDMG;
-            print("КРИТ МAXDMG " + maxDMG + " mf " + unit.criticalMF + " crDmg " + criticalDMG);
+            totalDmg[0] = criticalDMG;
+            totalDmg[1] = 1;
         }
         else
         {
-            totalDmg = Random.Range(minDMG, maxDMG);
+            totalDmg[0] = Random.Range(minDMG, maxDMG);
+            totalDmg[1] = 0;
         }
 
-        totalDmg *= (int)mf;
+        totalDmg[0] = (int)(totalDmg[0] * mf);
         StartCoolDown();
         EffectInit(totalDmg);
         return totalDmg;
     }
-    private void EffectInit(int dmg)
+    private void EffectInit(int[] dmg)
     {
         durationTimer = duration;
-        effectDMG = (int)(dmg * 0.3);
+        effectDMG = (int)(dmg[0] * 0.3);
     }
 
 }

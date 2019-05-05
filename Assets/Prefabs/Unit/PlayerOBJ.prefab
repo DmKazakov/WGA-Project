@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 6577528351913652739}
   - component: {fileID: 4861506102914160066}
   - component: {fileID: 1432930872045893612}
+  - component: {fileID: 8537342051237276719}
   m_Layer: 0
   m_Name: PlayerOBJ
   m_TagString: Player
@@ -114,6 +115,11 @@ MonoBehaviour:
   - {fileID: 4615261179389350267, guid: 9f1c2484641e15742aaf805160eac510, type: 3}
   - {fileID: 4121976991800837276, guid: 5972460143c5d8f42b259b5a7426df6c, type: 3}
   - {fileID: 0}
+  activeSkills:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  effectSkills: []
   headIcon: {fileID: 21300000, guid: ebcd99c5b1af1b648853dc54a54e4c67, type: 3}
 --- !u!114 &6577528351913652739
 MonoBehaviour:
@@ -172,3 +178,17 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.29, y: 0.78}
   m_EdgeRadius: 0
+--- !u!114 &8537342051237276719
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5719606070075497135}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14e30c43f9b2b7544b05f6db7d63e585, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  viewPanel: {fileID: 1875101286885076089, guid: 38a022c9484c241438e0151192eea270,
+    type: 3}

@@ -22,8 +22,11 @@ public class DoubleShoot : Skills,Foe
         return null;
     }
 
-    public override int Attack()
+    public override int[] Attack()
     {
-        return 0;
+        int[] result = new int[2];
+        result[0] = 0;
+        result[1] = 0;
+        return result;
     }
 }

@@ -26,7 +26,7 @@ public abstract class Unit : MonoBehaviour
     public int minDMG;
     public int maxDMG;
 
-    private int dmg;
+   
 
     public GameObject[] currentSkills = new GameObject[3];
     public GameObject[] activeSkills = new GameObject[3];
@@ -96,24 +96,39 @@ public abstract class Unit : MonoBehaviour
         effectSkills.Clear();
     }
 
-    public void SetDamage(int dmg) //уменьшить жизнь, получить урон
+    public void SetDamage(int[] info) //уменьшить жизнь, получить урон
     {
-
-        int chance = Random.Range(0, 100);
-        dmg -= armor;
-
-        if (dmg < 1)
+        //info[0] - dmg
+        //info[1] - crit, 1 - true, 0 - false, -1 - effect
+        if (info[1] == -1)
         {
-            dmg = 1;
+            ViewDamage(info);
         }
-
-
-        if (chance > (100 - dodge))
+        else
         {
-            dmg = 0;
+            int[] result = new int[2];
+            int dmg = info[0];
+            int chance = Random.Range(0, 100);
+            
+            dmg -= armor;
+
+            if (dmg < 1)
+            {
+                dmg = 1;
+            }
+
+
+            if (chance > (100 - dodge))
+            {
+                dmg = 0;
+            }
+            result[0] = dmg;
+            result[1] = info[1];
+
+            currentHitPoint -= dmg;
+            ViewDamage(result);
+            
         }
-        this.dmg = dmg;
-        currentHitPoint -= dmg;
 
     }
     public void AddEffect(GameObject skill)//добавить жффект из скила
@@ -134,10 +149,10 @@ public abstract class Unit : MonoBehaviour
             int[] info = effectSkills[i].Effect();
             BuffEffect(info);
             effectSkills[i].durationTimer--;
-            print("Имя юнита: "+this.name+" !!!!! Эффект: " + effectSkills[i]._name+" !!!! время: "+effectSkills[i].durationTimer);
+            print("Имя юнита: " + this.name + " !!!!! Эффект: " + effectSkills[i]._name + " !!!! время: " + effectSkills[i].durationTimer);
 
         }
-        
+
         DeleteEffect();
     }
     private void DeleteEffect() //удаляем эффект duration < 1;
@@ -148,7 +163,7 @@ public abstract class Unit : MonoBehaviour
             {
                 print(effectSkills[i]._name + " удален");
                 effectSkills.RemoveAt(i);
-                
+
             }
         }
     }
@@ -165,6 +180,11 @@ public abstract class Unit : MonoBehaviour
         if (stats == 0)
         {
             currentHitPoint -= count;
+
+            int[] view = new int[2];
+            view[0] = count;
+            view[1] = 0;
+            ViewDamage(view);
         }
         else if (stats == 1)
         {
@@ -185,8 +205,8 @@ public abstract class Unit : MonoBehaviour
         {
             minDMG *= count;
             maxDMG *= count;
-            print("MinDMG " + minDMG + " MaxDMG " + maxDMG+" !!!!!!!!!!! "+gameObject.name);
-           
+            print("MinDMG " + minDMG + " MaxDMG " + maxDMG + " !!!!!!!!!!! " + gameObject.name);
+
         }
         else { print(" не понятный стат в дебафе"); }
 
@@ -212,9 +232,10 @@ public abstract class Unit : MonoBehaviour
         }
     }
 
-    public int GetDamage()//простой геттер
+   
+    private void ViewDamage(int[] info)
     {
-        return dmg;
+        gameObject.GetComponent<toViewDamage>().Init(info, gameObject);
     }
 
 
