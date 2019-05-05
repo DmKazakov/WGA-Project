@@ -15,10 +15,10 @@ public class MeleeAttack : Skills,Foe
         duration = 0;
     }
 
-    public override int Attack() //вызывается последний юнит Init
+    public override int Attack() 
     {
         
-        
+
         int minDMG = unit.minDMG;
         int maxDMG = unit.maxDMG;
         float criticalChance = unit.criticalChance;
@@ -29,7 +29,7 @@ public class MeleeAttack : Skills,Foe
         if (chance > (100 - criticalChance))
         {
             totalDmg =(int) (maxDMG * unit.criticalMF);
-            print("МAXDMG "+maxDMG+" mf "+ unit.criticalMF + " crDmg " + totalDmg);
+            
             
         }
         else
@@ -38,6 +38,10 @@ public class MeleeAttack : Skills,Foe
         }
 
         return totalDmg;
+    }
+    public override int[] Effect()
+    {
+        throw new System.NotImplementedException();
     }
 
 }

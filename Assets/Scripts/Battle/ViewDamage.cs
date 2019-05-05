@@ -8,9 +8,13 @@ public class ViewDamage : MonoBehaviour
 {
     public GameObject obj;
     private float speed = 2.0f;
-    
 
 
+    public ViewDamage()
+    {
+        //прописать создание. Скилы возвращать int[]
+
+    }
     // Update is called once per frame
     void Update()
     {
@@ -26,7 +30,7 @@ public class ViewDamage : MonoBehaviour
     }
     public void Init(int dmg)
     {
-      
+        
         gameObject.GetComponent<Text>().text = dmg.ToString();
     }
 }

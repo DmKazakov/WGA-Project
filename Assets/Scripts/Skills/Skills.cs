@@ -2,13 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public abstract class Skills : MonoBehaviour
 {
-    protected string _name;
+    public string _name;
     protected int cooldown;
     public int cooldownTimer = 0;
     internal bool isCurrent = false;
-    protected int duration;
+
+    public int duration;
+    public int durationTimer;
+
     protected Unit unit;
     internal double mf;
     public Sprite spriteON;
@@ -16,6 +20,7 @@ public abstract class Skills : MonoBehaviour
 
 
     public abstract int Attack();
+    public abstract int[] Effect();
     public abstract void Init(Unit unit);
 
     public void StartCoolDown()

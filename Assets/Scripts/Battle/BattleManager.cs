@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 using UnityEngine.UI;
-using System.Threading;
+
 
 public class BattleManager : MonoBehaviour
 {
@@ -12,6 +12,7 @@ public class BattleManager : MonoBehaviour
     public static List<GameObject> units;
     public GameObject activeMenu;
     internal static GameObject target;
+    private static Unit targetUnit;
     internal static GameObject skill;
     public GameObject[] orderPanel = new GameObject[6];
     public GameObject viewDamage;
@@ -21,16 +22,16 @@ public class BattleManager : MonoBehaviour
     internal void Fight()
     {
         //весь процесс боя
-        //Прописать добавление эффекта в список, вызываем оставшиеся эффекты
+        targetUnit = target.GetComponent<Unit>();
         activeMenu.SetActive(false);
         SelectOFF();
-       // skill.GetComponent<Skills>().Init(units[0].GetComponent<Unit>()); заменено на Unit.skillInit
+        // skill.GetComponent<Skills>().Init(units[0].GetComponent<Unit>()); заменено на Unit.skillInit
 
         int dmg = skill.GetComponent<Skills>().Attack();
-        target.GetComponent<Unit>().SetDamage(dmg);
+        targetUnit.SetDamage(dmg); //наносим урон
+        
+
         dmg = target.GetComponent<Unit>().GetDamage(); // временно для отображение урона
-
-
         PrintRound(dmg);
         ViewDmg(dmg);
 
@@ -57,7 +58,7 @@ public class BattleManager : MonoBehaviour
         {
             //прописать AI
 
-            skill = units[0].GetComponent<Unit>().activeSkills[0]; //заменить на currentSkills[0]
+            skill = units[0].GetComponent<Unit>().activeSkills[0];
             BattleAI.ChoiceTarget();
             Fight();
 
@@ -121,13 +122,13 @@ public class BattleManager : MonoBehaviour
             k++;
         }
     }// панель очереди
-    void ViewDmg(int dmg)
+    void ViewDmg(int dmg) //визуализация урона... переделать
     {
         GameObject dmgView = Instantiate(viewDamage, target.transform.position, Quaternion.identity);
-        dmgView.GetComponent<ViewDamage>().Init(dmg);
+          dmgView.GetComponent<ViewDamage>().Init(dmg);
         dmgView.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, false);
         dmgView.transform.position = target.transform.position;
-    }//визуализация урона
+    }
     void PrintRound(int dmg)
     {
         String tXt = "Нанесен урон " + dmg + " по " + target.name + " осталось ХП: " + target.GetComponent<Unit>().currentHitPoint + "/" + target.GetComponent<Unit>().hitPoint;
@@ -141,7 +142,7 @@ public class BattleManager : MonoBehaviour
             Debug.Log("<color=red>" + tXt + "</color>");
         }
     }  //текстовое отображение урона, пока нет анимации
-    internal void Sort()
+    private void Sort()
     {
         GameObject temp;
         for (int i = 0; i < units.Count; i++)
@@ -158,6 +159,7 @@ public class BattleManager : MonoBehaviour
             }
         }
     }
+
     private void SelectOFF()
     {
         for (int i = 0; i < units.Count; i++)
@@ -165,7 +167,15 @@ public class BattleManager : MonoBehaviour
             units[i].GetComponent<SelectUnit>().select = false;
         }
     }
-    private void UnitUpdate()
+    private void UnitUpdate() //запуск кулдауна у скиллов, добавление эффекта, активация эффекта
+    {
+        CoolDownStart();
+        targetUnit.AddEffect(skill); //добавляем эффект скила в список
+        units[0].GetComponent<Unit>().ActivateEffect(); //активация эффекта
+
+
+    }
+    private void CoolDownStart()//запуск кулдауна у units[0]
     {
         for (int i = 0; i < units[0].GetComponent<Unit>().activeSkills.Length; i++)
         {
@@ -174,6 +184,5 @@ public class BattleManager : MonoBehaviour
                 units[0].GetComponent<Unit>().activeSkills[i].GetComponent<Skills>().DecreaseCoolDown();
             }
         }
-
     }
 }

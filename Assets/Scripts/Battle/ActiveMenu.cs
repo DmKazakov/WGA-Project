@@ -13,7 +13,7 @@ public class ActiveMenu : MonoBehaviour
     public void ToTarget(int num) //включаем возможность выбора на юнитах
     {
 
-        GameObject activeSkill = BattleManager.units[0].GetComponent<Unit>().activeSkills[num]; //заменить на currentSkills[num]
+        GameObject activeSkill = BattleManager.units[0].GetComponent<Unit>().activeSkills[num]; 
         BattleManager.skill = activeSkill;
 
         if (activeSkill.GetComponent<Skills>() is Foe)

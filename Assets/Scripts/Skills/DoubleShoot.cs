@@ -16,10 +16,10 @@ public class DoubleShoot : Skills,Foe
 
     }
 
-    public int Effect()
+    public override int[] Effect()
     {
 
-        return 0;
+        return null;
     }
 
     public override int Attack()
