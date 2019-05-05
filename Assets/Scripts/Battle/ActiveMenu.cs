@@ -43,7 +43,14 @@ public class ActiveMenu : MonoBehaviour
         int count = unit.GetComponent<Unit>().activeSkills.Length;
         for (int i = 0; i < count; i++)
         {
-            button[i].GetComponent<Image>().sprite = unit.GetComponent<Unit>().activeSkills[i].GetComponent<Image>().sprite;
+            if (unit.GetComponent<Unit>().activeSkills[i] == null)
+            {
+                button[i].GetComponent<Button>().interactable = false;
+            }
+            else
+            {
+                button[i].GetComponent<Image>().sprite = unit.GetComponent<Unit>().activeSkills[i].GetComponent<Image>().sprite;
+            }
         }
     }
     private void SetListener(GameObject unit)
