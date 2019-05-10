@@ -11,4 +11,8 @@ public class Avatar : MonoBehaviour
     public GameObject getUnit(int num) {
         return squad[num];
     }
+    public void Start()
+    {
+        transform = gameObject.transform;
+    }
 }

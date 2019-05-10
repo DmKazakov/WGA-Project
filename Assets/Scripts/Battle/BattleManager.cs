@@ -87,11 +87,15 @@ public class BattleManager : MonoBehaviour
         if (enemyes.Length < 1)
         {
             print("win!");
+            Clear();
+            gameObject.GetComponent<StartPoint>().ExitBattle(true);
+
             //добавить уничтожение всех объектов, чтобы по tag Player находился только один (Аватар)
         }
         else if (players.Length < 1)
         {
             print("Game Over");
+            gameObject.GetComponent<StartPoint>().ExitBattle(false);
         }
         else
         {
@@ -124,13 +128,7 @@ public class BattleManager : MonoBehaviour
             k++;
         }
     }// панель очереди
-    void ViewDmg(int dmg) //визуализация урона... переделать
-    {
-      //  GameObject dmgView = Instantiate(viewDamage, target.transform.position, Quaternion.identity);
-      //    dmgView.GetComponent<ViewDamage>().Init(dmg);
-     //   dmgView.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, false);
-       // dmgView.transform.position = target.transform.position;
-    }
+   
     void PrintRound(int dmg)
     {
         String tXt = "Нанесен урон " + dmg + " по " + target.name + " осталось ХП: " + target.GetComponent<Unit>().currentHitPoint + "/" + target.GetComponent<Unit>().hitPoint;
@@ -185,6 +183,13 @@ public class BattleManager : MonoBehaviour
             {
                 units[0].GetComponent<Unit>().activeSkills[i].GetComponent<Skills>().DecreaseCoolDown();
             }
+        }
+    }
+    private void Clear() {
+        for (int i = 0; i < units.Count; i++)
+        {
+            units[i].GetComponent<Unit>().effectSkills.Clear();
+            Destroy(units[i]);
         }
     }
 }

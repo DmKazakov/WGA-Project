@@ -9,9 +9,9 @@ public class Dustman : Enemy
     void Start()
     {
         level = 1;
-        strength = 3;
-        vitality = 5;
-        agility = 4;
+        strength = 1; //3
+        vitality = 1; //5
+        agility = 1; //4
         Recalc();
         
     }

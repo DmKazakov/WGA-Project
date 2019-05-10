@@ -754,7 +754,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1842041066}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d3efcecd2367e244ca975692f00557d4, type: 3}
+  m_Script: {fileID: 11500000, guid: 91f1eadbdd95bfb46826d8640c2dd614, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   scene: CreatePlayer
