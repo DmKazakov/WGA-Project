@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class StartPoint : MonoBehaviour
 {
@@ -121,6 +122,27 @@ public class StartPoint : MonoBehaviour
         }
 
 
+    }
+    public void ExitBattle(bool result)
+    {
+        if (result)
+        {
+            string sceneName = player.GetComponent<Avatar>().sceneName;
+            SceneManager.LoadScene(sceneName);
+            
+            Destroy(enemy);
+
+            player.SetActive(true);
+            player.transform.position = player.GetComponent<Avatar>().transform.position;
+        }
+        else
+        {
+            
+            Destroy(player);
+            print("уничтожили игрока");
+            Destroy(enemy);
+            SceneManager.LoadScene(1);
+        }
     }
 
 
