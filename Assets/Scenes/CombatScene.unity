@@ -1233,6 +1233,7 @@ MonoBehaviour:
   HPpointEnemy: {fileID: 1677618389}
   battleManager: {fileID: 909082695}
   sliderHP: {fileID: 380216913536774230, guid: 4e54b5bffd699c442ac271e39ec65630, type: 3}
+  background: {fileID: 872000586}
 --- !u!4 &909082697
 Transform:
   m_ObjectHideFlags: 0

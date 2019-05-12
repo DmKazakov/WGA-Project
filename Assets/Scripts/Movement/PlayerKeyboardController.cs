@@ -23,5 +23,8 @@ public class PlayerKeyboardController : MovementController {
 		base.MakeMove(movement);
 	}
 
+    public void Reset() {
+        isPlayerExists = false;
+    }
 
 }
