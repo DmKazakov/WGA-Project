@@ -5,6 +5,8 @@ public class PlayerKeyboardController : MovementController {
 
 	public string statrtPoint;
 
+    public bool openDoor;
+
 	protected override void Start() {
 		base.Start();
 
@@ -21,6 +23,12 @@ public class PlayerKeyboardController : MovementController {
 		float moveVertical = Input.GetAxisRaw("Vertical");
 		Vector2 movement = new Vector2(moveHorizontal, moveVertical);
 		base.MakeMove(movement);
+
+        //openDoor = false;
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            openDoor = true;
+        }
 	}
 
     public void Reset() {
