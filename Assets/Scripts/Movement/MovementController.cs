@@ -4,6 +4,7 @@ public abstract class MovementController : MonoBehaviour {
 	private Rigidbody2D rb2d;
 	private Animator animator;
 	private bool isMoving;
+    private Vector3 initialScale;
 
 	public float parallax;
 	public float speed;
@@ -20,6 +21,8 @@ public abstract class MovementController : MonoBehaviour {
 	protected void Init() {
 		animator = GetComponent<Animator>();
 		rb2d = GetComponent<Rigidbody2D>();
+
+        initialScale = new Vector3(transform.localScale.x, transform.localScale.y, transform.localScale.z);
 	}
 
 	protected void MakeMove(Vector2 movement) {
@@ -35,11 +38,11 @@ public abstract class MovementController : MonoBehaviour {
         //check direction
         if (rb2d.velocity.x < 0)
         {
-            transform.localScale = new Vector3(-1, 1, 1);
+            transform.localScale = new Vector3(-initialScale.x, initialScale.y, initialScale.z);
         }
         else if (rb2d.velocity.x > 0)
         {
-            transform.localScale = new Vector3(1, 1, 1);
+            transform.localScale = new Vector3(initialScale.x, initialScale.y, initialScale.z);
         }
 
         if (rb2d.velocity.x != 0)
