@@ -20,8 +20,6 @@ public class SceneLoaderActive : MonoBehaviour {
 
     void Update()
     {
-        
-
         if (colliding && Input.GetKeyDown(KeyCode.E) && isOpen)
         {
             SceneManager.LoadScene(sceneToLoad);

@@ -9859,6 +9859,7 @@ GameObject:
   m_Component:
   - component: {fileID: 747202907}
   - component: {fileID: 747202908}
+  - component: {fileID: 747202909}
   m_Layer: 0
   m_Name: tiles_131 (5)
   m_TagString: Untagged
@@ -9928,6 +9929,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &747202909
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 747202906}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b235eec6894ec0c43ae476a505ca460a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  thePlayer: {fileID: 881138729}
+  delta: {x: 1, y: 1}
 --- !u!1 &748120124
 GameObject:
   m_ObjectHideFlags: 0
@@ -11098,6 +11113,7 @@ MonoBehaviour:
   speed: 15
   lastMove: {x: 0, y: 0}
   statrtPoint: 
+  openDoor: 0
 --- !u!95 &881138730
 Animator:
   serializedVersion: 3
@@ -21057,6 +21073,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1793163668}
   - component: {fileID: 1793163669}
+  - component: {fileID: 1793163670}
   m_Layer: 0
   m_Name: tiles_131 (2)
   m_TagString: Untagged
@@ -21126,6 +21143,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1793163670
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1793163667}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b235eec6894ec0c43ae476a505ca460a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  thePlayer: {fileID: 881138729}
+  delta: {x: 1, y: 1}
 --- !u!1 &1797283653
 GameObject:
   m_ObjectHideFlags: 0
