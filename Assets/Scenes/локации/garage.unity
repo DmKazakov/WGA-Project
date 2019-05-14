@@ -41143,6 +41143,7 @@ MonoBehaviour:
   speed: 15
   lastMove: {x: 0, y: 0}
   statrtPoint: 
+  openDoor: 0
 --- !u!95 &1242429637
 Animator:
   serializedVersion: 3
