@@ -20,7 +20,17 @@ public static class Story
 
     public static void Restart()
     {
-        roomManager.GetComponent<RoomManager>().Restart();
+        if (roomManager != null)
+        {
+            roomManager.GetComponent<RoomManager>().Restart();
+        }
+
+        if (dvorManager != null)
+        {
+
+        }
         chapter = 1.0;
     }
+
+  
 }
