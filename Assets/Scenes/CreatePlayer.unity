@@ -152,7 +152,6 @@ MonoBehaviour:
   - {fileID: 0}
   sceneName: Room
   transform: {fileID: 0}
-  location: {fileID: 0}
 --- !u!212 &9197167
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -209,11 +208,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9197165}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-<<<<<<< HEAD
   m_LocalPosition: {x: 3.46, y: -1.66, z: 0}
-=======
-  m_LocalPosition: {x: -2.65, y: -19.61, z: 0}
->>>>>>> f6fd7dd02c42517e8d50da37185e1c96c5613bec
   m_LocalScale: {x: 1.13, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -338,7 +333,6 @@ MonoBehaviour:
   - {fileID: 0}
   sceneName: 
   transform: {fileID: 0}
-  location: {fileID: 21300000, guid: 0245bd8a07ec7b546aa14709d347807c, type: 3}
 --- !u!212 &75960575
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -395,7 +389,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 75960573}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.96, y: -1.39, z: 6.7134037}
+  m_LocalPosition: {x: 2.566713, y: -1.3702672, z: 6.7134037}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
