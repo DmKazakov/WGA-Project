@@ -94,7 +94,7 @@ public class BattleManager : MonoBehaviour
         }
         else if (players.Length < 1)
         {
-            print("Game Over");
+            Clear();
             gameObject.GetComponent<StartPoint>().ExitBattle(false);
         }
         else

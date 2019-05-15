@@ -20,6 +20,7 @@ public class BattleAI : MonoBehaviour
     }
     public static void ChoiceTarget()
     {
+        playerUnits.Clear();
         SearchTarget();
         int numTarget = Random.Range(0, playerUnits.Count - 1);
         BattleManager.target = playerUnits[numTarget];

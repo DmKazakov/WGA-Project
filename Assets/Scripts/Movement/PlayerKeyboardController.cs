@@ -31,5 +31,10 @@ public class PlayerKeyboardController : MovementController {
         }
 	}
 
+    public void Reset()
+    {
+        isPlayerExists = false;
+    }
+
 
 }

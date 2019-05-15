@@ -20,12 +20,20 @@ public class StartPoint : MonoBehaviour
 
     public GameObject battleManager;
     public GameObject sliderHP;
-    // Start is called before the first frame update
+
+    public GameObject background;
+
     void Start()
     {
+
+
+
         //расставляем юнитов
         player = GameObject.FindGameObjectWithTag("Player");
         enemy = GameObject.FindGameObjectWithTag("Enemy");
+
+        background.GetComponent<SpriteRenderer>().sprite = enemy.GetComponent<Avatar>().location;
+        player.transform.position = enemy.transform.position;
 
         ToPlace();
         gameObject.GetComponent<BattleManager>().BattleSetup(units); //запускаем бой
@@ -129,7 +137,7 @@ public class StartPoint : MonoBehaviour
         {
             string sceneName = player.GetComponent<Avatar>().sceneName;
             SceneManager.LoadScene(sceneName);
-            
+
             Destroy(enemy);
 
             player.SetActive(true);
@@ -137,10 +145,11 @@ public class StartPoint : MonoBehaviour
         }
         else
         {
-            
+
+            player.GetComponent<PlayerKeyboardController>().Reset();
             Destroy(player);
-            print("уничтожили игрока");
             Destroy(enemy);
+          //  Story.Restart();
             SceneManager.LoadScene(1);
         }
     }
