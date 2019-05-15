@@ -16,7 +16,7 @@ public class NewGame : MonoBehaviour
         SceneManager.LoadScene(scene);
      
             player.SetActive(true);
-        print("переносим плейера" + player.name);
+       
             DontDestroyOnLoad(player);
        
             DontDestroyOnLoad(dustman);

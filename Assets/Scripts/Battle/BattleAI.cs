@@ -15,14 +15,17 @@ public class BattleAI : MonoBehaviour
             if (BattleManager.units[i].tag.Equals("Player"))
             {
                 playerUnits.Add(BattleManager.units[i]);
+                
             }
         }
     }
     public static void ChoiceTarget()
     {
+        playerUnits.Clear();
         SearchTarget();
         int numTarget = Random.Range(0, playerUnits.Count - 1);
         BattleManager.target = playerUnits[numTarget];
+        
     }
 }
 

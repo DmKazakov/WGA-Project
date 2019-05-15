@@ -5,8 +5,6 @@ using UnityEngine;
 public class ChangeCollider : MonoBehaviour
 {
     // public init
-    //public BoxCollider2D topCol;
-    //public BoxCollider2D bottomCol;
     public PlayerKeyboardController thePlayer;
     public Vector2 minMax;
 
@@ -40,14 +38,10 @@ public class ChangeCollider : MonoBehaviour
 
         if (spriteMinBound > playerMinBound + 0.2) //(spriteMinBound > playerMinBound)
         {
-            //topCol.enabled = true;
-            //bottomCol.enabled = false;
             gameObject.GetComponent<BoxCollider2D>().offset = new Vector2(0, minMax.y); // 5.86
         }
         else //(spriteMinBound < playerMinBound)  //(spriteMaxBound < playerMaxBound)
         {
-            //topCol.enabled = false;
-            //bottomCol.enabled = true;
             gameObject.GetComponent<BoxCollider2D>().offset = new Vector2(0, minMax.x);   // -1.22
         }
        

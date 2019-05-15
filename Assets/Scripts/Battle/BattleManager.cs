@@ -22,21 +22,17 @@ public class BattleManager : MonoBehaviour
     internal void Fight()
     {
         //весь процесс боя
+        
         targetUnit = target.GetComponent<Unit>();
+
         activeMenu.SetActive(false);
         SelectOFF();
-        // skill.GetComponent<Skills>().Init(units[0].GetComponent<Unit>()); заменено на Unit.skillInit
-
+ 
         int[] dmg = skill.GetComponent<Skills>().Attack();
         targetUnit.SetDamage(dmg); //наносим урон
-        
 
-      //  dmg[0] = target.GetComponent<Unit>().GetDamage(); // временно для отображение урона
         PrintRound(dmg[0]);
-      //    ViewDmg(dmg[0]);
-       // viewDamage.GetComponent<ViewDamage>().toView(dmg, target);
-       
-        
+
         EndRound();
 
 
@@ -77,7 +73,7 @@ public class BattleManager : MonoBehaviour
             {
 
                 units[i].SetActive(false);
-                print("юнит: " + currentUnit.name + " умер");
+              //  print("юнит: " + currentUnit.name + " умер");
                 units.RemoveAt(i);
             }
         }
@@ -95,6 +91,7 @@ public class BattleManager : MonoBehaviour
         else if (players.Length < 1)
         {
             print("Game Over");
+            Clear();
             gameObject.GetComponent<StartPoint>().ExitBattle(false);
         }
         else
@@ -128,7 +125,7 @@ public class BattleManager : MonoBehaviour
             k++;
         }
     }// панель очереди
-   
+
     void PrintRound(int dmg)
     {
         String tXt = "Нанесен урон " + dmg + " по " + target.name + " осталось ХП: " + target.GetComponent<Unit>().currentHitPoint + "/" + target.GetComponent<Unit>().hitPoint;
@@ -185,7 +182,8 @@ public class BattleManager : MonoBehaviour
             }
         }
     }
-    private void Clear() {
+    private void Clear()
+    {
         for (int i = 0; i < units.Count; i++)
         {
             units[i].GetComponent<Unit>().effectSkills.Clear();
