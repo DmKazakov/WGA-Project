@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class SkillsPull : MonoBehaviour
 {
     public List<GameObject> skillsPull = new List<GameObject>();
+    public List<GameObject> teammates = new List<GameObject>();
     public GameObject emptySkill;
 
     
