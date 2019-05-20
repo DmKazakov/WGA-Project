@@ -7570,7 +7570,7 @@ Transform:
   - {fileID: 2039388596}
   - {fileID: 402217787}
   m_Father: {fileID: 0}
-  m_RootOrder: 17
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &187271377
 GameObject:
@@ -11143,7 +11143,7 @@ Transform:
   - {fileID: 546161383}
   - {fileID: 1224411418}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &290221121
 GameObject:
@@ -12670,7 +12670,7 @@ Transform:
   - {fileID: 940644412}
   - {fileID: 1941770400}
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &333070735
 GameObject:
@@ -12711,7 +12711,7 @@ Transform:
   - {fileID: 774234728}
   - {fileID: 143435771}
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &335526062
 GameObject:
@@ -14868,7 +14868,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5dbdef6deb2fc7d4a93625b3de22d5f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 5
+  moveSpeed: 100
   boundBox: {fileID: 756903117}
 --- !u!1 &386830444
 GameObject:
@@ -20436,7 +20436,7 @@ Transform:
   - {fileID: 3032671}
   - {fileID: 1986026575}
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &520110211
 GameObject:
@@ -21181,7 +21181,7 @@ Transform:
   - {fileID: 713134687}
   - {fileID: 1167676714}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &534369021
 BoxCollider2D:
@@ -28897,7 +28897,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 18
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &735717508
 GameObject:
@@ -37599,7 +37599,7 @@ Transform:
   - {fileID: 521839372}
   - {fileID: 506496654}
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &945769722
 GameObject:
@@ -38267,7 +38267,7 @@ Transform:
   - {fileID: 1197412008}
   - {fileID: 1379894069}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &968727684
 BoxCollider2D:
@@ -38827,7 +38827,7 @@ Transform:
   - {fileID: 1304048815}
   - {fileID: 448237417}
   m_Father: {fileID: 0}
-  m_RootOrder: 16
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &979470475
 GameObject:
@@ -43734,7 +43734,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &1109642693
 BoxCollider2D:
@@ -43779,7 +43779,6 @@ MonoBehaviour:
   - {fileID: 540164914385191499, guid: b9bcea0bc477cd1478d23049707fcdb8, type: 3}
   - {fileID: 7376505702515476960, guid: 3c41652810e87c448b41f5fb3758da0e, type: 3}
   sceneName: school
-  transform: {fileID: 0}
   location: {fileID: 21300000, guid: 9f549d4b2db728e4694e36fa7dd2e856, type: 3}
 --- !u!114 &1109642695
 MonoBehaviour:
@@ -56032,7 +56031,7 @@ Transform:
   - {fileID: 470098942}
   - {fileID: 1592555333}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1463298823
 GameObject:
@@ -56934,7 +56933,7 @@ Transform:
   - {fileID: 1819199198}
   - {fileID: 666309837}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1482133241
 GameObject:
@@ -75684,7 +75683,7 @@ Transform:
   - {fileID: 924659164}
   - {fileID: 843420923}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1947320213
 GameObject:
@@ -79761,7 +79760,7 @@ Transform:
   - {fileID: 1344701648}
   - {fileID: 752511285}
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2072178586
 GameObject:
