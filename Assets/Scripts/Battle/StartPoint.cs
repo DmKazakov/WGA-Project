@@ -33,7 +33,7 @@ public class StartPoint : MonoBehaviour
         enemy = GameObject.FindGameObjectWithTag("Enemy");
 
         background.GetComponent<SpriteRenderer>().sprite = enemy.GetComponent<Avatar>().location;
-        player.transform.position = enemy.transform.position;
+      //  player.transform.position = enemy.transform.position;
 
         ToPlace();
         gameObject.GetComponent<BattleManager>().BattleSetup(units); //запускаем бой
@@ -141,7 +141,7 @@ public class StartPoint : MonoBehaviour
             Destroy(enemy);
 
             player.SetActive(true);
-            player.transform.position = player.GetComponent<Avatar>().transform.position;
+          //  player.transform.position = player.GetComponent<Avatar>().transform.position;
         }
         else
         {

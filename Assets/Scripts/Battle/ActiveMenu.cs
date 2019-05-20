@@ -9,6 +9,7 @@ public class ActiveMenu : MonoBehaviour
     //  public GameObject battleManager;
     public GameObject[] button = new GameObject[3];
     public Image[] imageCooldown = new Image[3];
+    public GameObject emptypoint;
 
     public void ToTarget(int num) //включаем возможность выбора на юнитах
     {
@@ -45,6 +46,7 @@ public class ActiveMenu : MonoBehaviour
         {
             if (unit.GetComponent<Unit>().activeSkills[i] == null)
             {
+                button[i].GetComponent<Image>().sprite = emptypoint.GetComponent<Image>().sprite;
                 button[i].GetComponent<Button>().interactable = false;
             }
             else
