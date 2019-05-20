@@ -9,7 +9,7 @@ public class RoomDialog : MonoBehaviour
     private int[] rulesTxt; //3 - END dialog
 
     // Start is called before the first frame update
-    void Start()
+  public  void Init()
     {
         if (Story.chapter == 1.0)
         {
@@ -84,15 +84,15 @@ public class RoomDialog : MonoBehaviour
     }
 
     public string[] GetPlayertxt() {
-        Start();
+       
         return txtPlayer;
     }
     public string[] GetNPCtxt() {
-        Start();
+       
         return txtNPC;
     }
     public int[] GetRulseDialog() {
-        Start();
+        
         return rulesTxt;
     }
 }

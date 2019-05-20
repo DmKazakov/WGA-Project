@@ -15,4 +15,11 @@ public class Avatar : MonoBehaviour
     {
         transform = gameObject.transform;
     }
+
+    public void AddUnitSquad(int num)
+    {
+        GameObject unit = squad[0].GetComponent<SkillsPull>().teammates[num];
+        squad[1] = unit;
+        
+    }
 }

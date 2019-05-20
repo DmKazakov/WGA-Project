@@ -18,29 +18,15 @@ public class DialogManager : MonoBehaviour
     public int rulesNum;
 
     // Start is called before the first frame update
-    void Start()
+    public void StartDialog()
     {
-        double chapter = Story.chapter;
-        if (chapter == 1.0 || chapter == 1.2 || chapter == 1.4)
-        {
             Init();
-            print(txt1.Length);
-            print(txt2.Length);
-            print(rulesTxt.Length);
             DialogPlay(0, 0);
-        }
-        else
-        {
-            parentTxt1.SetActive(false);
-            parentTxt2.SetActive(false);
-        }
+   
     }
 
     private void Init()
     {
-       // parentTxt1 = person1txt.transform.parent.gameObject;
-      //  parentTxt2 = person2txt.transform.parent.gameObject;
-
         dialog = gameObject.GetComponent<RoomDialog>();
         txt1 = dialog.GetPlayertxt();
         txt2 = dialog.GetNPCtxt();
