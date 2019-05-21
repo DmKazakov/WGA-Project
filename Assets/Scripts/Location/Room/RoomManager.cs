@@ -20,21 +20,23 @@ public class RoomManager : MonoBehaviour
             dialog.StartDialog();
             playerAvatar.GetComponent<Avatar>().AddUnitSquad(0);
             Story.NextChapter();
-
+            
         }
 
-        if (Story.chapter == 1.2)
+      else  if (Story.chapter == 1.2)
+        {
+            dialogTXT.Init();
+            dialog.StartDialog();
+            Story.NextChapter();
+        }
+
+      else  if (Story.chapter == 1.4)
         {
             dialogTXT.Init();
             dialog.StartDialog();
         }
 
-        if (Story.chapter == 1.4)
-        {
-            dialogTXT.Init();
-            dialog.StartDialog();
-        }
-
+       
     }
 
 

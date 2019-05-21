@@ -33,9 +33,9 @@ public class StartPoint : MonoBehaviour
         enemy = GameObject.FindGameObjectWithTag("Enemy");
 
         background.GetComponent<SpriteRenderer>().sprite = enemy.GetComponent<Avatar>().location;
-      //  player.transform.position = enemy.transform.position;
 
         ToPlace();
+        CreateSlider();
         gameObject.GetComponent<BattleManager>().BattleSetup(units); //запускаем бой
         SelectUnit.battleManager = battleManager;
     }
@@ -81,10 +81,6 @@ public class StartPoint : MonoBehaviour
         //вырубаем аватары
         player.SetActive(false);
         enemy.SetActive(false);
-
-
-        CreateSlider();
-
     }
     void CreateSlider() //создаем и расставляем полоски жизней
     {
@@ -114,6 +110,8 @@ public class StartPoint : MonoBehaviour
             slider.GetComponent<HP>().Init(Uplayer[i]);
             k -= 0.5f;
 
+            print("Слайдер Герой " + Uplayer[i]);
+
         }
         k = HPpointEnemy.GetComponent<RectTransform>().position.y;
 
@@ -127,7 +125,7 @@ public class StartPoint : MonoBehaviour
 
             k -= 0.5f;
             slider.GetComponent<Slider>().direction = Slider.Direction.RightToLeft;
-
+            print("Слайдер НПС " + Uenemy[i]);
         }
 
 

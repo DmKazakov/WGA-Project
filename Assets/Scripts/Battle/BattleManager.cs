@@ -25,21 +25,13 @@ public class BattleManager : MonoBehaviour
         targetUnit = target.GetComponent<Unit>();
         activeMenu.SetActive(false);
         SelectOFF();
-        // skill.GetComponent<Skills>().Init(units[0].GetComponent<Unit>()); заменено на Unit.skillInit
 
         int[] dmg = skill.GetComponent<Skills>().Attack();
         targetUnit.SetDamage(dmg); //наносим урон
-        
 
-      //  dmg[0] = target.GetComponent<Unit>().GetDamage(); // временно для отображение урона
         PrintRound(dmg[0]);
-      //    ViewDmg(dmg[0]);
-       // viewDamage.GetComponent<ViewDamage>().toView(dmg, target);
-       
-        
+      
         EndRound();
-
-
     }
 
     internal void BattleSetup(List<GameObject> units)
@@ -51,6 +43,7 @@ public class BattleManager : MonoBehaviour
     }
     internal void StartBattle()
     {
+        units[0].GetComponent<Unit>().ActivateEffect(); //активация эффекта
         if (units[0].tag.Equals("Player"))
         {
             activeMenu.GetComponent<ActiveMenu>().ReplaceActiveMenu(units);
@@ -171,7 +164,7 @@ public class BattleManager : MonoBehaviour
     {
         CoolDownStart();
         targetUnit.AddEffect(skill); //добавляем эффект скила в список
-        units[0].GetComponent<Unit>().ActivateEffect(); //активация эффекта
+       // units[0].GetComponent<Unit>().ActivateEffect(); //активация эффекта
 
 
     }

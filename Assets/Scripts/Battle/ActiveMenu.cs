@@ -48,10 +48,12 @@ public class ActiveMenu : MonoBehaviour
             {
                 button[i].GetComponent<Image>().sprite = emptypoint.GetComponent<Image>().sprite;
                 button[i].GetComponent<Button>().interactable = false;
+                imageCooldown[i].gameObject.SetActive(false);
             }
             else
             {
                 button[i].GetComponent<Image>().sprite = unit.GetComponent<Unit>().activeSkills[i].GetComponent<Image>().sprite;
+                imageCooldown[i].gameObject.SetActive(true);
             }
         }
     }

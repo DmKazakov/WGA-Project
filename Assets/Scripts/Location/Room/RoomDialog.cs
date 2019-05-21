@@ -9,7 +9,7 @@ public class RoomDialog : MonoBehaviour
     private int[] rulesTxt; //3 - END dialog
 
     // Start is called before the first frame update
-  public  void Init()
+    public void Init()
     {
         if (Story.chapter == 1.0)
         {
@@ -29,11 +29,13 @@ public class RoomDialog : MonoBehaviour
             txtPlayer = new string[1] { "нет диалога" };
             rulesTxt = new int[3] { 1, 2, 3 };
         }
+
+
     }
 
     private void FirstDialog()
     {
-        rulesTxt = new int[17] { 2, 1, 2, 2, 2, 1, 2, 2, 2, 1, 2, 2, 2, 2,2,2, 3 };
+        rulesTxt = new int[17] { 2, 1, 2, 2, 2, 1, 2, 2, 2, 1, 2, 2, 2, 2, 2, 2, 3 };
         //1
         txtPlayer = new string[3];
         txtPlayer[0] = "Где я?";
@@ -60,39 +62,57 @@ public class RoomDialog : MonoBehaviour
     }
     private void SchoolFinish()
     {
-        rulesTxt = new int[5] { 1, 2, 1, 2, 3 };
+        rulesTxt = new int[11] { 2, 1, 2, 2, 1, 2, 2, 1, 2, 2, 3 };
 
-        txtPlayer = new string[2];
-        txtPlayer[0] = "тут диалог 1";
-        txtPlayer[1] = "диалог2";
+        txtPlayer = new string[3];
+        txtPlayer[0] = "Я выполнила свою часть сделки. Теперь дело за тобой, Фёдор.";
+        txtPlayer[1] = "Ты же говорил, что у тебя есть информация.";
+        txtPlayer[2] = "Андроид, интересно… Стоит проверить";
 
-        txtNPC = new string[2];
-        txtNPC[0] = "3";
-        txtNPC[1] = "222";
+        txtNPC = new string[7];
+        txtNPC[0] = "Усилитель у тебя, хорошая работа!";
+        txtNPC[1] = "Благодаря тебе теперь я могу подключиться к Сети и найти нужную информацию.";
+        txtNPC[2] = "Но мне нужно кое-какое время, чтобы все настроить.";
+        txtNPC[3] = "Да, я слыхал, что в гаражах одна местная ОПГ торгует редкими имплантами.";
+        txtNPC[4] = "Поговаривают, там даже можно найти части андроида.";
+        txtNPC[5] = "Сходи разведай обстановку. А как вернешься, я уже закончу с подключением.";
+        txtNPC[6] = "Но будь осторожна, там может быть очень опасно.";
+
+        print("инициализация закончена Правила: " + rulesTxt.Length + " Глава: " + Story.chapter);
     }
     private void ChapterOneFinish()
     {
-        rulesTxt = new int[5] { 1, 2, 1, 2, 3 };
+        rulesTxt = new int[11] { 2, 1, 2, 2, 1, 2, 2, 1, 2, 2, 3 };
 
-        txtPlayer = new string[2];
-        txtPlayer[0] = "тут диалог 1";
-        txtPlayer[1] = "диалог2";
+        txtPlayer = new string[3];
+        txtPlayer[0] = "Я выпо";
+        txtPlayer[1] = "Ты ж.";
+        txtPlayer[2] = "Анд";
 
-        txtNPC = new string[2];
-        txtNPC[0] = "3";
-        txtNPC[1] = "222";
+        txtNPC = new string[7];
+        txtNPC[0] = "Ус";
+        txtNPC[1] = "Бла";
+        txtNPC[2] = "Но";
+        txtNPC[3] = "Да";
+        txtNPC[4] = "Пог";
+        txtNPC[5] = "Сх";
+        txtNPC[6] = "Но бу";
+
     }
 
-    public string[] GetPlayertxt() {
-       
+    public string[] GetPlayertxt()
+    {
+
         return txtPlayer;
     }
-    public string[] GetNPCtxt() {
-       
+    public string[] GetNPCtxt()
+    {
+
         return txtNPC;
     }
-    public int[] GetRulseDialog() {
-        
+    public int[] GetRulseDialog()
+    {
+
         return rulesTxt;
     }
 }

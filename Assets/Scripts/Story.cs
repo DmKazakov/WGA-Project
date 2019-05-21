@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public static class Story
 {
@@ -16,6 +17,7 @@ public static class Story
     public static void NextChapter()
     {
         chapter += 0.1;
+        chapter = (double)Math.Round(chapter, 1);
     }
 
     public static void Restart()
@@ -29,7 +31,7 @@ public static class Story
         {
 
         }
-        chapter = 1.0;
+        chapter = 1.0d;
     }
 
   
