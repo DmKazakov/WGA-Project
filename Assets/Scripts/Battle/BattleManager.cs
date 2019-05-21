@@ -27,6 +27,8 @@ public class BattleManager : MonoBehaviour
         SelectOFF();
 
         int[] dmg = skill.GetComponent<Skills>().Attack();
+        units[0].GetComponent<Animator>().SetTrigger("attack");
+       
         targetUnit.SetDamage(dmg); //наносим урон
 
         PrintRound(dmg[0]);

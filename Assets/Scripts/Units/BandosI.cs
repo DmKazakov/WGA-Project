@@ -7,7 +7,7 @@ public class BandosI : Enemy
     void Start()
     {
         level = 1;
-        strength = 1; //3
+        strength = 3; //3
         vitality = 1; //5
         agility = 1; //4
         Recalc();
