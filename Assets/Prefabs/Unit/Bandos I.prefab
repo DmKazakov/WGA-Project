@@ -192,4 +192,4 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   effectSkills: []
-  headIcon: {fileID: 0}
+  headIcon: {fileID: 21300000, guid: 12ce9b7cb59cf3947817d634ca23ba51, type: 3}

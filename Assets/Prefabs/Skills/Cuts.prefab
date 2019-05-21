@@ -59,10 +59,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22bb237609b61964e84a7991be82353f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _name: 
   cooldownTimer: 0
   duration: 0
-  spriteON: {fileID: 21300000, guid: 6169a39a253f3f644b1005d2442a4b3e, type: 3}
-  spriteOFF: {fileID: 21300000, guid: 7f25bb6f2ad457f449c1f690586e1ff7, type: 3}
+  durationTimer: 0
+  spriteON: {fileID: 21300000, guid: d6c60bfd8fe8c694fa691d8c0b66d43c, type: 3}
+  spriteOFF: {fileID: 21300000, guid: 3734668ab63ccb74985ccbb095b9b827, type: 3}
 --- !u!114 &1890429206367002866
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -83,7 +85,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 7f25bb6f2ad457f449c1f690586e1ff7, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 3734668ab63ccb74985ccbb095b9b827, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
