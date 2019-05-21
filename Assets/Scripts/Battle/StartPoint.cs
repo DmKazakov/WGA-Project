@@ -13,8 +13,11 @@ public class StartPoint : MonoBehaviour
     public GameObject HPpointPlayer;
     public GameObject HPpointEnemy;
 
-    GameObject player;
-    GameObject enemy;
+    private List<GameObject> Uplayer = new List<GameObject>();
+    private List<GameObject> Uenemy = new List<GameObject>();
+
+    private GameObject player;
+    private GameObject enemy;
 
     List<GameObject> units = new List<GameObject>();
 
@@ -25,9 +28,6 @@ public class StartPoint : MonoBehaviour
 
     void Start()
     {
-
-
-
         //расставляем юнитов
         player = GameObject.FindGameObjectWithTag("Player");
         enemy = GameObject.FindGameObjectWithTag("Enemy");
@@ -82,15 +82,16 @@ public class StartPoint : MonoBehaviour
         player.SetActive(false);
         enemy.SetActive(false);
     }
-    void CreateSlider() //создаем и расставляем полоски жизней
+    private void CreateSlider() //создаем и расставляем полоски жизней
     {
-        List<GameObject> Uplayer = new List<GameObject>();
-        List<GameObject> Uenemy = new List<GameObject>();
-        float k = HPpointPlayer.GetComponent<RectTransform>().position.y;
-
-        GameObject slider;
-
+        UnitListInit();
+        PlayerSliderCreate();
+        EnemySliderCreate();
+    }
+    private void UnitListInit()
+    {
         for (int i = 0; i < units.Count; i++)
+
         {
             if (units[i].tag.Equals("Player"))
             {
@@ -101,7 +102,12 @@ public class StartPoint : MonoBehaviour
                 Uenemy.Add(units[i]);
             }
         }
-        // расставляем
+    }
+    private void PlayerSliderCreate()
+    {
+        GameObject slider;
+        float k = HPpointPlayer.GetComponent<RectTransform>().position.y;
+
         for (int i = 0; i < Uplayer.Count; i++)
         {
             slider = Instantiate(sliderHP, HPpointPlayer.transform.position, Quaternion.identity);
@@ -113,8 +119,12 @@ public class StartPoint : MonoBehaviour
             print("Слайдер Герой " + Uplayer[i]);
 
         }
-        k = HPpointEnemy.GetComponent<RectTransform>().position.y;
 
+    }
+    private void EnemySliderCreate()
+    {
+        GameObject slider;
+        float k = HPpointEnemy.GetComponent<RectTransform>().position.y;
 
         for (int i = 0; i < Uenemy.Count; i++)
         {
@@ -127,8 +137,6 @@ public class StartPoint : MonoBehaviour
             slider.GetComponent<Slider>().direction = Slider.Direction.RightToLeft;
             print("Слайдер НПС " + Uenemy[i]);
         }
-
-
     }
     public void ExitBattle(bool result)
     {
@@ -140,7 +148,7 @@ public class StartPoint : MonoBehaviour
             Destroy(enemy);
 
             player.SetActive(true);
-          //  player.transform.position = player.GetComponent<Avatar>().transform.position;
+
         }
         else
         {
@@ -148,7 +156,7 @@ public class StartPoint : MonoBehaviour
             player.GetComponent<PlayerKeyboardController>().Reset();
             Destroy(player);
             Destroy(enemy);
-          //  Story.Restart();
+            //  Story.Restart();
             SceneManager.LoadScene(1);
         }
     }
