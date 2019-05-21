@@ -11,18 +11,26 @@ public class DialogManager : MonoBehaviour
     public GameObject parentTxt2;
 
     private RoomDialog dialog;
-
+    
     private string[] txt1;
     private string[] txt2;
     private int[] rulesTxt;
     public int rulesNum;
 
+
+    PlayerKeyboardController thePlayer;
+    float initSpeed;
+
     // Start is called before the first frame update
     public void StartDialog()
     {
-            Init();
-            DialogPlay(0, 0);
-   
+        Init();
+        DialogPlay(0, 0);
+
+        thePlayer = FindObjectOfType<PlayerKeyboardController>();
+        initSpeed = thePlayer.speed;
+        thePlayer.speed = 0;
+
     }
 
     private void Init()
@@ -43,6 +51,8 @@ public class DialogManager : MonoBehaviour
         {
             parentTxt1.SetActive(false);
             parentTxt2.SetActive(false);
+
+            thePlayer.speed = initSpeed;
         }
         else
         {
