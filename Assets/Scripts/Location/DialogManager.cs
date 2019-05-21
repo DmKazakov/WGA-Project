@@ -30,6 +30,7 @@ public class DialogManager : MonoBehaviour
         thePlayer = FindObjectOfType<PlayerKeyboardController>();
         initSpeed = thePlayer.speed;
         thePlayer.speed = 0;
+        thePlayer.transform.localScale = new Vector3(1, 1, 1);
 
     }
 
