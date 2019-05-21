@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 2684606906678452551}
   - component: {fileID: 5146339803231316777}
   - component: {fileID: 8212767440918126616}
+  - component: {fileID: 3605635004361213100}
   m_Layer: 0
   m_Name: Bandos II
   m_TagString: Enemy
@@ -69,8 +70,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -395431129
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 7c480a44f410f7a46a03ba90147ec7d3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -173,3 +174,22 @@ MonoBehaviour:
   - {fileID: 0}
   effectSkills: []
   headIcon: {fileID: 21300000, guid: eb8de397a435f0c4cab9cb570b53942e, type: 3}
+--- !u!95 &3605635004361213100
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 540164914385191499}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 7fd8c1bacee48684da6c44e89e5f5562, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
