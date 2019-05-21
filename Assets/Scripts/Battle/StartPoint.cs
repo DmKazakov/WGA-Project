@@ -51,7 +51,7 @@ public class StartPoint : MonoBehaviour
             {
 
                 playerUnit = Instantiate<GameObject>(squad[i], squadPoint[i].transform.position, Quaternion.identity);
-
+                playerUnit.GetComponent<SpriteRenderer>().sortingOrder = i;
                 units.Add(playerUnit);
             }
 
@@ -65,6 +65,7 @@ public class StartPoint : MonoBehaviour
             if (squad[i] != null)
             {
                 enemyUnit = Instantiate<GameObject>(squad[i], enemySquadPoint[i].transform.position, Quaternion.identity);
+                enemyUnit.GetComponent<SpriteRenderer>().sortingOrder = i;
                 units.Add(enemyUnit);
             }
 
