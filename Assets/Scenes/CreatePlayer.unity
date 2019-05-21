@@ -246,7 +246,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parallax: 0
-  speed: 11
+  speed: 15
   lastMove: {x: 0, y: 0}
   statrtPoint: d-r
   openDoor: 0

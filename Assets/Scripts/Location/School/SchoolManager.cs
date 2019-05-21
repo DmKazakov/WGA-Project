@@ -6,13 +6,20 @@ public class SchoolManager : MonoBehaviour
 {
     public static bool enemy1 = true;
     public GameObject enemy;
+    public GameObject message;
     // Start is called before the first frame update
     void Start()
     {
         if (!enemy1)
         {
             enemy.SetActive(false);
-        }   
+
+        }
+        if (Story.chapter==1.1 && !enemy1)
+        {
+            message.SetActive(true);
+            Story.NextChapter();
+        }
     }
 
     // Update is called once per frame
