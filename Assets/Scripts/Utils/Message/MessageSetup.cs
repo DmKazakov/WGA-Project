@@ -9,6 +9,9 @@ public class MessageSetup : MonoBehaviour
     private MessageText txtObj;
     int i;
 
+    PlayerKeyboardController thePlayer;
+    float initSpeed;
+
     //  private Text txt;
     void Start()
     {
@@ -17,6 +20,10 @@ public class MessageSetup : MonoBehaviour
         txtObj.Init();
         txtPanel.text = txtObj.GetText(0);
         i = 0;
+
+        thePlayer = FindObjectOfType<PlayerKeyboardController>();
+        initSpeed = thePlayer.speed;
+        thePlayer.speed = 0;
     }
 
     public void onClick()
@@ -30,6 +37,8 @@ public class MessageSetup : MonoBehaviour
         {
 
             gameObject.transform.parent.gameObject.SetActive(false);
+
+            thePlayer.speed = initSpeed;
         }
 
     }
