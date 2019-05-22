@@ -11,21 +11,19 @@ public class NewGame : MonoBehaviour
     // public GameObject dustman2;
 
 
-    public void OnMouse() 
+    public void OnMouse()
     {
+
+
+
+
+
         SceneManager.LoadScene(scene);
-     
-            player.SetActive(true);
-        print("переносим плейера" + player.name);
-            DontDestroyOnLoad(player);
-       
-            DontDestroyOnLoad(dustman);
-        
 
+        player.SetActive(true);
 
-       
-        
-        
+        DontDestroyOnLoad(player);
+        DontDestroyOnLoad(dustman);
     }
 }
 
