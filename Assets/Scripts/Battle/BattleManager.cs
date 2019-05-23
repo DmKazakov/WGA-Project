@@ -55,7 +55,8 @@ public class BattleManager : MonoBehaviour
         {
             //прописать AI
 
-            skill = units[0].GetComponent<Unit>().activeSkills[0];
+            // skill = units[0].GetComponent<Unit>().activeSkills[0];
+            BattleAI.ChoiceSkill(units[0]);
             BattleAI.ChoiceTarget();
             Fight();
 

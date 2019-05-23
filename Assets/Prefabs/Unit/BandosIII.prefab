@@ -150,6 +150,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   level: 0
+  nameGame: 
   freeStatPoints: 0
   strength: 0
   agility: 0
@@ -166,7 +167,7 @@ MonoBehaviour:
   maxDMG: 0
   currentSkills:
   - {fileID: 4615261179389350267, guid: 9f1c2484641e15742aaf805160eac510, type: 3}
-  - {fileID: 0}
+  - {fileID: 1067625510709232244, guid: 684883ac46bc6894194a82376dbfcad0, type: 3}
   - {fileID: 0}
   activeSkills:
   - {fileID: 0}
