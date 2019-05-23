@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GarageManager : MonoBehaviour
+public class GarageManager : Managers
 {
    
     public GameObject message;
@@ -11,7 +11,6 @@ public class GarageManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Story.garageManager = gameObject;
 
         for (int i = 0; i < enemyes.Length; i++)
         {
@@ -20,12 +19,23 @@ public class GarageManager : MonoBehaviour
                 enemyes[i].SetActive(false);
             }
         }
+        if (!enemyes[2].activeSelf)
+        {
+            message.SetActive(true);
+            Story.NextChapter();
+            print(Story.chapter);
+        }
     }
 
-    public void Restart()
+    public static void Restart()
     {
-        
+        for (int i = 0; i < enemyStatus.Length; i++)
+        {
+            enemyStatus[i] = true;
+        }
     }
+
+ 
 
 
 }

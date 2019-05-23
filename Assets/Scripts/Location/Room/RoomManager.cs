@@ -2,12 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RoomManager : MonoBehaviour
+public class RoomManager : Managers
 {
-    // Start is called before the first frame update
+    //крепится к менеджеру
+
     private DialogManager dialog;
     private RoomDialog dialogTXT;
     private GameObject playerAvatar;
+
+
+    public GameObject sister;
 
     void Start()
     {
@@ -20,34 +24,52 @@ public class RoomManager : MonoBehaviour
             dialog.StartDialog();
             playerAvatar.GetComponent<Avatar>().AddUnitSquad(0);
             Story.NextChapter();
-            
+
         }
 
-      else  if (Story.chapter == 1.2)
+        else if (Story.chapter == 1.2)
         {
             dialogTXT.Init();
             dialog.StartDialog();
             Story.NextChapter();
         }
 
-      else  if (Story.chapter == 1.4)
+        else if (Story.chapter == 1.4)
         {
             dialogTXT.Init();
             dialog.StartDialog();
+            Story.NextChapter();
         }
-
-       
     }
-
-
     public void Init()
     {
-        Story.roomManager = gameObject;
         dialog = gameObject.GetComponent<DialogManager>();
         dialogTXT = gameObject.GetComponent<RoomDialog>();
 
         playerAvatar = GameObject.FindGameObjectWithTag("Player");
 
     }
-    public void Restart() { }
+
+    public override void EvenDialog()
+    {
+        if (Story.chapter == 1.5)
+        {
+            Init();
+            dialogTXT.Init();
+            dialog.StartDialog();
+            Story.NextChapter();
+            sister.SetActive(true);
+
+            print(Story.chapter);
+        }
+        else if (Story.chapter == 1.6)
+        {
+            print("прописать сообщение концовки игры");
+        }
+    }
+    public static void Restart()
+    {
+
+    }
+
 }

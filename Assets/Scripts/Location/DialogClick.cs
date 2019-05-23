@@ -13,10 +13,14 @@ public class DialogClick : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        count1 = 0;
-        count2 = 0;
+        Init();
         panel1.onClick.AddListener(onClick1);
         panel2.onClick.AddListener(onClick2);
+    }
+    public void Init()
+    {
+        count1 = 0;
+        count2 = 0;
     }
 
     public void onClick1()
@@ -24,7 +28,7 @@ public class DialogClick : MonoBehaviour
         count1++;
         manager.rulesNum++;
         manager.DialogPlay(count1, count2);
-        
+        print(count1 + " one-two " + count2);
     }
     public void onClick2()
     {
@@ -32,4 +36,5 @@ public class DialogClick : MonoBehaviour
         manager.rulesNum++;
         manager.DialogPlay(count1, count2);
     }
+    
 }

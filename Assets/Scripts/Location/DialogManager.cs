@@ -5,16 +5,24 @@ using UnityEngine.UI;
 
 public class DialogManager : MonoBehaviour
 {
-    public GameObject person1txt;
-    public GameObject person2txt;
-    public GameObject parentTxt1;
-    public GameObject parentTxt2;
+    //крепится к менеджеру 
+
+    public GameObject person1txt; //панель текста1
+    public GameObject person2txt; //панель текста2
+    public GameObject parentTxt1; //окно диалога
+    public GameObject parentTxt2; //окно даилога2
+
+    public Image speaker1; //панель голова спикера1
+    public Image speaker2; //панель голова спикера2
+    public Text speakerName1;
+    public Text speakerName2;
 
     private RoomDialog dialog;
     
     private string[] txt1;
     private string[] txt2;
     private int[] rulesTxt;
+    private Unit[] speakers;
     public int rulesNum;
 
 
@@ -36,11 +44,14 @@ public class DialogManager : MonoBehaviour
 
     private void Init()
     {
-        dialog = gameObject.GetComponent<RoomDialog>();
+        dialog = gameObject.GetComponent<RoomDialog>();       
         txt1 = dialog.GetPlayertxt();
         txt2 = dialog.GetNPCtxt();
         rulesTxt = dialog.GetRulseDialog();
         rulesNum = 0;
+
+        SetSpeakerHeads();
+        
     }
 
     public void DialogPlay(int count1, int count2)
@@ -53,6 +64,9 @@ public class DialogManager : MonoBehaviour
             parentTxt1.SetActive(false);
             parentTxt2.SetActive(false);
 
+            gameObject.GetComponent<DialogClick>().Init();
+            EventDialog();
+            
             thePlayer.speed = initSpeed;
         }
         else
@@ -82,6 +96,14 @@ public class DialogManager : MonoBehaviour
         person1txt.GetComponent<Text>().text = txt1[count1];
         person2txt.GetComponent<Text>().text = txt2[count2];
     }
+    private void SetSpeakerHeads()
+    {
+        speakers = dialog.GetHeadSpeaker();
+        speaker1.sprite = speakers[0].headIcon;
+        speaker2.sprite = speakers[1].headIcon;
+        speakerName1.text = speakers[0].nameGame;
+        speakerName2.text = speakers[1].nameGame;
+    }
     private int CountTest(int count, int txt) {
         string[] testTXT;
         if (txt == 1)
@@ -97,6 +119,12 @@ public class DialogManager : MonoBehaviour
         }
         
         return count;
+    }
+    private void EventDialog()
+    {
+        Managers managers = gameObject.GetComponent<Managers>();
+        managers.EvenDialog();
+       
     }
 
 }
