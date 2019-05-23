@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GarageManager : MonoBehaviour
+public class GarageManager : Managers
 {
    
     public GameObject message;
@@ -19,6 +19,12 @@ public class GarageManager : MonoBehaviour
                 enemyes[i].SetActive(false);
             }
         }
+        if (!enemyes[2].activeSelf)
+        {
+            message.SetActive(true);
+            Story.NextChapter();
+            print(Story.chapter);
+        }
     }
 
     public static void Restart()
@@ -28,6 +34,8 @@ public class GarageManager : MonoBehaviour
             enemyStatus[i] = true;
         }
     }
+
+ 
 
 
 }

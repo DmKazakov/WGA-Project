@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SchoolManager : MonoBehaviour
+public class SchoolManager : Managers
 {
     public static bool enemy1 = true;
     public GameObject enemy;
@@ -28,5 +28,5 @@ public class SchoolManager : MonoBehaviour
         enemy1 = true;
     }
 
-    
+   
 }

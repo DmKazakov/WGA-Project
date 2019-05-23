@@ -98,6 +98,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   level: 1
+  nameGame: "\u0411\u0435\u0437\u044B\u043C\u044F\u043D\u043D\u0430\u044F"
   freeStatPoints: 4
   strength: 5
   agility: 5

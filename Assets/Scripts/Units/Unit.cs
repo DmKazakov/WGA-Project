@@ -8,6 +8,8 @@ public abstract class Unit : MonoBehaviour
 {
     public int level;
 
+    public string nameGame = "";
+
     public int freeStatPoints;
     public int strength;
     public int agility;
@@ -131,7 +133,7 @@ public abstract class Unit : MonoBehaviour
         }
 
     }
-    public void AddEffect(GameObject skill)//добавить жффект из скила
+    public void AddEffect(GameObject skill)//добавить эффект из скила
     {
         Skills effect = skill.GetComponent<Skills>();
         if (effect.duration > 0)
@@ -149,7 +151,7 @@ public abstract class Unit : MonoBehaviour
             int[] info = effectSkills[i].Effect();
             BuffEffect(info);
             effectSkills[i].durationTimer--;
-            print("Имя юнита: " + this.name + " !!!!! Эффект: " + effectSkills[i]._name + " !!!! время: " + effectSkills[i].durationTimer);
+          //  print("Имя юнита: " + this.name + " !!!!! Эффект: " + effectSkills[i]._name + " !!!! время: " + effectSkills[i].durationTimer);
 
         }
 

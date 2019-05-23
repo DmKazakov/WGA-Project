@@ -8,6 +8,7 @@ public class Player : Unit
    
     public void Init()
     {
+        nameGame = "Безымянная";
         level = 1;
         freeStatPoints = 4;
         strength = 5;
