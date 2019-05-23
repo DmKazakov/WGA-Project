@@ -1056,6 +1056,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e6a4a096aedab04ca5b68cbeacab5b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  newGameScene: CreatePlayer
   pauseMenu: {fileID: 762189414}
   isPaused: 0
 --- !u!1 &438449315
@@ -1538,6 +1539,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 380142212}
     - target: {fileID: 4681630539709990290, guid: 11af959da28948e409a14b6a85d544e5,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: NewGame
+      objectReference: {fileID: 0}
+    - target: {fileID: 7711895584286830658, guid: 11af959da28948e409a14b6a85d544e5,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 380142212}
+    - target: {fileID: 7711895584286830658, guid: 11af959da28948e409a14b6a85d544e5,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: ExitGame
