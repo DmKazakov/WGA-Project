@@ -10,7 +10,7 @@ public class SchoolManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Story.schoolDvorManager = gameObject;
+
         if (!enemy1)
         {
             enemy.SetActive(false);
@@ -23,7 +23,10 @@ public class SchoolManager : MonoBehaviour
         }
     }
 
-    public void Restart() { }
+    public static void Restart()
+    {
+        enemy1 = true;
+    }
 
     
 }

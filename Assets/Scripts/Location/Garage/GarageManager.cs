@@ -11,7 +11,6 @@ public class GarageManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Story.garageManager = gameObject;
 
         for (int i = 0; i < enemyes.Length; i++)
         {
@@ -22,9 +21,12 @@ public class GarageManager : MonoBehaviour
         }
     }
 
-    public void Restart()
+    public static void Restart()
     {
-        
+        for (int i = 0; i < enemyStatus.Length; i++)
+        {
+            enemyStatus[i] = true;
+        }
     }
 
 

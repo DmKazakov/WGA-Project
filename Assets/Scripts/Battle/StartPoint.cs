@@ -153,10 +153,7 @@ public class StartPoint : MonoBehaviour
         else
         {
 
-            player.GetComponent<PlayerKeyboardController>().Reset();
-            Destroy(player);
-            Destroy(enemy);
-            //  Story.Restart();
+            Story.Restart();
             SceneManager.LoadScene(1);
         }
     }

@@ -36,7 +36,10 @@ public class PauseMenu : MonoBehaviour
 
     public void NewGame()
     {
+        Story.Restart();
+        ResumeGame();
         SceneManager.LoadScene(newGameScene);
+
     }
 
     public void ResumeGame()
@@ -48,7 +51,6 @@ public class PauseMenu : MonoBehaviour
 
     public void ExitGame()
     {
-        Debug.Log("Quit");    
-        Application.Quit();
+        Story.Exit();
     }
 }

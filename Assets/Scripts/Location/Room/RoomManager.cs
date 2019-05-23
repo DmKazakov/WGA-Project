@@ -41,13 +41,15 @@ public class RoomManager : MonoBehaviour
 
 
     public void Init()
-    {
-        Story.roomManager = gameObject;
+    {    
         dialog = gameObject.GetComponent<DialogManager>();
         dialogTXT = gameObject.GetComponent<RoomDialog>();
 
         playerAvatar = GameObject.FindGameObjectWithTag("Player");
 
     }
-    public void Restart() { }
+    public static void Restart()
+    {
+
+    }
 }
