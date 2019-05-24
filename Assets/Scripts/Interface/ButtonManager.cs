@@ -36,7 +36,11 @@ public class ButtonManager : MonoBehaviour
     }
     private void Close()
     {
-        thePlayer.speed = initSpeed;
+        if (thePlayer != null)
+        {
+            thePlayer.speed = initSpeed;
+        }
+       
         gameObject.SetActive(false);
     }
 
@@ -51,7 +55,11 @@ public class ButtonManager : MonoBehaviour
 
         // ограничиваем передсижение
         thePlayer = FindObjectOfType<PlayerKeyboardController>();
-        initSpeed = thePlayer.speed;
-        thePlayer.speed = 0;
+        if (thePlayer != null)
+        {
+            initSpeed = thePlayer.speed;
+            thePlayer.speed = 0;
+        }
+        
     }
 }
