@@ -9,13 +9,14 @@ public class RoomManager : Managers
     private DialogManager dialog;
     private RoomDialog dialogTXT;
     private GameObject playerAvatar;
+    public GameObject canvasInterface;
 
 
     public GameObject sister;
 
     void Start()
     {
-
+        canvasInterface.GetComponent<ButtonManager>().Init();
         Init();
 
         if (Story.chapter == 1.0)

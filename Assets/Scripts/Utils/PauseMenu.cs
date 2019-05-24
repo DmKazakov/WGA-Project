@@ -21,16 +21,7 @@ public class PauseMenu : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if (isPaused)
-            {
-                ResumeGame();
-            }
-            else
-            {
-                isPaused = true;
-                pauseMenu.SetActive(true);
-                Time.timeScale = 0f;
-            }
+            OpenMenu();
         }
     }
 
@@ -52,5 +43,18 @@ public class PauseMenu : MonoBehaviour
     public void ExitGame()
     {
         Story.Exit();
+    }
+    public void OpenMenu()
+    {
+        if (isPaused)
+        {
+            ResumeGame();
+        }
+        else
+        {
+            isPaused = true;
+            pauseMenu.SetActive(true);
+            Time.timeScale = 0f;
+        }
     }
 }
