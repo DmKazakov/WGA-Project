@@ -8,7 +8,7 @@ public class CharPanelManager : MonoBehaviour
 
 
     public GameObject[] squad = new GameObject[2];
-    private Unit currentUnit;
+    internal Unit currentUnit;
 
     public Image unitImage;
     public Image skill;
@@ -20,6 +20,7 @@ public class CharPanelManager : MonoBehaviour
     {
         InitStats();
         unitImage.sprite = currentUnit.GetComponent<SpriteRenderer>().sprite;
+        gameObject.GetComponent<ButtonManager>().SwitchButtonState();
         InitSkill();
 
     }
@@ -30,7 +31,7 @@ public class CharPanelManager : MonoBehaviour
     {
 
         currentUnit = squad[i].GetComponent<Unit>();
-
+        currentUnit.Recalc();
         Init();
     }
 

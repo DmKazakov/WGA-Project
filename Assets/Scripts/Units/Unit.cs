@@ -28,10 +28,11 @@ public abstract class Unit : MonoBehaviour
     public int minDMG;
     public int maxDMG;
 
-    public int armorBase = 0;
-    public int maxDMGbase = 0;
-    public int baseCooldown = 0;  //Костыль
+    public int armorBase;
+    public int maxDMGbase;
+    public int baseCooldown;  //Костыль
     public int perkEmpty;
+    public bool[] perkActive = new bool[3] { false, false, false };
 
     public GameObject[] currentSkills = new GameObject[3];
     public GameObject[] activeSkills = new GameObject[3];
@@ -245,5 +246,25 @@ public abstract class Unit : MonoBehaviour
     }
     public abstract void Init();
 
-
+    public void PerkClinki()
+    {
+        maxDMGbase = 2;
+        perkActive[0] = true;
+        perkEmpty--;
+        Recalc();
+    }
+    public void PerkSplav()
+    {
+        armorBase = 1;
+        perkActive[1] = true;
+        perkEmpty--;
+        Recalc();
+    }
+    public void PerkReaction()
+    {
+        baseCooldown = -1;
+        perkActive[1] = true;
+        perkEmpty--;
+        Recalc();
+    }
 }

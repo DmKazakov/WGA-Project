@@ -15,8 +15,11 @@ public class Player : Unit
         agility = 5;
         vitality = 5;
 
-        
-
+        armorBase = 0;
+        maxDMGbase = 0;
+        baseCooldown = 0;
+        perkEmpty = 0;
+        perkActive = new bool[3] { false, false, false };
     }
 
     

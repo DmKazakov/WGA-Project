@@ -3275,6 +3275,10 @@ MonoBehaviour:
   close: {fileID: 1283651318}
   mainMenuButton: {fileID: 341158421}
   charButton: {fileID: 1787895140}
+  perkButton:
+  - {fileID: 1500135967}
+  - {fileID: 523211102}
+  - {fileID: 1114793586}
   canvasMenu: {fileID: 1693702207}
 --- !u!1001 &743714057
 PrefabInstance:
@@ -8211,7 +8215,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1738082317883428, guid: 568a13f670f95f944b8d8f05fe4eb97f, type: 3}
       propertyPath: m_Name
-      value: CritChanceP
+      value: Reaction
       objectReference: {fileID: 0}
     - target: {fileID: 224577643391336360, guid: 568a13f670f95f944b8d8f05fe4eb97f,
         type: 3}

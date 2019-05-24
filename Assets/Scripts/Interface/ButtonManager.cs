@@ -11,6 +11,10 @@ public class ButtonManager : MonoBehaviour
     public Button mainMenuButton;
     public Button charButton;
 
+    public Button[] perkButton; //clinki, splav, reaction
+
+
+
     public GameObject canvasMenu;
 
     PlayerKeyboardController thePlayer;
@@ -18,13 +22,17 @@ public class ButtonManager : MonoBehaviour
 
     public void Init()
     {
+        perkButton[0].GetComponent<Button>().onClick.AddListener(() => PerkListener(0));
+        perkButton[1].GetComponent<Button>().onClick.AddListener(() => PerkListener(1));
+        perkButton[2].GetComponent<Button>().onClick.AddListener(() => PerkListener(2));
+
         charButton.onClick.AddListener(OpenCharPanel);
         mainMenuButton.onClick.AddListener(OpenMainMenu);
         player.onClick.AddListener(ActivePlayer);
         robot.onClick.AddListener(ActiveRobot);
         close.onClick.AddListener(Close);
 
-        
+
     }
     private void ActivePlayer()
     {
@@ -40,7 +48,7 @@ public class ButtonManager : MonoBehaviour
         {
             thePlayer.speed = initSpeed;
         }
-       
+
         gameObject.SetActive(false);
     }
 
@@ -48,18 +56,78 @@ public class ButtonManager : MonoBehaviour
     {
         canvasMenu.GetComponent<PauseMenu>().OpenMenu();
     }
+
     private void OpenCharPanel()
     {
-        gameObject.GetComponent<CharPanelManager>().SwitchUnit(0);
-        gameObject.SetActive(true);
-
-        // ограничиваем передсижение
-        thePlayer = FindObjectOfType<PlayerKeyboardController>();
-        if (thePlayer != null)
+        if (!gameObject.activeSelf)
         {
-            initSpeed = thePlayer.speed;
-            thePlayer.speed = 0;
+            gameObject.GetComponent<CharPanelManager>().SwitchUnit(0);
+            SwitchButtonState();
+            gameObject.SetActive(true);
+
+            // ограничиваем передсижение
+            thePlayer = FindObjectOfType<PlayerKeyboardController>();
+            if (thePlayer != null)
+            {
+                initSpeed = thePlayer.speed;
+                thePlayer.speed = 0;
+            }
         }
-        
+        else
+        {
+            Close();
+        }
+
     }
+    private void PerkListener(int num)
+    {
+        Unit unit = gameObject.GetComponent<CharPanelManager>().currentUnit;
+        if (num == 0)
+        {
+            unit.PerkClinki();
+        }
+        else if (num == 1)
+        {
+            unit.PerkSplav();
+        }
+        else if (num == 2)
+        {
+            unit.PerkReaction();
+        }
+        for (int i = 0; i <perkButton.Length; i++)
+        {
+            SwitchButtonState();
+        }
+        gameObject.GetComponent<CharPanelManager>().Init();
+    }
+    internal void SwitchButtonState()
+    {
+        Unit unit = gameObject.GetComponent<CharPanelManager>().currentUnit;
+        if (unit.perkEmpty>0)
+        {
+            InitPerkButton(unit);
+        }
+        else
+        {
+            for (int i = 0; i < perkButton.Length; i++)
+            {
+                perkButton[i].interactable = false;
+            }
+        }
+    }
+    private void InitPerkButton(Unit unit)
+    {
+        for (int i = 0; i <perkButton.Length; i++)
+        {
+            if (!unit.perkActive[i])
+            {
+                perkButton[i].interactable = true;
+            }
+            else
+            {
+                perkButton[i].interactable = false;
+            }
+        }
+    }
+
 }
