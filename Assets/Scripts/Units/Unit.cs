@@ -243,7 +243,7 @@ public abstract class Unit : MonoBehaviour
     {
         gameObject.GetComponent<toViewDamage>().Init(info, gameObject);
     }
-
+    public abstract void Init();
 
 
 }

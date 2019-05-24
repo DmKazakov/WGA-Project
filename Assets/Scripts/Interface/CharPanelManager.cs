@@ -13,14 +13,14 @@ public class CharPanelManager : MonoBehaviour
     public Image unitImage;
     public Image skill;
     public Text[] statspoint;
-
+    public Image emptyskill;
 
 
     public void Init()
     {
         InitStats();
         unitImage.sprite = currentUnit.GetComponent<SpriteRenderer>().sprite;
-        skill.sprite = currentUnit.GetComponent<Unit>().currentSkills[2].GetComponent<Skills>().spriteON;
+        InitSkill();
 
     }
 
@@ -49,5 +49,17 @@ public class CharPanelManager : MonoBehaviour
         statspoint[10].text = currentUnit.dodge.ToString();
         statspoint[11].text = currentUnit.perkEmpty.ToString();
 
+    }
+    private void InitSkill()
+    {
+        GameObject skl = currentUnit.GetComponent<Unit>().currentSkills[2];
+        if (skl != null)
+        {
+            skill.sprite = skl.GetComponent<Skills>().spriteON;
+        }
+        else
+        {
+            skill.sprite = emptyskill.sprite;
+        }
     }
 }

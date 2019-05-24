@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Robot : Unit
 {
-    public void Init()
+    public override void Init()
     {
         level = 1;
         freeStatPoints = 0;

@@ -66,6 +66,7 @@ public class StartPoint : MonoBehaviour
             {
                 enemyUnit = Instantiate<GameObject>(squad[i], enemySquadPoint[i].transform.position, Quaternion.identity);
                 enemyUnit.GetComponent<SpriteRenderer>().sortingOrder = i;
+                enemyUnit.GetComponent<Unit>().Init();
                 units.Add(enemyUnit);
             }
 

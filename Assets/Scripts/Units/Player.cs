@@ -6,7 +6,7 @@ public class Player : Unit
 {
     // Start is called before the first frame update
    
-    public void Init()
+    public override void Init()
     {
         nameGame = "Безымянная";
         level = 1;
