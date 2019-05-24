@@ -13,7 +13,8 @@ public class ButtonManager : MonoBehaviour
 
     public GameObject canvasMenu;
 
-   
+    PlayerKeyboardController thePlayer;
+    float initSpeed;
 
     public void Init()
     {
@@ -22,6 +23,8 @@ public class ButtonManager : MonoBehaviour
         player.onClick.AddListener(ActivePlayer);
         robot.onClick.AddListener(ActiveRobot);
         close.onClick.AddListener(Close);
+
+        
     }
     private void ActivePlayer()
     {
@@ -33,6 +36,7 @@ public class ButtonManager : MonoBehaviour
     }
     private void Close()
     {
+        thePlayer.speed = initSpeed;
         gameObject.SetActive(false);
     }
 
@@ -44,5 +48,10 @@ public class ButtonManager : MonoBehaviour
     {
         gameObject.GetComponent<CharPanelManager>().SwitchUnit(0);
         gameObject.SetActive(true);
+
+        // ограничиваем передсижение
+        thePlayer = FindObjectOfType<PlayerKeyboardController>();
+        initSpeed = thePlayer.speed;
+        thePlayer.speed = 0;
     }
 }
