@@ -9,6 +9,8 @@ public class Aim : Skills, Mate, Debuff
     {
         this.unit = unit;
         _name = "Прицеливание";
+        trigger = "aim";
+        triggerEffect = "scope";
         cooldown = 5;
         cooldownTimer = 0;
         duration = 1;

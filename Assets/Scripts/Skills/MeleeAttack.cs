@@ -10,6 +10,8 @@ public class MeleeAttack : Skills,Foe
     {
         this.unit = unit;
         _name = "Ближний бой";
+        trigger = "melee";
+        triggerEffect = "";
         mf = 1;
         cooldown = 0;
         duration = 0;

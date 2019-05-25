@@ -10,6 +10,8 @@ public class EneryShield : Skills, Mate, Poison
         this.unit = unit;
 
         _name = "Регенерация";
+        trigger = "regen";
+        triggerEffect = "heal";
         cooldown = 6;
         duration = 3;
         durationTimer = 0;

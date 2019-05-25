@@ -20,6 +20,8 @@ public abstract class Skills : MonoBehaviour
     public Sprite spriteON;
     public Sprite spriteOFF;
 
+    protected string trigger;
+    protected string triggerEffect;
 
     public abstract int[] Attack();
     public abstract int[] Effect();
@@ -42,5 +44,12 @@ public abstract class Skills : MonoBehaviour
     public int GetCooldown() {
         return cooldown;
     }
-
+    public string GetTrigger()
+    {
+        return trigger;
+    }
+    public string GetTriggerEffect()
+    {
+        return triggerEffect;
+    }
 }

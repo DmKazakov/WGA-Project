@@ -27,7 +27,7 @@ public class BattleManager : MonoBehaviour
         SelectOFF();
 
         int[] dmg = skill.GetComponent<Skills>().Attack();
-        units[0].GetComponent<Animator>().SetTrigger("attack");
+        StartAnimation();
        
         targetUnit.SetDamage(dmg); //наносим урон
 
@@ -188,4 +188,10 @@ public class BattleManager : MonoBehaviour
             Destroy(units[i]);
         }
     }
+    private void StartAnimation()
+    {
+        string trigger = skill.GetComponent<Skills>().GetTrigger();
+        units[0].GetComponent<Animator>().SetTrigger("trigger");
+    }
 }
+

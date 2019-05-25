@@ -12,6 +12,8 @@ public class Cuts : Skills, Foe, Poison
     {
         this.unit = unit;
         _name = "Глубокие порезы";
+        trigger = "cuts";
+        triggerEffect = "blood";
         cooldown = 4;
         cooldownTimer = 0;
         duration = 2;
