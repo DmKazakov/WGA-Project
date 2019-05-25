@@ -53,10 +53,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _name: 
   cooldownTimer: 0
+  cooldownTimerBASE: 0
   duration: 0
   durationTimer: 0
   spriteON: {fileID: 21300000, guid: e7b04eaec7c3b81439dd210dadaabfac, type: 3}
   spriteOFF: {fileID: 21300000, guid: c8d614e845f7fb84ebd4a6d8c0aee86b, type: 3}
+  particle: {fileID: 5733310356269663330, guid: 4fdeb3eb4dbc0e24cbe6d1d93ae4ebee,
+    type: 3}
 --- !u!114 &3506386313774351485
 MonoBehaviour:
   m_ObjectHideFlags: 0

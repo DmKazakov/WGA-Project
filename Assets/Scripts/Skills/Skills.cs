@@ -24,14 +24,23 @@ public abstract class Skills : MonoBehaviour
     protected string triggerEffect;
 
     public abstract int[] Attack();
-    public abstract int[] Effect();
+    public abstract int[] Effect(Transform transform);
     public abstract void Init(Unit unit);
+    public virtual void EffectAnimation(Transform transform) {
+        if (particle != null)
+        {
+            print("создаем анимацию эффекта");
+            GameObject anim = Instantiate(particle, transform.position, Quaternion.identity);
+        }
+        else { print("нет партикла"); }
+    }
 
     public void StartCoolDown()
     {
         cooldownTimer = cooldownTimerBASE + cooldown;
     }
 
+    public GameObject particle;
 
     public void DecreaseCoolDown()
     {

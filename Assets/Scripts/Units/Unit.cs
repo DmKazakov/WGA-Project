@@ -152,13 +152,12 @@ public abstract class Unit : MonoBehaviour
         ParamInit();
         for (int i = 0; i < effectSkills.Count; i++)
         {
-            int[] info = effectSkills[i].Effect();
+            int[] info = effectSkills[i].Effect(gameObject.transform);
             BuffEffect(info);
+            
             effectSkills[i].durationTimer--;
-          //  print("Имя юнита: " + this.name + " !!!!! Эффект: " + effectSkills[i]._name + " !!!! время: " + effectSkills[i].durationTimer);
-
+          // анимация эффекта запускает в Skills.Effect
         }
-
         DeleteEffect();
     }
     private void DeleteEffect() //удаляем эффект duration < 1;
@@ -225,12 +224,13 @@ public abstract class Unit : MonoBehaviour
         {
             if (currentSkills[i] != null && activeSkills[i] == null)
             {
-                activeSkills[i] = new GameObject();
-                activeSkills[i].AddComponent<Image>();
-                activeSkills[i].GetComponent<Image>().sprite = currentSkills[i].GetComponent<Image>().sprite;
+                // activeSkills[i] = new GameObject();
+                // activeSkills[i].AddComponent<Image>();
+                //  activeSkills[i].GetComponent<Image>().sprite = currentSkills[i].GetComponent<Image>().sprite;
 
 
-                activeSkills[i].AddComponent(currentSkills[i].GetComponent<Skills>().GetType());
+                //  activeSkills[i].AddComponent(currentSkills[i].GetComponent<Skills>().GetType());
+                activeSkills[i] = Instantiate(currentSkills[i]);
                 activeSkills[i].GetComponent<Skills>().cooldownTimerBASE = baseCooldown; //Костыль
             }
 
