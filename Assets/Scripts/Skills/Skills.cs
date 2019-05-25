@@ -8,10 +8,12 @@ public abstract class Skills : MonoBehaviour
     public string _name;
     protected int cooldown;
     public int cooldownTimer = 0;
+    public int cooldownTimerBASE = 0;
     internal bool isCurrent = false;
 
     public int duration;
     public int durationTimer;
+    
 
     protected Unit unit;
     internal double mf;
@@ -25,7 +27,7 @@ public abstract class Skills : MonoBehaviour
 
     public void StartCoolDown()
     {
-        cooldownTimer = cooldown;
+        cooldownTimer = cooldownTimerBASE + cooldown;
     }
 
 

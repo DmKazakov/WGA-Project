@@ -20,6 +20,8 @@ public class Avatar : MonoBehaviour
     public void AddUnitSquad(int num)
     {
         GameObject unit = squad[0].GetComponent<SkillsPull>().teammates[num];
+        unit.GetComponent<Robot>().Init();
+        unit.GetComponent<Unit>().Recalc();
         squad[1] = unit;
         
     }

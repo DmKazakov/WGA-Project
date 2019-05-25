@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BandosBoss : Enemy
 {
-    void Start()
+    public override void Init()
     {
         level = 1;
         strength = 1; //3

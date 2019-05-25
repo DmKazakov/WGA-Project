@@ -80,7 +80,7 @@ public class Tooltip : MonoBehaviour
         if (boxText.preferredWidth <= maxWidth - border) width = boxText.preferredWidth + border;
         box.sizeDelta = new Vector2(width, boxText.preferredHeight + border);
 
-        float arrowShift = width / 4; // сдвиг позиции стрелки по Х
+        float arrowShift = width / 40; // сдвиг позиции стрелки по Х
 
         if (show || isUI)
         {

@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 7340150532385238441}
   - component: {fileID: 3583164977768964907}
   - component: {fileID: 1835507715600868393}
+  - component: {fileID: 866055930130112064}
   m_Layer: 0
   m_Name: BandosIV
   m_TagString: Enemy
@@ -149,6 +150,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   level: 0
+  nameGame: 
   freeStatPoints: 0
   strength: 0
   agility: 0
@@ -163,6 +165,10 @@ MonoBehaviour:
   initiative: 0
   minDMG: 0
   maxDMG: 0
+  armorBase: 0
+  maxDMGbase: 0
+  baseCooldown: 0
+  perkEmpty: 0
   currentSkills:
   - {fileID: 4615261179389350267, guid: 9f1c2484641e15742aaf805160eac510, type: 3}
   - {fileID: 0}
@@ -173,3 +179,22 @@ MonoBehaviour:
   - {fileID: 0}
   effectSkills: []
   headIcon: {fileID: 0}
+--- !u!95 &866055930130112064
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7568670684476623567}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 39929467299e4364eab2c669bb03083d, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

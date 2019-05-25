@@ -31,6 +31,7 @@ public static class Story
     {
         GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
         GameObject[] enemyes = GameObject.FindGameObjectsWithTag("Enemy");
+        GameObject[] interfaces = GameObject.FindGameObjectsWithTag("GameInterface");
 
         for (int i = 0; i < players.Length; i++)
         {
@@ -40,13 +41,20 @@ public static class Story
         {
             GameObject.Destroy(enemyes[i]);
         }
+        for (int i = 0; i < interfaces.Length; i++)
+        {
+            GameObject.Destroy(interfaces[i]);
+        }
     }
     private static void RestartManagers()
     {
+        
         RoomManager.Restart();
         SchoolManager.Restart();
         GarageManager.Restart();
         TManager.Restart();
+        DontDestroy.Restart();
+        Clearing();
     }
   
 }

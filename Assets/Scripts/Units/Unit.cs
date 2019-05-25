@@ -28,7 +28,11 @@ public abstract class Unit : MonoBehaviour
     public int minDMG;
     public int maxDMG;
 
-   
+    public int armorBase;
+    public int maxDMGbase;
+    public int baseCooldown;  //Костыль
+    public int perkEmpty;
+    public bool[] perkActive = new bool[3] { false, false, false };
 
     public GameObject[] currentSkills = new GameObject[3];
     public GameObject[] activeSkills = new GameObject[3];
@@ -55,13 +59,13 @@ public abstract class Unit : MonoBehaviour
     public void ParamInit()// считаем параметры
     {
         minDMG = 1 + strength;
-        maxDMG = 3 + strength;
+        maxDMG =maxDMGbase + 3 + strength;
 
         criticalChance = 0 + (2 * agility);
         criticalMF = 2;
         criticalDMG = (int)(maxDMG * criticalMF);
         dodge = 0 + (int)(0.5 * agility);
-        armor = (int)(vitality / 2);
+        armor =armorBase + (int)(vitality / 2);
         initiative = 0 + (int)(agility / 2) + (int)(strength / 2);
     }
     private void SkillInit()//привязываем скилы
@@ -227,6 +231,7 @@ public abstract class Unit : MonoBehaviour
 
 
                 activeSkills[i].AddComponent(currentSkills[i].GetComponent<Skills>().GetType());
+                activeSkills[i].GetComponent<Skills>().cooldownTimerBASE = baseCooldown; //Костыль
             }
 
 
@@ -239,7 +244,27 @@ public abstract class Unit : MonoBehaviour
     {
         gameObject.GetComponent<toViewDamage>().Init(info, gameObject);
     }
+    public abstract void Init();
 
-
-
+    public void PerkClinki()
+    {
+        maxDMGbase = 2;
+        perkActive[0] = true;
+        perkEmpty--;
+        Recalc();
+    }
+    public void PerkSplav()
+    {
+        armorBase = 1;
+        perkActive[1] = true;
+        perkEmpty--;
+        Recalc();
+    }
+    public void PerkReaction()
+    {
+        baseCooldown = -1;
+        perkActive[1] = true;
+        perkEmpty--;
+        Recalc();
+    }
 }

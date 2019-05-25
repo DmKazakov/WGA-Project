@@ -22,8 +22,11 @@ public class MessageSetup : MonoBehaviour
         i = 0;
 
         thePlayer = FindObjectOfType<PlayerKeyboardController>();
-        initSpeed = thePlayer.speed;
-        thePlayer.speed = 0;
+        if (thePlayer != null)
+        {
+            initSpeed = thePlayer.speed;
+            thePlayer.speed = 0;
+        }
     }
 
     public void onClick()
@@ -38,7 +41,10 @@ public class MessageSetup : MonoBehaviour
 
             gameObject.transform.parent.gameObject.SetActive(false);
 
-            thePlayer.speed = initSpeed;
+            if (thePlayer != null)
+            {
+                thePlayer.speed = initSpeed;
+            }
         }
 
     }

@@ -6,7 +6,7 @@ public class Player : Unit
 {
     // Start is called before the first frame update
    
-    public void Init()
+    public override void Init()
     {
         nameGame = "Безымянная";
         level = 1;
@@ -15,8 +15,11 @@ public class Player : Unit
         agility = 5;
         vitality = 5;
 
-        
-
+        armorBase = 0;
+        maxDMGbase = 0;
+        baseCooldown = 0;
+        perkEmpty = 0;
+        perkActive = new bool[3] { false, false, false };
     }
 
     

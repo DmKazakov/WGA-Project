@@ -97,6 +97,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   level: 0
+  nameGame: 
   freeStatPoints: 0
   strength: 6
   agility: 2
@@ -111,13 +112,17 @@ MonoBehaviour:
   initiative: 0
   minDMG: 0
   maxDMG: 0
+  armorBase: 0
+  maxDMGbase: 0
+  baseCooldown: 0
+  perkEmpty: 0
   currentSkills:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  activeSkills:
   - {fileID: 4121976991800837276, guid: 5972460143c5d8f42b259b5a7426df6c, type: 3}
+  - {fileID: 0}
   - {fileID: 1857962424452997128, guid: e3e7820fdaa97f545bc9a6b3a05f8039, type: 3}
+  activeSkills:
+  - {fileID: 0}
+  - {fileID: 0}
   - {fileID: 0}
   effectSkills: []
   headIcon: {fileID: 21300000, guid: d4285b8a076a7d6458867e4a5a24b8a0, type: 3}

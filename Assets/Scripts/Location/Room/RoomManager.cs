@@ -9,13 +9,14 @@ public class RoomManager : Managers
     private DialogManager dialog;
     private RoomDialog dialogTXT;
     private GameObject playerAvatar;
+    public GameObject canvasInterface;
 
 
     public GameObject sister;
 
     void Start()
     {
-
+        canvasInterface.GetComponent<ButtonManager>().Init();
         Init();
 
         if (Story.chapter == 1.0)
@@ -32,6 +33,7 @@ public class RoomManager : Managers
             dialogTXT.Init();
             dialog.StartDialog();
             Story.NextChapter();
+            LevelUp();
         }
 
         else if (Story.chapter == 1.4)
@@ -70,6 +72,13 @@ public class RoomManager : Managers
     public static void Restart()
     {
 
+    }
+
+    private void LevelUp()
+    {
+      Unit unit =  playerAvatar.GetComponent<Avatar>().squad[0].GetComponent<Unit>();
+        unit.level++;
+        unit.perkEmpty++;
     }
 
 }

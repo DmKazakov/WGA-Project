@@ -9,6 +9,6 @@ public class Fedor : Unit
     {
         nameGame = "Фёдор";
     }
-
+    public override void Init() { }
 
 }

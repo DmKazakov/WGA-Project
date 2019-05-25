@@ -9,5 +9,5 @@ public class SisterI : Unit
     {
         nameGame = "Сестра";
     }
-
+    public override void Init() { }
 }
