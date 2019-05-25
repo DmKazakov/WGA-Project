@@ -31,7 +31,7 @@ Transform:
   m_GameObject: {fileID: 3812544546119342946}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -6.8, y: -1.11, z: 48.58008}
-  m_LocalScale: {x: -1, y: 1, z: 1}
+  m_LocalScale: {x: -0.95, y: 0.95, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -150,6 +150,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   level: 0
+  nameGame: 
   freeStatPoints: 0
   strength: 0
   agility: 0
@@ -164,6 +165,11 @@ MonoBehaviour:
   initiative: 0
   minDMG: 0
   maxDMG: 0
+  armorBase: 0
+  maxDMGbase: 0
+  baseCooldown: 0
+  perkEmpty: 0
+  perkActive: 000000
   currentSkills:
   - {fileID: 4615261179389350267, guid: 9f1c2484641e15742aaf805160eac510, type: 3}
   - {fileID: 1857962424452997128, guid: e3e7820fdaa97f545bc9a6b3a05f8039, type: 3}
@@ -184,7 +190,7 @@ Animator:
   m_GameObject: {fileID: 3812544546119342946}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a0def0962a4889c4f97dfe845c4d2f2d, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
