@@ -15,10 +15,10 @@ public class ChangeCollider : MonoBehaviour
     private SpriteRenderer playerSprite;
 
     private float spriteMinBound;
-    private float spriteMaxBound;
+    //private float spriteMaxBound;
 
     private float playerMinBound;
-    private float playerMaxBound;
+    //private float playerMaxBound;
 
 
     // Start is called before the first frame update
@@ -35,8 +35,8 @@ public class ChangeCollider : MonoBehaviour
         playerMinBound = playerSprite.bounds.min.y;
         spriteMinBound = sprite.bounds.min.y;
 
-        playerMaxBound = playerSprite.bounds.max.y;
-        spriteMaxBound = sprite.bounds.max.y;
+        //playerMaxBound = playerSprite.bounds.max.y;
+        //spriteMaxBound = sprite.bounds.max.y;
 
         if (spriteMinBound > playerMinBound + 0.2) //(spriteMinBound > playerMinBound)
         {

@@ -74,7 +74,7 @@ SpriteRenderer:
   m_SortingLayerID: -395431129
   m_SortingLayer: 4
   m_SortingOrder: 3
-  m_Sprite: {fileID: 21300000, guid: 536475a7b7a1b6a4aa813b83b2d7e64f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a7bd91347ec96be49913eb7e2905a618, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -113,6 +113,11 @@ MonoBehaviour:
   initiative: 0
   minDMG: 6
   maxDMG: 8
+  armorBase: 0
+  maxDMGbase: 0
+  baseCooldown: 0
+  perkEmpty: 0
+  perkActive: 000000
   currentSkills:
   - {fileID: 4615261179389350267, guid: 9f1c2484641e15742aaf805160eac510, type: 3}
   - {fileID: 4121976991800837276, guid: 5972460143c5d8f42b259b5a7426df6c, type: 3}
@@ -169,18 +174,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.00615564, y: 0.26058048}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.29, y: 0.78}
+    oldSize: {x: 2.24, y: 3.53}
     newSize: {x: 0.29, y: 0.78}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.7947647, y: 1.9659723}
+  m_Size: {x: 1.1, y: 3.08}
   m_EdgeRadius: 0
 --- !u!114 &8537342051237276719
 MonoBehaviour:
