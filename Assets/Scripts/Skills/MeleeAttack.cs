@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MeleeAttack : Skills,Foe
+public class MeleeAttack : Skills,Foe,Melee
 {
     // private Unit unit;
 

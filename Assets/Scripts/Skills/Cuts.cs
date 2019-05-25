@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-public class Cuts : Skills, Foe, Poison
+public class Cuts : Skills, Foe, Poison,Melee
 {
     int effectDMG;
 

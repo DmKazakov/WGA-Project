@@ -28,7 +28,7 @@ public class BattleManager : MonoBehaviour
 
         int[] dmg = skill.GetComponent<Skills>().Attack();
         StartAnimation();
-       
+        
         targetUnit.SetDamage(dmg); //наносим урон
 
         PrintRound(dmg[0]);
@@ -99,7 +99,7 @@ public class BattleManager : MonoBehaviour
             units.Add(units[0]);
             units.RemoveAt(0);  //двигаем очередь
             OrderPanelplace();  //отображаем очередь на панели
-            Invoke("StartBattle", 0.5f); //задрежка для проверки, удалить потом
+            Invoke("StartBattle", 1.0f); //задрежка для проверки, удалить потом
                                          // StartBattle(); активировать после удаления
         }
 

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RangeAttack : MeleeAttack //наследуемся от Skills
+public class RangeAttack : MeleeAttack, Range //наследуемся от Skills
 
 {
 
