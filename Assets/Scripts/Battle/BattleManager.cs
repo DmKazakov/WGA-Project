@@ -33,7 +33,7 @@ public class BattleManager : MonoBehaviour
 
         PrintRound(dmg[0]);
       
-        EndRound();
+        Invoke("EndRound",1.0f);
     }
 
     internal void BattleSetup(List<GameObject> units)
@@ -99,8 +99,9 @@ public class BattleManager : MonoBehaviour
             units.Add(units[0]);
             units.RemoveAt(0);  //двигаем очередь
             OrderPanelplace();  //отображаем очередь на панели
-            Invoke("StartBattle", 1.0f); //задрежка для проверки, удалить потом
-                                         // StartBattle(); активировать после удаления
+                                // Invoke("StartBattle", 1.0f); //задрежка для проверки, удалить потом
+                                // StartBattle(); активировать после удаления
+            StartBattle();
         }
 
     }
