@@ -10,6 +10,8 @@ public class EneryShield : Skills, Mate, Poison
         this.unit = unit;
 
         _name = "Регенерация";
+        trigger = "regen";
+        triggerEffect = "heal";
         cooldown = 6;
         duration = 3;
         durationTimer = 0;
@@ -17,7 +19,7 @@ public class EneryShield : Skills, Mate, Poison
 
     }
 
-    public override int[] Effect()
+    public override int[] Effect(Transform transform)
     {
         // result[0] - count, result[1] - stats:
         // 0 - HP
@@ -34,7 +36,9 @@ public class EneryShield : Skills, Mate, Poison
         result[0] = heal;
         result[0] *= -1;
         result[1] = 0;
-        
+
+        EffectAnimation(transform);
+
         return result;
     }
     public override int[] Attack()
@@ -54,6 +58,6 @@ public class EneryShield : Skills, Mate, Poison
         durationTimer = duration;
         heal = (int)(BattleManager.target.GetComponent<Unit>().hitPoint * 0.05);
     }
-
+ 
 
 }

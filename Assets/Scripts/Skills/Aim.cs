@@ -9,13 +9,15 @@ public class Aim : Skills, Mate, Debuff
     {
         this.unit = unit;
         _name = "Прицеливание";
+        trigger = "aim";
+        triggerEffect = "scope";
         cooldown = 5;
         cooldownTimer = 0;
         duration = 1;
         mf = 1;
     }
 
-    public override int[] Effect() {
+    public override int[] Effect(Transform transform) {
         // result[0] - count, result[1] - stats:
         // 0 - HP
         // 1 - strenght
@@ -25,8 +27,8 @@ public class Aim : Skills, Mate, Debuff
         int[] result = new int[2];
         result[0] = 3;
         result[1] = 4;
-        
 
+        EffectAnimation(transform);
 
 
         return result;
@@ -44,4 +46,6 @@ public class Aim : Skills, Mate, Debuff
         StartCoolDown();
         return result;
     }
+
+
 }

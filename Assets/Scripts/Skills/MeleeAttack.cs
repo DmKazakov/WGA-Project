@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MeleeAttack : Skills,Foe
+public class MeleeAttack : Skills,Foe,Melee
 {
     // private Unit unit;
 
@@ -10,6 +10,8 @@ public class MeleeAttack : Skills,Foe
     {
         this.unit = unit;
         _name = "Ближний бой";
+        trigger = "melee";
+        triggerEffect = "";
         mf = 1;
         cooldown = 0;
         duration = 0;
@@ -41,7 +43,7 @@ public class MeleeAttack : Skills,Foe
 
         return totalDmg;
     }
-    public override int[] Effect()
+    public override int[] Effect(Transform transform)
     {
         return null;
     }

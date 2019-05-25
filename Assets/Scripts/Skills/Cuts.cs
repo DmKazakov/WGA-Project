@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-public class Cuts : Skills, Foe, Poison
+public class Cuts : Skills, Foe, Poison,Melee
 {
     int effectDMG;
 
@@ -12,6 +12,8 @@ public class Cuts : Skills, Foe, Poison
     {
         this.unit = unit;
         _name = "Глубокие порезы";
+        trigger = "cuts";
+        triggerEffect = "blood";
         cooldown = 4;
         cooldownTimer = 0;
         duration = 2;
@@ -20,7 +22,7 @@ public class Cuts : Skills, Foe, Poison
     }
 
     // Update is called once per frame
-    public override int[] Effect()
+    public override int[] Effect(Transform transform)
     {
         // result[0] - count, result[1] - stats:
         // 0 - HP
@@ -35,7 +37,7 @@ public class Cuts : Skills, Foe, Poison
             result[0] = 1;
         }
         result[1] = 0;
-
+        EffectAnimation(transform);
 
         return result;
     }
@@ -73,6 +75,6 @@ public class Cuts : Skills, Foe, Poison
         durationTimer = duration;
         effectDMG = (int)(dmg[0] * 0.3);
     }
-
+    
 }
 

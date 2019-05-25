@@ -79,6 +79,7 @@ public class RoomManager : Managers
       Unit unit =  playerAvatar.GetComponent<Avatar>().squad[0].GetComponent<Unit>();
         unit.level++;
         unit.perkEmpty++;
+        unit.Recalc();
     }
 
 }

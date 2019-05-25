@@ -16,7 +16,7 @@ public class DoubleShoot : Skills,Foe
 
     }
 
-    public override int[] Effect()
+    public override int[] Effect(Transform transform)
     {
 
         return null;
