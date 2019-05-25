@@ -133,7 +133,7 @@ public abstract class Unit : MonoBehaviour
 
             currentHitPoint -= dmg;
             ViewDamage(result);
-            
+            gameObject.GetComponent<Animator>().SetTrigger("hit"); //анимация повреждения
         }
 
     }

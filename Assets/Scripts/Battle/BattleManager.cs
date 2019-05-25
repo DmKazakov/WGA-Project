@@ -191,7 +191,8 @@ public class BattleManager : MonoBehaviour
     private void StartAnimation()
     {
         string trigger = skill.GetComponent<Skills>().GetTrigger();
-        units[0].GetComponent<Animator>().SetTrigger("trigger");
+        units[0].GetComponent<Animator>().SetTrigger(trigger);
+        
     }
 }
 
