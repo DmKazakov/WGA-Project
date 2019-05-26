@@ -33,6 +33,7 @@ public class RoomManager : Managers
             dialogTXT.Init();
             dialog.StartDialog();
             Story.NextChapter();
+            Story.checkpoint = (Vector2)playerAvatar.transform.position;
             LevelUp();
         }
 

@@ -151,9 +151,20 @@ public class StartPoint : MonoBehaviour
         }
         else
         {
-
-            Story.Restart();
-            SceneManager.LoadScene(1);
+            if (Story.chapter > 1.2)
+            {
+                Story.CheckPoint();
+                Destroy(enemy);
+                SceneManager.LoadScene("Room");
+                player.transform.position = (Vector2)Story.checkpoint;
+                player.SetActive(true);
+            }
+            else
+            {
+                Story.Restart();
+                
+                SceneManager.LoadScene(1);
+            }
         }
     }
 

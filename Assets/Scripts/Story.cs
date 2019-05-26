@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 public static class Story
 {
     public static double chapter = 1.0;
+    public static Vector2 checkpoint; 
 
     public static void NextChapter()
     {
@@ -55,6 +56,11 @@ public static class Story
         TManager.Restart();
         DontDestroy.Restart();
         Clearing();
+    }
+    public static void CheckPoint()
+    {
+        chapter = 1.3;
+        GarageManager.Restart();
     }
   
 }
