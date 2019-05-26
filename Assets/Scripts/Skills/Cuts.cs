@@ -10,11 +10,12 @@ public class Cuts : Skills, Foe, Poison,Melee
 
     public override void Init(Unit unit)
     {
+        
         this.unit = unit;
         _name = "Глубокие порезы";
         trigger = "cuts";
         triggerEffect = "blood";
-        cooldown = 4;
+        cooldown =cooldownTimerBASE + 4;
         cooldownTimer = 0;
         duration = 2;
         mf = 0.9;

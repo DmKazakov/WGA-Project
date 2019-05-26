@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3383948547475271438}
   - component: {fileID: 6901921880391443375}
   - component: {fileID: 5501748306170981091}
+  - component: {fileID: 322502364384776840}
   m_Layer: 5
   m_Name: Aim
   m_TagString: Buff
@@ -60,6 +61,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _name: 
+  description: 
   cooldownTimer: 0
   cooldownTimerBASE: 0
   duration: 0
@@ -139,3 +141,15 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
+--- !u!114 &322502364384776840
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1857962424452997128}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 549540b45fe60134e9ac9a2e171c0791, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

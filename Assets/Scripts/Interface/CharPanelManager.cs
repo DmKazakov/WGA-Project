@@ -20,6 +20,7 @@ public class CharPanelManager : MonoBehaviour
     {
         InitStats();
         unitImage.sprite = currentUnit.GetComponent<SpriteRenderer>().sprite;
+
         gameObject.GetComponent<ButtonManager>().SwitchButtonState();
         InitSkill();
 
@@ -53,10 +54,15 @@ public class CharPanelManager : MonoBehaviour
     }
     private void InitSkill()
     {
-        GameObject skl = currentUnit.GetComponent<Unit>().currentSkills[2];
+        Skills skl = currentUnit.GetComponent<Unit>().currentSkills[2].GetComponent<Skills>();
+        TxtSkills txtskill = currentUnit.GetComponent<Unit>().currentSkills[2].GetComponent<TxtSkills>();
         if (skl != null)
         {
-            skill.sprite = skl.GetComponent<Skills>().spriteON;
+            txtskill.Init();
+            string ttt = txtskill.txt;
+            skill.sprite = skl.spriteON;
+            skill.gameObject.transform.GetComponent<SkillDescription>().SetDescripion(ttt);
+          
         }
         else
         {

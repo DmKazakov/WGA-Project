@@ -8,11 +8,11 @@ public class EneryShield : Skills, Mate, Poison
     public override void Init(Unit unit)
     {
         this.unit = unit;
-
+        
         _name = "Регенерация";
         trigger = "regen";
         triggerEffect = "heal";
-        cooldown = 6;
+        cooldown =cooldownTimerBASE + 6;
         duration = 3;
         durationTimer = 0;
         mf = 0;

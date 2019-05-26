@@ -2647,6 +2647,7 @@ GameObject:
   - component: {fileID: 491581128}
   - component: {fileID: 491581130}
   - component: {fileID: 491581129}
+  - component: {fileID: 491581131}
   m_Layer: 5
   m_Name: Skill
   m_TagString: Untagged
@@ -2710,6 +2711,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 491581127}
   m_CullTransparentMesh: 0
+--- !u!114 &491581131
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 491581127}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02b0034796e945c4eb49615917691e9c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  txt: {fileID: 1555974784}
 --- !u!1001 &491648423
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5135,11 +5149,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 978270530}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2d3165645c760684c8fc580aded22bcb, type: 3}
+  m_Script: {fileID: 11500000, guid: d098ddde9b9fa5e428f608237b73f669, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  text: "\u0417\u0434\u043E\u0440\u043E\u0432\u044C\u0435 \u0433\u043B\u0430\u0432\u043D\u043E\u0433\u043E
-    \u0433\u0435\u0440\u043E\u044F"
+  txt: {fileID: 1555974784}
 --- !u!1001 &979439857
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5470,11 +5483,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 986858634}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2d3165645c760684c8fc580aded22bcb, type: 3}
+  m_Script: {fileID: 11500000, guid: f398bff1f35d1c945bf911dcc70976ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  text: "\u0428\u0430\u043D\u0441 \u043D\u0430\u043D\u0435\u0441\u0442\u0438 \u043A\u0440\u0438\u0442\u0438\u0447\u0435\u0441\u043A\u0438\u0439
-    \u0443\u0440\u043E\u043D"
+  txt: {fileID: 1555974784}
 --- !u!1 &1008270990
 GameObject:
   m_ObjectHideFlags: 0
@@ -8009,11 +8021,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1607593863}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2d3165645c760684c8fc580aded22bcb, type: 3}
+  m_Script: {fileID: 11500000, guid: cd261489a46fc1d49bcd62c6015cca82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  text: "\u041D\u0430\u043D\u043E\u0441\u0438\u043C\u044B\u0439 \u0443\u0440\u043E\u043D
-    \u043F\u043E \u043F\u0440\u043E\u0442\u0438\u0432\u043D\u0438\u043A\u0443"
+  txt: {fileID: 1555974784}
 --- !u!1 &1627323713
 GameObject:
   m_ObjectHideFlags: 0

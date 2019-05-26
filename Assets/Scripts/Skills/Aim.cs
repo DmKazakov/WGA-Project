@@ -8,13 +8,15 @@ public class Aim : Skills, Mate, Debuff
     public override void Init(Unit unit)
     {
         this.unit = unit;
+        
         _name = "Прицеливание";
         trigger = "aim";
         triggerEffect = "scope";
-        cooldown = 5;
+        cooldown = cooldownTimerBASE + 5;
         cooldownTimer = 0;
         duration = 1;
         mf = 1;
+
     }
 
     public override int[] Effect() {
@@ -42,6 +44,8 @@ public class Aim : Skills, Mate, Debuff
         StartCoolDown();
         return result;
     }
+
+
 
 
 }

@@ -6,7 +6,9 @@ using UnityEngine;
 public abstract class Skills : MonoBehaviour
 {
     public string _name;
-    protected int cooldown;
+    public string description;
+
+    internal int cooldown;
     public int cooldownTimer = 0;
     public int cooldownTimerBASE = 0;
     internal bool isCurrent = false;
@@ -26,6 +28,7 @@ public abstract class Skills : MonoBehaviour
     public abstract int[] Attack();
     public abstract int[] Effect();
     public abstract void Init(Unit unit);
+   
     public virtual void EffectAnimation(GameObject gobj) {
         if (particle != null)
         {
@@ -39,7 +42,7 @@ public abstract class Skills : MonoBehaviour
 
     public void StartCoolDown()
     {
-        cooldownTimer = cooldownTimerBASE + cooldown;
+        cooldownTimer = cooldown;
     }
 
     public GameObject particle;
