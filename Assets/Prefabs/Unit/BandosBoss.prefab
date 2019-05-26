@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 4209763459724465157}
   - component: {fileID: 53742755684277686}
   - component: {fileID: 1717260984782984251}
+  - component: {fileID: 5557443173596700891}
   m_Layer: 0
   m_Name: BandosBoss
   m_TagString: Enemy
@@ -171,7 +172,7 @@ MonoBehaviour:
   perkEmpty: 0
   perkActive: 000000
   currentSkills:
-  - {fileID: 4615261179389350267, guid: 9f1c2484641e15742aaf805160eac510, type: 3}
+  - {fileID: 4121976991800837276, guid: 5972460143c5d8f42b259b5a7426df6c, type: 3}
   - {fileID: 1857962424452997128, guid: e3e7820fdaa97f545bc9a6b3a05f8039, type: 3}
   - {fileID: 0}
   activeSkills:
@@ -199,3 +200,15 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &5557443173596700891
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3812544546119342946}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39d9dbc5fe0d42f4a8bec517a72b4a03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
