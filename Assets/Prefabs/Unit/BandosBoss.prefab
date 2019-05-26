@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 4209763459724465157}
   - component: {fileID: 53742755684277686}
   - component: {fileID: 1717260984782984251}
+  - component: {fileID: 5557443173596700891}
   m_Layer: 0
   m_Name: BandosBoss
   m_TagString: Enemy
@@ -199,3 +200,15 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &5557443173596700891
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3812544546119342946}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39d9dbc5fe0d42f4a8bec517a72b4a03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

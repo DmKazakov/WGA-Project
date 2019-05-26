@@ -191,9 +191,24 @@ public class BattleManager : MonoBehaviour
     }
     private void StartAnimation()
     {
+        Skills skl = skill.GetComponent<Skills>();
+        PlayerLerp lerp = units[0].GetComponent<PlayerLerp>();
+        if (skl is Melee)
+        {
+
+
+            Vector2 enemys = target.transform.position;
+            Vector2 attaker = units[0].transform.position;
+            
+            lerp.enemy = enemys; //движемся
+        }
+
         string trigger = skill.GetComponent<Skills>().GetTrigger();
         units[0].GetComponent<Animator>().SetTrigger(trigger);
-        
+
+        lerp.ReturnPlayer();
     }
+
+  
 }
 

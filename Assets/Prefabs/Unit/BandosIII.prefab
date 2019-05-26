@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 1564965691532908307}
   - component: {fileID: 6235371504199901952}
   - component: {fileID: 5845061701878679684}
+  - component: {fileID: 6288826968246910593}
   m_Layer: 0
   m_Name: BandosIII
   m_TagString: Enemy
@@ -165,6 +166,11 @@ MonoBehaviour:
   initiative: 0
   minDMG: 0
   maxDMG: 0
+  armorBase: 0
+  maxDMGbase: 0
+  baseCooldown: 0
+  perkEmpty: 0
+  perkActive: 000000
   currentSkills:
   - {fileID: 4615261179389350267, guid: 9f1c2484641e15742aaf805160eac510, type: 3}
   - {fileID: 1067625510709232244, guid: 684883ac46bc6894194a82376dbfcad0, type: 3}
@@ -194,3 +200,15 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &6288826968246910593
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2423991322718474567}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39d9dbc5fe0d42f4a8bec517a72b4a03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 5362565092256461642}
   - component: {fileID: 2642893296601647803}
   - component: {fileID: 3975040644537746814}
+  - component: {fileID: 5539911408382336694}
   m_Layer: 0
   m_Name: BandosV
   m_TagString: Enemy
@@ -169,6 +170,7 @@ MonoBehaviour:
   maxDMGbase: 0
   baseCooldown: 0
   perkEmpty: 0
+  perkActive: 000000
   currentSkills:
   - {fileID: 4615261179389350267, guid: 9f1c2484641e15742aaf805160eac510, type: 3}
   - {fileID: 1067625510709232244, guid: 684883ac46bc6894194a82376dbfcad0, type: 3}
@@ -198,3 +200,15 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &5539911408382336694
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5400076651138573415}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39d9dbc5fe0d42f4a8bec517a72b4a03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

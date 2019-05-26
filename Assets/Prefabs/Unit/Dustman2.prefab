@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 410221665}
   - component: {fileID: 603900308453976863}
   - component: {fileID: 2711069960377851886}
+  - component: {fileID: 4514657188003160647}
   m_Layer: 0
   m_Name: Dustman2
   m_TagString: Enemy
@@ -97,6 +98,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   level: 0
+  nameGame: 
   freeStatPoints: 0
   strength: 0
   agility: 0
@@ -111,6 +113,11 @@ MonoBehaviour:
   initiative: 0
   minDMG: 1
   maxDMG: 3
+  armorBase: 0
+  maxDMGbase: 0
+  baseCooldown: 0
+  perkEmpty: 0
+  perkActive: 000000
   currentSkills:
   - {fileID: 4615261179389350267, guid: 9f1c2484641e15742aaf805160eac510, type: 3}
   - {fileID: 0}
@@ -193,3 +200,15 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &4514657188003160647
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4787263607262992368}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39d9dbc5fe0d42f4a8bec517a72b4a03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
