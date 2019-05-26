@@ -15,7 +15,7 @@ public abstract class Skills : MonoBehaviour
 
     public int duration;
     public int durationTimer;
-    
+
 
     protected Unit unit;
     internal double mf;
@@ -28,8 +28,9 @@ public abstract class Skills : MonoBehaviour
     public abstract int[] Attack();
     public abstract int[] Effect();
     public abstract void Init(Unit unit);
-   
-    public virtual void EffectAnimation(GameObject gobj) {
+
+    public virtual void EffectAnimation(GameObject gobj)
+    {
         if (particle != null)
         {
             Transform transform = gobj.transform;
@@ -55,7 +56,9 @@ public abstract class Skills : MonoBehaviour
         }
 
     }
-    public int GetCooldown() {
+   
+    public int GetCooldown()
+    {
         return cooldown;
     }
     public string GetTrigger()

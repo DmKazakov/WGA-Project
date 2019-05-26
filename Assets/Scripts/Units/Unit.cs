@@ -142,8 +142,29 @@ public abstract class Unit : MonoBehaviour
         Skills effect = skill.GetComponent<Skills>();
         if (effect.duration > 0)
         {
-            effectSkills.Add(effect);
+            if (!CheckEffect(effect))
+            {
+                effectSkills.Add(effect);
+            }
+
+            
         }
+    }
+
+    private bool CheckEffect(Skills effect) //проверка, есть ли уже такой эффект, если есть увеличивает длительность
+    {
+        bool result = false;
+        for (int i = 0; i < effectSkills.Count; i++)
+        {
+            if (effectSkills[i]._name.Equals(effect._name))
+            {
+
+                result = true;
+                effectSkills[i].durationTimer += effectSkills[i].duration;
+
+            }
+        }
+        return result;
     }
 
     public void ActivateEffect() //процесс запуска эффекта
