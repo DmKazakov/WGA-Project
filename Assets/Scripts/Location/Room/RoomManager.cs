@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class RoomManager : Managers
 {
@@ -67,7 +68,8 @@ public class RoomManager : Managers
         }
         else if (Story.chapter == 1.6)
         {
-            print("прописать сообщение концовки игры");
+            SceneManager.LoadScene("TheEnd");
+            Story.Restart();
         }
     }
     public static void Restart()

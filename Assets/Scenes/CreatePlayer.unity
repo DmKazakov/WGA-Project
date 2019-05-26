@@ -127,6 +127,7 @@ GameObject:
   - component: {fileID: 9197170}
   - component: {fileID: 9197171}
   - component: {fileID: 9197172}
+  - component: {fileID: 9197173}
   m_Layer: 0
   m_Name: PlayerAVA
   m_TagString: Player
@@ -297,6 +298,19 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &9197173
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9197165}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae3a80e0f2af11449a05f85c0bde6685, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  distance: 10
 --- !u!1 &75960573
 GameObject:
   m_ObjectHideFlags: 0
