@@ -310,7 +310,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae3a80e0f2af11449a05f85c0bde6685, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  distance: 10
 --- !u!1 &75960573
 GameObject:
   m_ObjectHideFlags: 0
@@ -346,7 +345,7 @@ MonoBehaviour:
   - {fileID: 4787263607262992368, guid: f5a71f39019120640b035adc4c402b1f, type: 3}
   - {fileID: 0}
   sceneName: Room
-  location: {fileID: 21300000, guid: 0245bd8a07ec7b546aa14709d347807c, type: 3}
+  location: {fileID: 21300000, guid: 371df460f4333de4fae97b40d65b8756, type: 3}
 --- !u!212 &75960575
 SpriteRenderer:
   m_ObjectHideFlags: 0

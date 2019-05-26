@@ -11,7 +11,7 @@ public class Dustman : Enemy
     {
         level = 1;
         strength = 4; //4
-        vitality = 4; //4
+        vitality = 3; //3
         agility = 4; //4
         Recalc();
     }
