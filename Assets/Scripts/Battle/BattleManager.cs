@@ -24,6 +24,7 @@ public class BattleManager : MonoBehaviour
         //весь процесс боя
         targetUnit = target.GetComponent<Unit>();
         activeMenu.SetActive(false);
+        
         SelectOFF();
 
         int[] dmg = skill.GetComponent<Skills>().Attack();
@@ -48,6 +49,7 @@ public class BattleManager : MonoBehaviour
         units[0].GetComponent<Unit>().ActivateEffect(); //активация эффекта
         if (units[0].tag.Equals("Player"))
         {
+            units[0].GetComponent<SelectUnit>().self.SetActive(true);
             activeMenu.GetComponent<ActiveMenu>().ReplaceActiveMenu(units);
 
         }
@@ -159,6 +161,11 @@ public class BattleManager : MonoBehaviour
 
     private void SelectOFF()
     {
+        GameObject placehold = units[0].GetComponent<SelectUnit>().self;
+        if (placehold != null)
+        {
+            placehold.SetActive(false);
+        }
         for (int i = 0; i < units.Count; i++)
         {
             units[i].GetComponent<SelectUnit>().select = false;
