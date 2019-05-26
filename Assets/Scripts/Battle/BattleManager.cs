@@ -198,15 +198,15 @@ public class BattleManager : MonoBehaviour
 
 
             Vector2 enemys = target.transform.position;
-            Vector2 attaker = units[0].transform.position;
-            
-            lerp.enemy = enemys; //движемся
+
+
+            lerp.MoveUnit(enemys); //движемся
         }
 
         string trigger = skill.GetComponent<Skills>().GetTrigger();
         units[0].GetComponent<Animator>().SetTrigger(trigger);
 
-        lerp.ReturnPlayer();
+        lerp.ReturnPlayer(); //возврат
     }
 
   

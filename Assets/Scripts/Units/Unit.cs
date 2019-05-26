@@ -152,7 +152,8 @@ public abstract class Unit : MonoBehaviour
         ParamInit();
         for (int i = 0; i < effectSkills.Count; i++)
         {
-            int[] info = effectSkills[i].Effect(gameObject.transform);
+            int[] info = effectSkills[i].Effect();
+            effectSkills[i].EffectAnimation(gameObject);
             BuffEffect(info);
             
             effectSkills[i].durationTimer--;

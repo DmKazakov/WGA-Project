@@ -43,7 +43,7 @@ public class MeleeAttack : Skills,Foe,Melee
 
         return totalDmg;
     }
-    public override int[] Effect(Transform transform)
+    public override int[] Effect()
     {
         return null;
     }

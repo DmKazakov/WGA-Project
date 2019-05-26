@@ -19,7 +19,7 @@ public class EneryShield : Skills, Mate, Poison
 
     }
 
-    public override int[] Effect(Transform transform)
+    public override int[] Effect()
     {
         // result[0] - count, result[1] - stats:
         // 0 - HP
@@ -37,7 +37,7 @@ public class EneryShield : Skills, Mate, Poison
         result[0] *= -1;
         result[1] = 0;
 
-        EffectAnimation(transform);
+
 
         return result;
     }

@@ -17,7 +17,7 @@ public class Aim : Skills, Mate, Debuff
         mf = 1;
     }
 
-    public override int[] Effect(Transform transform) {
+    public override int[] Effect() {
         // result[0] - count, result[1] - stats:
         // 0 - HP
         // 1 - strenght
@@ -27,10 +27,6 @@ public class Aim : Skills, Mate, Debuff
         int[] result = new int[2];
         result[0] = 3;
         result[1] = 4;
-
-        EffectAnimation(transform);
-
-
         return result;
     }
 

@@ -22,7 +22,7 @@ public class Cuts : Skills, Foe, Poison,Melee
     }
 
     // Update is called once per frame
-    public override int[] Effect(Transform transform)
+    public override int[] Effect()
     {
         // result[0] - count, result[1] - stats:
         // 0 - HP
@@ -37,7 +37,6 @@ public class Cuts : Skills, Foe, Poison,Melee
             result[0] = 1;
         }
         result[1] = 0;
-        EffectAnimation(transform);
 
         return result;
     }

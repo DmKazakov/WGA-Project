@@ -5,8 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class PlayerLerp : MonoBehaviour
 {
-    internal Vector2 enemy;
-    internal Vector2 startPosition;
+    private Vector2 enemy;
+    private Vector2 startPosition;
     private float speed = 4f;
 
     // Start is called before the first frame update
@@ -23,6 +23,10 @@ public class PlayerLerp : MonoBehaviour
             transform.position = Vector2.Lerp(transform.position, enemy, Time.deltaTime * speed);
      
  
+    }
+    public void MoveUnit(Vector2 position)
+    {
+        enemy = position;
     }
     public void ReturnPlayer()
     {

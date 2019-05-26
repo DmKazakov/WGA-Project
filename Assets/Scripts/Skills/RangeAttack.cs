@@ -44,7 +44,7 @@ public class RangeAttack : Skills,Foe, Range //наследуемся от Skill
 
         return totalDmg;
     }
-    public override int[] Effect(Transform transform)
+    public override int[] Effect()
     {
         return null;
     }
