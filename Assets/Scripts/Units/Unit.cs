@@ -58,13 +58,13 @@ public abstract class Unit : MonoBehaviour
     }
     public void ParamInit()// считаем параметры
     {
-        minDMG = 1 + strength;
-        maxDMG =maxDMGbase + 3 + strength;
+        minDMG = 1 + strength+(int)(agility/2);
+        maxDMG =maxDMGbase + 3 + strength+(int)(agility/2);
 
         criticalChance = 0 + (2 * agility);
         criticalMF = 2;
         criticalDMG = (int)(maxDMG * criticalMF);
-        dodge = 0 + (int)(0.5 * agility);
+        dodge = 0 + (int)(0.7 * agility);
         armor =armorBase + (int)(vitality / 2);
         initiative = 0 + (int)(agility / 2) + (int)(strength / 2);
     }
