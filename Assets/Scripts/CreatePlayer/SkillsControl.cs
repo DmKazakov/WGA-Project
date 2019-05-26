@@ -23,7 +23,7 @@ public class SkillsControl : MonoBehaviour
     void SwitchSkills(int num)
     {
 
-        print(num);
+
         SwitchSprite();
         player.GetComponent<Unit>().currentSkills[2] = player.GetComponent<SkillsPull>().getSkill(skills[num].name);
 
@@ -33,21 +33,7 @@ public class SkillsControl : MonoBehaviour
 
     }
 
-    //void ChangeColorButton(int num, bool active) {
-    //    Button button = skills[num].GetComponent<Button>();
-    //    ColorBlock colorVar = button.colors;
-    //
-    //    if (active)
-    //    {
-    //        colorVar.normalColor = new Color(colorVar.normalColor.r, colorVar.normalColor.g, colorVar.normalColor.b, 1f);
-    //    }
-    //    else
-    //     {
-    //         colorVar.normalColor = new Color(colorVar.normalColor.r, colorVar.normalColor.g, colorVar.normalColor.b, 0.3f);
-    //     }
 
-    //     button.colors = colorVar;
-    // }
     void SwitchSprite()
     {
         for (int i = 0; i < skills.Length; i++)

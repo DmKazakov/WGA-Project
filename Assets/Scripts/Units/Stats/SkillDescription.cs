@@ -13,7 +13,7 @@ public class SkillDescription : MonoBehaviour, IPointerEnterHandler, IPointerExi
     public void OnPointerEnter(PointerEventData eventData)
     {
         txt.text = descriprion;
-        print(descriprion);
+
     }
 
     public void OnPointerExit(PointerEventData eventData)

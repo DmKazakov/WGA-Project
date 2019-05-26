@@ -117,8 +117,6 @@ public class StartPoint : MonoBehaviour
             slider.GetComponent<HP>().Init(Uplayer[i]);
             k -= 0.5f;
 
-            print("Слайдер Герой " + Uplayer[i]);
-
         }
 
     }
@@ -136,7 +134,7 @@ public class StartPoint : MonoBehaviour
 
             k -= 0.5f;
             slider.GetComponent<Slider>().direction = Slider.Direction.RightToLeft;
-            print("Слайдер НПС " + Uenemy[i]);
+
         }
     }
     public void ExitBattle(bool result)

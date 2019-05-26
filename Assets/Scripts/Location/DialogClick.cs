@@ -28,7 +28,7 @@ public class DialogClick : MonoBehaviour
         count1++;
         manager.rulesNum++;
         manager.DialogPlay(count1, count2);
-        print(count1 + " one-two " + count2);
+
     }
     public void onClick2()
     {
