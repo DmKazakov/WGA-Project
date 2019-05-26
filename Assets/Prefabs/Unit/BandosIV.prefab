@@ -180,7 +180,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   effectSkills: []
-  headIcon: {fileID: 0}
+  headIcon: {fileID: 21300000, guid: a0281206274eb0248b455545cf9c61d5, type: 3}
 --- !u!95 &866055930130112064
 Animator:
   serializedVersion: 3
