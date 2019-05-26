@@ -7,9 +7,9 @@ public class BandosBoss : Enemy
     public override void Init()
     {
         level = 1;
-        strength = 7; //3
-        vitality = 4; //5
-        agility = 2; //4
+        strength = 7; //7
+        vitality = 4; //4
+        agility = 2; //2
         Recalc();
 
     }

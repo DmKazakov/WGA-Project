@@ -8,8 +8,8 @@ public class BandosI : Enemy
     {
         level = 1;
         strength = 3; //3
-        vitality = 3; //5
-        agility = 5; //4
+        vitality = 3; //3
+        agility = 5; //5
         Recalc();
 
     }

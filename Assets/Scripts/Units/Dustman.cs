@@ -10,9 +10,9 @@ public class Dustman : Enemy
     public override void Init()
     {
         level = 1;
-        strength = 1; //4
-        vitality = 1; //4
-        agility = 1; //4
+        strength = 4; //4
+        vitality = 4; //4
+        agility = 4; //4
         Recalc();
     }
 

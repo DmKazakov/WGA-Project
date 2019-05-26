@@ -8,9 +8,9 @@ public class Robot : Unit
     {
         level = 1;
         freeStatPoints = 0;
-        strength = 6;
-        agility = 7;
-        vitality = 4;
+        strength = 6; //6
+        agility = 7; //7
+        vitality = 3; //3
 
 
 
