@@ -74,7 +74,7 @@ public abstract class Unit : MonoBehaviour
         {
             if (activeSkills[i] != null)
             {
-
+                
                 activeSkills[i].GetComponent<Skills>().Init(gameObject.GetComponent<Unit>());
 
             }

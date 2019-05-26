@@ -54,10 +54,11 @@ public class CharPanelManager : MonoBehaviour
     }
     private void InitSkill()
     {
-        Skills skl = currentUnit.GetComponent<Unit>().currentSkills[2].GetComponent<Skills>();
-        TxtSkills txtskill = currentUnit.GetComponent<Unit>().currentSkills[2].GetComponent<TxtSkills>();
+        Skills skl = currentUnit.currentSkills[2].GetComponent<Skills>();
+        TxtSkills txtskill = currentUnit.currentSkills[2].GetComponent<TxtSkills>();
         if (skl != null)
         {
+            currentUnit.currentSkills[2].GetComponent<Skills>().Init(currentUnit);
             txtskill.Init();
             string ttt = txtskill.txt;
             skill.sprite = skl.spriteON;

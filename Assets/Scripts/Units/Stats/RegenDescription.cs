@@ -8,7 +8,7 @@ public class RegenDescription : TxtSkills
     {
         int reload = gameObject.GetComponent<Skills>().cooldown;
         int duration = gameObject.GetComponent<Skills>().duration;
-         txt = "Регенерация." + '\n' + "Перезарядка: " + reload + '\n'+"Длительность: "+duration + '\n' + "Восстанавливает здоровье цели каждый ход. Сила восстановления зависит от максимального здоровья персонажа.";
+         txt = "Регенерация." + '\n' + "Базовая перезарядка: " + reload + '\n'+"Длительность: "+duration + '\n' + "Восстанавливает здоровье цели каждый ход. Сила восстановления зависит от максимального здоровья персонажа.";
         gameObject.GetComponent<Skills>().description = txt;
     }
 

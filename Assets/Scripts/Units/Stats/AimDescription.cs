@@ -8,7 +8,7 @@ public class AimDescription : TxtSkills
     {
         int reload = gameObject.GetComponent<Skills>().cooldown;
         int duration = gameObject.GetComponent<Skills>().duration;
-         txt = "Прицеливание." + '\n' + "Перезарядка: " + reload +'\n' + "Длительность: " + duration + '\n' + "Следующий удар нанесет тройной урон";
+         txt = "Прицеливание." + '\n' + "Базовая перезарядка: " + reload +'\n' + "Длительность: " + duration + '\n' + "Следующий удар нанесет тройной урон";
         gameObject.GetComponent<Skills>().description = txt;
     }
 }
