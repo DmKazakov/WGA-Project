@@ -73,7 +73,7 @@ public class Cuts : Skills, Foe, Poison,Melee
     private void EffectInit(int[] dmg)
     {
         durationTimer = duration;
-        effectDMG = (int)(dmg[0] * 0.3);
+        effectDMG = (int)(dmg[0] * 0.4);
     }
     
 }

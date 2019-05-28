@@ -56,7 +56,7 @@ public class EneryShield : Skills, Mate, Poison
     public void EffectInit()
     {
         durationTimer = duration;
-        heal = (int)(BattleManager.target.GetComponent<Unit>().hitPoint * 0.05);
+        heal = (int)(BattleManager.target.GetComponent<Unit>().hitPoint * 0.07);
     }
  
 

@@ -32,9 +32,12 @@ EditorBuildSettings:
   - enabled: 1
     path: "Assets/Scenes/\u043B\u043E\u043A\u0430\u0446\u0438\u0438/garage.unity"
     guid: 9cf8f3513d71d244d8a0c58b81944648
+  - enabled: 1
+    path: Assets/Scenes/TheEnd.unity
+    guid: a26db0f2e9ba99246ace469065386d84
   - enabled: 0
-    path: Assets/__DELETED_GUID_Trash/2fb278db268c1734e850c082ee1e9ac0
-    guid: 2fb278db268c1734e850c082ee1e9ac0
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
