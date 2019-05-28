@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Assets/Art/Characters/Musor 2 head 2.png.meta
 guid: ec351c53abae0fc44ba5a91a56093f83
+=======
+guid: 7f6d67085f0b0b24296e6617338b022c
+>>>>>>> 5ad74f4a8ab37a444f8f67cda32bd32afffa4c3c:Assets/Art/Characters/Musor 2 head 2.png.meta
 TextureImporter:
   fileIDToRecycleName: {}
   externalObjects: {}
@@ -75,7 +79,11 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
+<<<<<<< HEAD:Assets/Art/Characters/Musor 2 head 2.png.meta
     spriteID: a691c95fea1499e43960f59040ae2a08
+=======
+    spriteID: 1768b0abdd9735045bd8596c86214314
+>>>>>>> 5ad74f4a8ab37a444f8f67cda32bd32afffa4c3c:Assets/Art/Characters/Musor 2 head 2.png.meta
     vertices: []
     indices: 
     edges: []
