@@ -41,10 +41,14 @@ public abstract class Unit : MonoBehaviour
 
     public Sprite headIcon;
 
-
+    private AudioSource unitSounds;
+    private AudioPull audioPull;
 
     public void Recalc()
     {
+        unitSounds = gameObject.GetComponent<AudioSource>(); //костыль, надо в Init();
+        audioPull = gameObject.GetComponent<AudioPull>();
+
         HPinit();
         ParamInit();
         SaveBasicStats();
@@ -104,6 +108,7 @@ public abstract class Unit : MonoBehaviour
 
     public void SetDamage(int[] info) //уменьшить жизнь, получить урон
     {
+
         //info[0] - dmg
         //info[1] - crit, 1 - true, 0 - false, -1 - effect
         if (info[1] == -1)
@@ -112,6 +117,8 @@ public abstract class Unit : MonoBehaviour
         }
         else
         {
+            unitSounds.clip = audioPull.hitSound;
+
             int[] result = new int[2];
             int dmg = info[0];
             int chance = Random.Range(0, 100);
@@ -127,6 +134,7 @@ public abstract class Unit : MonoBehaviour
             if (chance > (100 - dodge))
             {
                 dmg = 0;
+                unitSounds.clip = audioPull.dodgeSound;
             }
             result[0] = dmg;
             result[1] = info[1];
@@ -134,6 +142,7 @@ public abstract class Unit : MonoBehaviour
             currentHitPoint -= dmg;
             ViewDamage(result);
             gameObject.GetComponent<Animator>().SetTrigger("hit"); //анимация повреждения
+            unitSounds.Play();
         }
 
     }
@@ -175,6 +184,10 @@ public abstract class Unit : MonoBehaviour
         {
             int[] info = effectSkills[i].Effect();
             effectSkills[i].EffectAnimation(gameObject);
+
+            unitSounds.clip = effectSkills[i].effectSound;
+            unitSounds.Play();
+
             BuffEffect(info);
             
             effectSkills[i].durationTimer--;

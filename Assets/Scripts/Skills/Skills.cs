@@ -29,6 +29,11 @@ public abstract class Skills : MonoBehaviour
     public abstract int[] Effect();
     public abstract void Init(Unit unit);
 
+    public GameObject particle;
+
+    public AudioClip activeSound;
+    public AudioClip effectSound;
+
     public virtual void EffectAnimation(GameObject gobj)
     {
         if (particle != null)
@@ -46,7 +51,6 @@ public abstract class Skills : MonoBehaviour
         cooldownTimer = cooldown;
     }
 
-    public GameObject particle;
 
     public void DecreaseCoolDown()
     {

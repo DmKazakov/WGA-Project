@@ -52,11 +52,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _name: 
+  description: 
   cooldownTimer: 0
+  cooldownTimerBASE: 0
   duration: 0
   durationTimer: 0
   spriteON: {fileID: 21300000, guid: 5d9dad354808c684db1e0b1060650460, type: 3}
   spriteOFF: {fileID: 21300000, guid: 5d9dad354808c684db1e0b1060650460, type: 3}
+  particle: {fileID: 0}
+  activeSound: {fileID: 8300000, guid: 0ecca80d8c765724288220302b61c2b2, type: 3}
+  effectSound: {fileID: 8300000, guid: ae88b6d9ff7ad7541abe69b0c45ef177, type: 3}
 --- !u!114 &3469066310162859118
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -13,7 +13,7 @@ public class ActiveMenu : MonoBehaviour
 
     public void ToTarget(int num) //включаем возможность выбора на юнитах
     {
-
+        gameObject.GetComponent<AudioSource>().Play();
         GameObject activeSkill = BattleManager.units[0].GetComponent<Unit>().activeSkills[num]; 
         BattleManager.skill = activeSkill;
 

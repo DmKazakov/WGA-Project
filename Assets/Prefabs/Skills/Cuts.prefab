@@ -70,6 +70,8 @@ MonoBehaviour:
   spriteOFF: {fileID: 21300000, guid: 3734668ab63ccb74985ccbb095b9b827, type: 3}
   particle: {fileID: 5178553657518646311, guid: e972abd8c1621ad449d73ed59e6a14ee,
     type: 3}
+  activeSound: {fileID: 8300000, guid: cca1fadfb01b6e349a60d2b5c94823c1, type: 3}
+  effectSound: {fileID: 8300000, guid: 670fbbc562a4a8145a8bbde0b87d68eb, type: 3}
 --- !u!114 &1890429206367002866
 MonoBehaviour:
   m_ObjectHideFlags: 0

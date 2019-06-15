@@ -13,7 +13,7 @@ public class BattleManager : MonoBehaviour
     public GameObject activeMenu;
     internal static GameObject target;
     private static Unit targetUnit;
-    internal static GameObject skill;
+    internal static GameObject skill; //активный скилл
     public GameObject[] orderPanel = new GameObject[6];
     public GameObject viewDamage;
 
@@ -29,6 +29,7 @@ public class BattleManager : MonoBehaviour
 
         int[] dmg = skill.GetComponent<Skills>().Attack();
         StartAnimation();
+        StartSound();
         
         targetUnit.SetDamage(dmg); //наносим урон
 
@@ -203,9 +204,7 @@ public class BattleManager : MonoBehaviour
         if (skl is Melee)
         {
 
-
             Vector2 enemys = target.transform.position;
-
 
             lerp.MoveUnit(enemys); //движемся
         }
@@ -214,6 +213,12 @@ public class BattleManager : MonoBehaviour
         units[0].GetComponent<Animator>().SetTrigger(trigger);
 
         lerp.ReturnPlayer(); //возврат
+    }
+    private void StartSound()
+    {
+        AudioSource audio = gameObject.GetComponent<AudioSource>();
+        audio.clip = skill.GetComponent<Skills>().activeSound;
+        audio.Play();
     }
 
   
