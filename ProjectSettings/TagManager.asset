@@ -9,6 +9,7 @@ TagManager:
   - Poison
   - Buff
   - GameInterface
+  - MainSound
   layers:
   - Default
   - TransparentFX

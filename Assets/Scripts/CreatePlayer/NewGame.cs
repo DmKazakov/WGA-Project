@@ -11,11 +11,12 @@ public class NewGame : MonoBehaviour
     public GameObject dustman;
     public GameObject message;
     // public GameObject dustman2;
-
+    
 
     public void OnMouse()
     {
         Unit unit = player.GetComponent<Avatar>().squad[0].GetComponent<Unit>();
+        gameObject.GetComponent<AudioSource>().Play();
         string txt = "";
         if (unit.currentSkills[2] == null)
         {

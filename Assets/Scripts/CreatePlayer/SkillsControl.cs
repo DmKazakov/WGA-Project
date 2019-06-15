@@ -10,9 +10,12 @@ public class SkillsControl : MonoBehaviour
     public GameObject[] skills;
     public GameObject player;
 
+    private AudioSource sound;
+
     // Start is called before the first frame update
     void Start()
     {
+        sound = GameObject.FindGameObjectWithTag("MainSound").GetComponent<AudioSource>();
         skills[0].GetComponent<Button>().onClick.AddListener(() => SwitchSkills(0));
         skills[1].GetComponent<Button>().onClick.AddListener(() => SwitchSkills(1));
         skills[2].GetComponent<Button>().onClick.AddListener(() => SwitchSkills(2));
@@ -29,7 +32,7 @@ public class SkillsControl : MonoBehaviour
 
 
         skills[num].GetComponent<Image>().sprite = skills[num].GetComponent<Skills>().spriteON;
-
+        sound.Play();
 
     }
 

@@ -128,7 +128,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   effectSkills: []
-  headIcon: {fileID: 21300000, guid: 7f6d67085f0b0b24296e6617338b022c, type: 3}
+  headIcon: {fileID: 21300000, guid: 5b2f7a655b829e1448591ab71fef7049, type: 3}
 --- !u!61 &410221666
 BoxCollider2D:
   m_ObjectHideFlags: 0

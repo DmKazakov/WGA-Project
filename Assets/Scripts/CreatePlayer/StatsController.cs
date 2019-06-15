@@ -11,11 +11,13 @@ public class StatsController : MonoBehaviour {
 	public Button agilDown;
 	public GameObject player;
 
+    private AudioSource sound;
 	private Player playerStats;
 
 	// Start is called before the first frame update
 	void Start() {
 		playerStats = player.GetComponent<Player>();
+        sound = GameObject.FindGameObjectWithTag("MainSound").GetComponent<AudioSource>();
 
 		strUp.onClick.AddListener(() => playerStats.strength++);
 		strDown.onClick.AddListener(() => playerStats.strength--);
@@ -36,11 +38,13 @@ public class StatsController : MonoBehaviour {
 	}
 
 	private void AddStatPoint() {
+        sound.Play();
 		playerStats.freeStatPoints++;
 		ValidateButtonsState();
 	}
 
 	private void RemoveStatPoint() {
+        sound.Play();
 		playerStats.freeStatPoints--;
 		ValidateButtonsState();
 	}
