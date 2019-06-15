@@ -10,7 +10,7 @@ public class ButtonManager : MonoBehaviour
     public Button close;
     public Button mainMenuButton;
     public Button charButton;
-
+    public AudioSource sound;
     public Button[] perkButton; //clinki, splav, reaction
 
 
@@ -37,10 +37,12 @@ public class ButtonManager : MonoBehaviour
     private void ActivePlayer()
     {
         gameObject.GetComponent<CharPanelManager>().SwitchUnit(0);
+        sound.Play();
     }
     private void ActiveRobot()
     {
         gameObject.GetComponent<CharPanelManager>().SwitchUnit(1);
+        sound.Play();
     }
     private void Close()
     {
@@ -50,11 +52,13 @@ public class ButtonManager : MonoBehaviour
         }
 
         gameObject.SetActive(false);
+        sound.Play();
     }
 
     private void OpenMainMenu()
     {
         canvasMenu.GetComponent<PauseMenu>().OpenMenu();
+        sound.Play();
     }
 
     private void OpenCharPanel()
@@ -77,7 +81,7 @@ public class ButtonManager : MonoBehaviour
         {
             Close();
         }
-
+        sound.Play();
     }
     private void PerkListener(int num)
     {
@@ -99,6 +103,7 @@ public class ButtonManager : MonoBehaviour
             SwitchButtonState();
         }
         gameObject.GetComponent<CharPanelManager>().Init();
+        sound.Play();
     }
     internal void SwitchButtonState()
     {

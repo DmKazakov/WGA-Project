@@ -46,7 +46,7 @@ public class MessageSetup : MonoBehaviour
                 thePlayer.speed = initSpeed;
             }
         }
-
+        gameObject.transform.parent.GetComponent<AudioSource>().Play();
     }
 
 

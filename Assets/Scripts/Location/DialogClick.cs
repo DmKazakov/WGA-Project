@@ -28,13 +28,14 @@ public class DialogClick : MonoBehaviour
         count1++;
         manager.rulesNum++;
         manager.DialogPlay(count1, count2);
-
+        gameObject.GetComponent<AudioSource>().Play();
     }
     public void onClick2()
     {
         count2++;
         manager.rulesNum++;
         manager.DialogPlay(count1, count2);
+        gameObject.GetComponent<AudioSource>().Play();
     }
     
 }
